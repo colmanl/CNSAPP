@@ -1,0 +1,6 @@
+framework module Pods_CNSAPP {
+  umbrella header "Pods-CNSAPP-umbrella.h"
+
+  export *
+  module * { export * }
+}

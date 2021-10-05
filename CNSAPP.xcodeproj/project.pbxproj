@@ -16,6 +16,10 @@
 		092FCD56270C9CD7002AF17E /* CNSAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD55270C9CD7002AF17E /* CNSAPPTests.swift */; };
 		092FCD60270C9CD8002AF17E /* CNSAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */; };
 		092FCD62270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */; };
+		092FCD6F270C9CFD002AF17E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */; };
+		1C46F19CC7D3C72A716E3EA8 /* Pods_CNSAPPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38B9B10BB08DFBE2F8DB2E8 /* Pods_CNSAPPTests.framework */; };
+		D268408772C20E21BC29CDC9 /* Pods_CNSAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18FEE9082FBB90D031A6235 /* Pods_CNSAPP.framework */; };
+		D7043B1292F4C2C074B1CAA9 /* Pods_CNSAPP_CNSAPPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498D71FE159F67BBA46F2C79 /* Pods_CNSAPP_CNSAPPUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,16 @@
 		092FCD5B270C9CD8002AF17E /* CNSAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNSAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSAPPUITests.swift; sourceTree = "<group>"; };
 		092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2B28F88937F16A4D2AB4FFD0 /* Pods-CNSAPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPPTests.debug.xcconfig"; path = "Target Support Files/Pods-CNSAPPTests/Pods-CNSAPPTests.debug.xcconfig"; sourceTree = "<group>"; };
+		34EAEE289C2D186AF65A2718 /* Pods-CNSAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP.release.xcconfig"; path = "Target Support Files/Pods-CNSAPP/Pods-CNSAPP.release.xcconfig"; sourceTree = "<group>"; };
+		4071173097941FB18FB06BF3 /* Pods-CNSAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPPTests.release.xcconfig"; path = "Target Support Files/Pods-CNSAPPTests/Pods-CNSAPPTests.release.xcconfig"; sourceTree = "<group>"; };
+		498D71FE159F67BBA46F2C79 /* Pods_CNSAPP_CNSAPPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNSAPP_CNSAPPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		869D4618B36F307AE677678A /* Pods-CNSAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP.debug.xcconfig"; path = "Target Support Files/Pods-CNSAPP/Pods-CNSAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		8D76BDB7979BF156A0E0206C /* Pods-CNSAPP-CNSAPPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP-CNSAPPUITests.release.xcconfig"; path = "Target Support Files/Pods-CNSAPP-CNSAPPUITests/Pods-CNSAPP-CNSAPPUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A18FEE9082FBB90D031A6235 /* Pods_CNSAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNSAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDE33BAAAE71EBD0B5FB548 /* Pods-CNSAPP-CNSAPPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP-CNSAPPUITests.debug.xcconfig"; path = "Target Support Files/Pods-CNSAPP-CNSAPPUITests/Pods-CNSAPP-CNSAPPUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F38B9B10BB08DFBE2F8DB2E8 /* Pods_CNSAPPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNSAPPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D268408772C20E21BC29CDC9 /* Pods_CNSAPP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C46F19CC7D3C72A716E3EA8 /* Pods_CNSAPPTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7043B1292F4C2C074B1CAA9 /* Pods_CNSAPP_CNSAPPUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +100,8 @@
 				092FCD54270C9CD7002AF17E /* CNSAPPTests */,
 				092FCD5E270C9CD8002AF17E /* CNSAPPUITests */,
 				092FCD3C270C9CD5002AF17E /* Products */,
+				293E70662892C6ECF7EEF7CF /* Pods */,
+				497B72B5CCC86000C25979BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +125,7 @@
 				092FCD47270C9CD7002AF17E /* Assets.xcassets */,
 				092FCD49270C9CD7002AF17E /* LaunchScreen.storyboard */,
 				092FCD4C270C9CD7002AF17E /* Info.plist */,
+				092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */,
 			);
 			path = CNSAPP;
 			sourceTree = "<group>";
@@ -127,6 +147,29 @@
 			path = CNSAPPUITests;
 			sourceTree = "<group>";
 		};
+		293E70662892C6ECF7EEF7CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				869D4618B36F307AE677678A /* Pods-CNSAPP.debug.xcconfig */,
+				34EAEE289C2D186AF65A2718 /* Pods-CNSAPP.release.xcconfig */,
+				CDDE33BAAAE71EBD0B5FB548 /* Pods-CNSAPP-CNSAPPUITests.debug.xcconfig */,
+				8D76BDB7979BF156A0E0206C /* Pods-CNSAPP-CNSAPPUITests.release.xcconfig */,
+				2B28F88937F16A4D2AB4FFD0 /* Pods-CNSAPPTests.debug.xcconfig */,
+				4071173097941FB18FB06BF3 /* Pods-CNSAPPTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		497B72B5CCC86000C25979BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A18FEE9082FBB90D031A6235 /* Pods_CNSAPP.framework */,
+				498D71FE159F67BBA46F2C79 /* Pods_CNSAPP_CNSAPPUITests.framework */,
+				F38B9B10BB08DFBE2F8DB2E8 /* Pods_CNSAPPTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 092FCD65270C9CD8002AF17E /* Build configuration list for PBXNativeTarget "CNSAPP" */;
 			buildPhases = (
+				3BE0699329D136AFEAA4BFDA /* [CP] Check Pods Manifest.lock */,
 				092FCD37270C9CD5002AF17E /* Sources */,
 				092FCD38270C9CD5002AF17E /* Frameworks */,
 				092FCD39270C9CD5002AF17E /* Resources */,
+				B4C438F4C7A48A2855C20192 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 092FCD68270C9CD8002AF17E /* Build configuration list for PBXNativeTarget "CNSAPPTests" */;
 			buildPhases = (
+				A4BD79AA599D0411AFCA7A10 /* [CP] Check Pods Manifest.lock */,
 				092FCD4D270C9CD7002AF17E /* Sources */,
 				092FCD4E270C9CD7002AF17E /* Frameworks */,
 				092FCD4F270C9CD7002AF17E /* Resources */,
@@ -169,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 092FCD6B270C9CD8002AF17E /* Build configuration list for PBXNativeTarget "CNSAPPUITests" */;
 			buildPhases = (
+				235E2D1BB59627D3C640152D /* [CP] Check Pods Manifest.lock */,
 				092FCD57270C9CD8002AF17E /* Sources */,
 				092FCD58270C9CD8002AF17E /* Frameworks */,
 				092FCD59270C9CD8002AF17E /* Resources */,
+				A03CC173C49C363FB5CAE358 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				092FCD4B270C9CD7002AF17E /* LaunchScreen.storyboard in Resources */,
+				092FCD6F270C9CFD002AF17E /* GoogleService-Info.plist in Resources */,
 				092FCD48270C9CD7002AF17E /* Assets.xcassets in Resources */,
 				092FCD46270C9CD5002AF17E /* Main.storyboard in Resources */,
 			);
@@ -252,6 +301,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		235E2D1BB59627D3C640152D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CNSAPP-CNSAPPUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BE0699329D136AFEAA4BFDA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CNSAPP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A03CC173C49C363FB5CAE358 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CNSAPP-CNSAPPUITests/Pods-CNSAPP-CNSAPPUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CNSAPP-CNSAPPUITests/Pods-CNSAPP-CNSAPPUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CNSAPP-CNSAPPUITests/Pods-CNSAPP-CNSAPPUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4BD79AA599D0411AFCA7A10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CNSAPPTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4C438F4C7A48A2855C20192 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CNSAPP/Pods-CNSAPP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CNSAPP/Pods-CNSAPP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CNSAPP/Pods-CNSAPP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		092FCD37270C9CD5002AF17E /* Sources */ = {
@@ -353,6 +505,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -414,6 +568,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -434,11 +590,27 @@
 		};
 		092FCD66270C9CD8002AF17E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 869D4618B36F307AE677678A /* Pods-CNSAPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/FirebaseAnalytics/AdIdSupport\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAppMeasurement/AdIdSupport\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAppMeasurement/WithoutAdIdSupport\"",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CNSAPP/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -461,6 +633,7 @@
 		};
 		092FCD67270C9CD8002AF17E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34EAEE289C2D186AF65A2718 /* Pods-CNSAPP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,11 +661,14 @@
 		};
 		092FCD69270C9CD8002AF17E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B28F88937F16A4D2AB4FFD0 /* Pods-CNSAPPTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,11 +688,14 @@
 		};
 		092FCD6A270C9CD8002AF17E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4071173097941FB18FB06BF3 /* Pods-CNSAPPTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -536,6 +715,7 @@
 		};
 		092FCD6C270C9CD8002AF17E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDDE33BAAAE71EBD0B5FB548 /* Pods-CNSAPP-CNSAPPUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +738,7 @@
 		};
 		092FCD6D270C9CD8002AF17E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D76BDB7979BF156A0E0206C /* Pods-CNSAPP-CNSAPPUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

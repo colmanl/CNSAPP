@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-CNSAPP-CNSAPPUITests/Pods-CNSAPP-CNSAPPUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseABTesting/FirebaseABTesting.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework

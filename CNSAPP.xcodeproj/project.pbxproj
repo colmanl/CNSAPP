@@ -18,6 +18,11 @@
 		092FCD62270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */; };
 		092FCD6F270C9CFD002AF17E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */; };
 		1C46F19CC7D3C72A716E3EA8 /* Pods_CNSAPPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38B9B10BB08DFBE2F8DB2E8 /* Pods_CNSAPPTests.framework */; };
+		594A2897270E56AA007E5391 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A2896270E56AA007E5391 /* SignUpViewController.swift */; };
+		594A2899270E56DE007E5391 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A2898270E56DE007E5391 /* LoginViewController.swift */; };
+		594A289B270E5708007E5391 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A289A270E5708007E5391 /* HomeViewController.swift */; };
+		594E3B31271782E900FF92BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594E3B30271782E900FF92BF /* Constants.swift */; };
+		59B495A32713716E009A0FCF /* LoginStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B495A22713716E009A0FCF /* LoginStyling.swift */; };
 		D268408772C20E21BC29CDC9 /* Pods_CNSAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18FEE9082FBB90D031A6235 /* Pods_CNSAPP.framework */; };
 		D7043B1292F4C2C074B1CAA9 /* Pods_CNSAPP_CNSAPPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498D71FE159F67BBA46F2C79 /* Pods_CNSAPP_CNSAPPUITests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +63,11 @@
 		34EAEE289C2D186AF65A2718 /* Pods-CNSAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP.release.xcconfig"; path = "Target Support Files/Pods-CNSAPP/Pods-CNSAPP.release.xcconfig"; sourceTree = "<group>"; };
 		4071173097941FB18FB06BF3 /* Pods-CNSAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPPTests.release.xcconfig"; path = "Target Support Files/Pods-CNSAPPTests/Pods-CNSAPPTests.release.xcconfig"; sourceTree = "<group>"; };
 		498D71FE159F67BBA46F2C79 /* Pods_CNSAPP_CNSAPPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNSAPP_CNSAPPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		594A2896270E56AA007E5391 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		594A2898270E56DE007E5391 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		594A289A270E5708007E5391 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		594E3B30271782E900FF92BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		59B495A22713716E009A0FCF /* LoginStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStyling.swift; sourceTree = "<group>"; };
 		869D4618B36F307AE677678A /* Pods-CNSAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP.debug.xcconfig"; path = "Target Support Files/Pods-CNSAPP/Pods-CNSAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		8D76BDB7979BF156A0E0206C /* Pods-CNSAPP-CNSAPPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP-CNSAPPUITests.release.xcconfig"; path = "Target Support Files/Pods-CNSAPP-CNSAPPUITests/Pods-CNSAPP-CNSAPPUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A18FEE9082FBB90D031A6235 /* Pods_CNSAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNSAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,12 +130,14 @@
 			children = (
 				092FCD3E270C9CD5002AF17E /* AppDelegate.swift */,
 				092FCD40270C9CD5002AF17E /* SceneDelegate.swift */,
-				092FCD42270C9CD5002AF17E /* ViewController.swift */,
+				59B495A427137841009A0FCF /* Page Styles */,
+				594A289C270E5732007E5391 /* View Controllers */,
 				092FCD44270C9CD5002AF17E /* Main.storyboard */,
 				092FCD47270C9CD7002AF17E /* Assets.xcassets */,
 				092FCD49270C9CD7002AF17E /* LaunchScreen.storyboard */,
 				092FCD4C270C9CD7002AF17E /* Info.plist */,
 				092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */,
+				594E3B30271782E900FF92BF /* Constants.swift */,
 			);
 			path = CNSAPP;
 			sourceTree = "<group>";
@@ -168,6 +180,25 @@
 				F38B9B10BB08DFBE2F8DB2E8 /* Pods_CNSAPPTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		594A289C270E5732007E5391 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				092FCD42270C9CD5002AF17E /* ViewController.swift */,
+				594A289A270E5708007E5391 /* HomeViewController.swift */,
+				594A2898270E56DE007E5391 /* LoginViewController.swift */,
+				594A2896270E56AA007E5391 /* SignUpViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		59B495A427137841009A0FCF /* Page Styles */ = {
+			isa = PBXGroup;
+			children = (
+				59B495A22713716E009A0FCF /* LoginStyling.swift */,
+			);
+			path = "Page Styles";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,7 +443,12 @@
 			files = (
 				092FCD43270C9CD5002AF17E /* ViewController.swift in Sources */,
 				092FCD3F270C9CD5002AF17E /* AppDelegate.swift in Sources */,
+				594A2897270E56AA007E5391 /* SignUpViewController.swift in Sources */,
+				594A2899270E56DE007E5391 /* LoginViewController.swift in Sources */,
 				092FCD41270C9CD5002AF17E /* SceneDelegate.swift in Sources */,
+				59B495A32713716E009A0FCF /* LoginStyling.swift in Sources */,
+				594A289B270E5708007E5391 /* HomeViewController.swift in Sources */,
+				594E3B31271782E900FF92BF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/DynamicLinks'
 pod 'Firebase/Functions'
+pod 'Firebase/Firestore'
 # or pod ‘Firebase/AnalyticsWithoutAdIdSupport’
 # for Analytics without IDFA collection capability
 

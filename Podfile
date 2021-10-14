@@ -7,6 +7,8 @@ target 'CNSAPP' do
 
   # Pods for CNSAPP
 
+pod 'FSCalendar'
+
   target 'CNSAPPTests' do
     inherit! :search_paths
     # Pods for testing
@@ -24,7 +26,11 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/DynamicLinks'
 pod 'Firebase/Functions'
+<<<<<<< HEAD
 pod 'Firebase/Firestore'
+=======
+
+>>>>>>> main
 # or pod ‘Firebase/AnalyticsWithoutAdIdSupport’
 # for Analytics without IDFA collection capability
 

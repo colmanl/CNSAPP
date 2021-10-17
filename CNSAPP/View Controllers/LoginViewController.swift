@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         
         LoginStyling.styleTextField(emailTextField)
         LoginStyling.styleTextField(passwordTextField)
-        LoginStyling.styleFilledButton(loginButton)
+        LoginStyling.styleHollowButton(loginButton)
         passwordTextField.isSecureTextEntry = true
     }
     

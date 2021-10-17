@@ -142,6 +142,8 @@ class SignUpViewController: UIViewController {
                 }
                 else{
                     //User was created succuesfully, store the rest of the data
+                    
+                    //this is the line of code that link the firestore database to our code.
                     let db = Firestore.firestore()
                     
                     db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "email":email, "phoneNumber":phoneNumber, "uid": result!.user.uid]) { (error) in

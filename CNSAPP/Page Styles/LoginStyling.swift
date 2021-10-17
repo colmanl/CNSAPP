@@ -17,7 +17,7 @@ class LoginStyling{
         BottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
         
         //makes the line yellow
-        BottomLine.backgroundColor = UIColor.blue.cgColor
+        BottomLine.backgroundColor = UIColor.systemYellow.cgColor
         
         //Removes border on textfield
         textfield.borderStyle = .none
@@ -28,8 +28,17 @@ class LoginStyling{
     
     static func styleFilledButton(_ button:UIButton) {
          //Rounded corner styling
-        button.backgroundColor = UIColor.blue
+        button.backgroundColor = UIColor.systemBlue
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.white
+    }
+    
+    static func styleHollowButton(_ button:UIButton){
+        //Hollow Button
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.systemBlue.cgColor
+        button.layer.cornerRadius = 25.0
+        button.tintColor = UIColor.systemBlue
+        
     }
 }

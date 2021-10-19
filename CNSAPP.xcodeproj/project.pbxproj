@@ -16,6 +16,7 @@
 		092FCD60270C9CD8002AF17E /* CNSAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */; };
 		092FCD62270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */; };
 		092FCD6F270C9CFD002AF17E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */; };
+		167E6D34271F863C00E37F25 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167E6D33271F863C00E37F25 /* CalendarViewController.swift */; };
 		1C46F19CC7D3C72A716E3EA8 /* Pods_CNSAPPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38B9B10BB08DFBE2F8DB2E8 /* Pods_CNSAPPTests.framework */; };
 		590CB6D72718A9C800B856A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590CB6D62718A9C800B856A5 /* ViewController.swift */; };
 		5937B711271F4B1800AEBF5E /* CentralHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5937B710271F4B1800AEBF5E /* CentralHomeViewController.swift */; };
@@ -60,6 +61,7 @@
 		092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSAPPUITests.swift; sourceTree = "<group>"; };
 		092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		167E6D33271F863C00E37F25 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		2B28F88937F16A4D2AB4FFD0 /* Pods-CNSAPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPPTests.debug.xcconfig"; path = "Target Support Files/Pods-CNSAPPTests/Pods-CNSAPPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		34EAEE289C2D186AF65A2718 /* Pods-CNSAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP.release.xcconfig"; path = "Target Support Files/Pods-CNSAPP/Pods-CNSAPP.release.xcconfig"; sourceTree = "<group>"; };
 		4071173097941FB18FB06BF3 /* Pods-CNSAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPPTests.release.xcconfig"; path = "Target Support Files/Pods-CNSAPPTests/Pods-CNSAPPTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				594A2896270E56AA007E5391 /* SignUpViewController.swift */,
 				5980B4912718B5D500CF888F /* EntryViewController.swift */,
 				5937B710271F4B1800AEBF5E /* CentralHomeViewController.swift */,
+				167E6D33271F863C00E37F25 /* CalendarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				092FCD3F270C9CD5002AF17E /* AppDelegate.swift in Sources */,
 				594A2897270E56AA007E5391 /* SignUpViewController.swift in Sources */,
 				594A2899270E56DE007E5391 /* LoginViewController.swift in Sources */,
+				167E6D34271F863C00E37F25 /* CalendarViewController.swift in Sources */,
 				092FCD41270C9CD5002AF17E /* SceneDelegate.swift in Sources */,
 				59B495A32713716E009A0FCF /* LoginStyling.swift in Sources */,
 				5980B4922718B5D500CF888F /* EntryViewController.swift in Sources */,

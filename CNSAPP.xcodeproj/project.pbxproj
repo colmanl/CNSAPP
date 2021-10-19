@@ -18,6 +18,7 @@
 		092FCD6F270C9CFD002AF17E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */; };
 		1C46F19CC7D3C72A716E3EA8 /* Pods_CNSAPPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38B9B10BB08DFBE2F8DB2E8 /* Pods_CNSAPPTests.framework */; };
 		590CB6D72718A9C800B856A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590CB6D62718A9C800B856A5 /* ViewController.swift */; };
+		5937B711271F4B1800AEBF5E /* CentralHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5937B710271F4B1800AEBF5E /* CentralHomeViewController.swift */; };
 		594A2897270E56AA007E5391 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A2896270E56AA007E5391 /* SignUpViewController.swift */; };
 		594A2899270E56DE007E5391 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A2898270E56DE007E5391 /* LoginViewController.swift */; };
 		594A289B270E5708007E5391 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A289A270E5708007E5391 /* HomeViewController.swift */; };
@@ -64,6 +65,7 @@
 		4071173097941FB18FB06BF3 /* Pods-CNSAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPPTests.release.xcconfig"; path = "Target Support Files/Pods-CNSAPPTests/Pods-CNSAPPTests.release.xcconfig"; sourceTree = "<group>"; };
 		498D71FE159F67BBA46F2C79 /* Pods_CNSAPP_CNSAPPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNSAPP_CNSAPPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		590CB6D62718A9C800B856A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5937B710271F4B1800AEBF5E /* CentralHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralHomeViewController.swift; sourceTree = "<group>"; };
 		594A2896270E56AA007E5391 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		594A2898270E56DE007E5391 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		594A289A270E5708007E5391 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				594A2898270E56DE007E5391 /* LoginViewController.swift */,
 				594A2896270E56AA007E5391 /* SignUpViewController.swift */,
 				5980B4912718B5D500CF888F /* EntryViewController.swift */,
+				5937B710271F4B1800AEBF5E /* CentralHomeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				594A289B270E5708007E5391 /* HomeViewController.swift in Sources */,
 				590CB6D72718A9C800B856A5 /* ViewController.swift in Sources */,
 				594E3B31271782E900FF92BF /* Constants.swift in Sources */,
+				5937B711271F4B1800AEBF5E /* CentralHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

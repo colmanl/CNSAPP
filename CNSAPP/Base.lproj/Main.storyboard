@@ -154,10 +154,35 @@
             </objects>
             <point key="canvasLocation" x="1805.7971014492755" y="540.40178571428567"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Central Home View Controller-->
+        <scene sceneID="dd8-a9-2Tk">
+            <objects>
+                <tabBarController storyboardIdentifier="CentralVC" id="pi3-1r-4kj" customClass="CentralHomeViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Pz-hK-rhS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemYellowColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KWH-Ei-GVn" kind="relationship" relationship="viewControllers" id="Y1g-pW-ZuS"/>
+                        <segue destination="m2H-hQ-ejL" kind="relationship" relationship="viewControllers" id="j0D-bT-LtG"/>
+                        <segue destination="cWM-Xt-3wX" kind="relationship" relationship="viewControllers" id="da7-AR-JTv"/>
+                        <segue destination="NAv-dz-5Yd" kind="relationship" relationship="viewControllers" id="3JS-yY-oFN"/>
+                        <segue destination="Oxf-i5-oAQ" kind="relationship" relationship="viewControllers" id="b95-YM-FZc"/>
+                        <segue destination="bkA-Bi-CQb" kind="relationship" relationship="viewControllers" id="KoM-OC-7pC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cT0-bG-Y1b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3129" y="226"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="bWI-KC-Brt">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="KWH-Ei-GVn" customClass="HomeViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" title="Home" id="KWH-Ei-GVn" customClass="HomeViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cja-vI-kDs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,10 +201,131 @@
                             <constraint firstItem="HZH-K4-wWO" firstAttribute="centerX" secondItem="cja-vI-kDs" secondAttribute="centerX" id="HRA-R0-LVg"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="ded-PS-a8i"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBU-lb-hfR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2659" y="156"/>
+            <point key="canvasLocation" x="3977" y="-213"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="WCI-UZ-6ip">
+            <objects>
+                <viewController id="m2H-hQ-ejL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rmy-ji-IQE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test View #2" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OJ5-xH-W8M">
+                                <rect key="frame" x="93" y="383" width="229" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Q3i-4H-x9O"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="gH0-m7-0mQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KcU-j9-r2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4874" y="-214"/>
+        </scene>
+        <!--Announcements-->
+        <scene sceneID="dYT-oV-OBu">
+            <objects>
+                <viewController id="cWM-Xt-3wX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HCF-j4-fOy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test View #3" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X8s-c6-zC5">
+                                <rect key="frame" x="45" y="423" width="325" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0xZ-Pe-cdm"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Announcements" image="bell.fill" catalog="system" id="hhW-XD-Bh9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6FD-RV-8je" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5697" y="-214"/>
+        </scene>
+        <!--Photo Library-->
+        <scene sceneID="hgQ-oP-LDO">
+            <objects>
+                <viewController id="NAv-dz-5Yd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ABf-vn-7rf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test View #4" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pTs-FM-gvo">
+                                <rect key="frame" x="20" y="431" width="374" height="62.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xKI-qQ-6KS"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Photo Library" image="photo.artframe" catalog="system" id="XRa-zp-AFo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0a-eU-FcH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3976.811594202899" y="574.55357142857144"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="kEs-91-DOB">
+            <objects>
+                <viewController id="Oxf-i5-oAQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IxJ-Gz-5DI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test View #5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rKi-wP-VGg">
+                                <rect key="frame" x="0.0" y="431" width="414" height="64.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2CT-K7-Hpo"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Help" image="hand.raised.fill" catalog="system" id="SRV-dD-pqZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOn-mS-orb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4873.913043478261" y="574.55357142857144"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Cou-fJ-qaT">
+            <objects>
+                <viewController id="bkA-Bi-CQb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R8O-93-pb9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TestView #6" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVp-WE-dP9">
+                                <rect key="frame" x="20" y="431" width="374" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AFp-rx-dTB"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="dr5-2v-VQC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DpN-dA-YDz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5695.652173913044" y="574.55357142857144"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="P0Y-Er-aKn">
@@ -267,11 +413,29 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bell.fill" catalog="system" width="128" height="124"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="hand.raised.fill" catalog="system" width="128" height="124"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

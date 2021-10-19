@@ -168,10 +168,10 @@ class SignUpViewController: UIViewController {
     }
     
     func goToHomeScreen(){
-        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as?
-        HomeViewController
+        let centralViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.centralViewController) as?
+        CentralHomeViewController
         
-        view.window?.rootViewController = homeViewController
+        view.window?.rootViewController = centralViewController
         view.window?.makeKeyAndVisible()
     }
 }

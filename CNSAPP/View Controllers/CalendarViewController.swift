@@ -12,6 +12,15 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
 
     @IBOutlet var calendar: FSCalendar!
     
+    @IBOutlet weak var outputTextView: UITextView!
+    
+    @IBOutlet weak var inputEventTitle: UILabel!
+    
+    @IBOutlet weak var inputTextView: UITextView!
+    
+    @IBOutlet weak var addEventButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         calendar.delegate = self
@@ -21,6 +30,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM. dd"
         let string = formatter.string(from: date)
-        print("\(string) Announcements:")
+        //outputTextView.text = ""
+        outputTextView.text = "\(string) Announcements:"
     }
 }

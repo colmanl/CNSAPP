@@ -26,6 +26,9 @@
 		594E3B31271782E900FF92BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594E3B30271782E900FF92BF /* Constants.swift */; };
 		5980B4922718B5D500CF888F /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980B4912718B5D500CF888F /* EntryViewController.swift */; };
 		59B495A32713716E009A0FCF /* LoginStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B495A22713716E009A0FCF /* LoginStyling.swift */; };
+		8F6895F52723498900DEAEFC /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6895F42723498900DEAEFC /* PhotosViewController.swift */; };
+		8F6895F62723498900DEAEFC /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6895F42723498900DEAEFC /* PhotosViewController.swift */; };
+		8F6895F72723498900DEAEFC /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6895F42723498900DEAEFC /* PhotosViewController.swift */; };
 		D268408772C20E21BC29CDC9 /* Pods_CNSAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18FEE9082FBB90D031A6235 /* Pods_CNSAPP.framework */; };
 		D7043B1292F4C2C074B1CAA9 /* Pods_CNSAPP_CNSAPPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498D71FE159F67BBA46F2C79 /* Pods_CNSAPP_CNSAPPUITests.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +79,7 @@
 		59B495A22713716E009A0FCF /* LoginStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStyling.swift; sourceTree = "<group>"; };
 		869D4618B36F307AE677678A /* Pods-CNSAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP.debug.xcconfig"; path = "Target Support Files/Pods-CNSAPP/Pods-CNSAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		8D76BDB7979BF156A0E0206C /* Pods-CNSAPP-CNSAPPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP-CNSAPPUITests.release.xcconfig"; path = "Target Support Files/Pods-CNSAPP-CNSAPPUITests/Pods-CNSAPP-CNSAPPUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8F6895F42723498900DEAEFC /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		A18FEE9082FBB90D031A6235 /* Pods_CNSAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNSAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDE33BAAAE71EBD0B5FB548 /* Pods-CNSAPP-CNSAPPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP-CNSAPPUITests.debug.xcconfig"; path = "Target Support Files/Pods-CNSAPP-CNSAPPUITests/Pods-CNSAPP-CNSAPPUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F38B9B10BB08DFBE2F8DB2E8 /* Pods_CNSAPPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CNSAPPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +199,7 @@
 				594A289A270E5708007E5391 /* HomeViewController.swift */,
 				594A2898270E56DE007E5391 /* LoginViewController.swift */,
 				594A2896270E56AA007E5391 /* SignUpViewController.swift */,
+				8F6895F42723498900DEAEFC /* PhotosViewController.swift */,
 				5980B4912718B5D500CF888F /* EntryViewController.swift */,
 				5937B710271F4B1800AEBF5E /* CentralHomeViewController.swift */,
 				167E6D33271F863C00E37F25 /* CalendarViewController.swift */,
@@ -459,6 +464,7 @@
 				5980B4922718B5D500CF888F /* EntryViewController.swift in Sources */,
 				594A289B270E5708007E5391 /* HomeViewController.swift in Sources */,
 				590CB6D72718A9C800B856A5 /* ViewController.swift in Sources */,
+				8F6895F52723498900DEAEFC /* PhotosViewController.swift in Sources */,
 				594E3B31271782E900FF92BF /* Constants.swift in Sources */,
 				5937B711271F4B1800AEBF5E /* CentralHomeViewController.swift in Sources */,
 			);
@@ -469,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				092FCD56270C9CD7002AF17E /* CNSAPPTests.swift in Sources */,
+				8F6895F62723498900DEAEFC /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F6895F72723498900DEAEFC /* PhotosViewController.swift in Sources */,
 				092FCD60270C9CD8002AF17E /* CNSAPPUITests.swift in Sources */,
 				092FCD62270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift in Sources */,
 			);

@@ -215,12 +215,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Odp-8b-RNS">
+                                <rect key="frame" x="47" y="349" width="320" height="290"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Events:" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-HU-C1M" userLabel="Output Text View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="NY1-60-aeY" userLabel="height = 100"/>
+                                            <constraint firstAttribute="width" constant="350" id="cT9-P5-97I"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UpV-by-A7A" userLabel="New Event Stack View">
+                                        <rect key="frame" x="0.0" y="110" width="320" height="180"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new event title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WPr-sH-rHk">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Add description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HAb-6T-bZf" userLabel="Input Text View">
+                                                <rect key="frame" x="0.0" y="45" width="320" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" selected="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Z8c-RK-vav"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tA-Sz-eUn">
+                                                <rect key="frame" x="0.0" y="105" width="320" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKm-1C-sBy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="oPB-x6-Iyr"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="K3X-kA-i8R">
+                                                        <rect key="frame" x="150" y="0.0" width="170" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="150" id="VTz-pD-Sn3"/>
+                                                        </constraints>
+                                                    </datePicker>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="M79-ZP-ein"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIw-cR-LrB">
+                                                <rect key="frame" x="0.0" y="155" width="320" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="4oG-M8-MzV"/>
+                                                    <constraint firstAttribute="width" constant="300" id="vBH-c9-AhC"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Add Event"/>
+                                                <connections>
+                                                    <action selector="addEventBtnTapped:" destination="m2H-hQ-ejL" eventType="touchUpInside" id="TCM-5h-C8A"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="dv3-Km-eMk"/>
+                                            <constraint firstItem="EIw-cR-LrB" firstAttribute="top" secondItem="9tA-Sz-eUn" secondAttribute="bottom" constant="5" id="h8X-UR-1JN"/>
+                                            <constraint firstAttribute="height" constant="180" id="iNI-we-DGI"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="1rr-Ys-6DF"/>
+                                    <constraint firstAttribute="height" constant="290" id="VPb-Ht-wp5"/>
+                                </constraints>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3on-hP-32S" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="69" width="414" height="394"/>
+                                <rect key="frame" x="27" y="44" width="360" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="33u-oc-u0J"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="DDw-kg-rBs"/>
+                                    <constraint firstAttribute="width" constant="360" id="33u-oc-u0J"/>
                                     <constraint firstAttribute="height" constant="300" id="ROf-I5-zbu"/>
                                 </constraints>
                             </view>
@@ -228,26 +313,27 @@
                         <viewLayoutGuide key="safeArea" id="Q3i-4H-x9O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Q3i-4H-x9O" firstAttribute="bottom" secondItem="3on-hP-32S" secondAttribute="bottom" constant="400" id="2pl-fr-fNt"/>
-                            <constraint firstItem="Q3i-4H-x9O" firstAttribute="trailing" secondItem="3on-hP-32S" secondAttribute="trailing" id="B07-We-ut2"/>
-                            <constraint firstItem="Q3i-4H-x9O" firstAttribute="bottom" secondItem="3on-hP-32S" secondAttribute="bottom" constant="400" id="Eb5-uI-dKk"/>
-                            <constraint firstItem="3on-hP-32S" firstAttribute="top" secondItem="Q3i-4H-x9O" secondAttribute="top" id="PI0-Bh-G34"/>
-                            <constraint firstItem="Q3i-4H-x9O" firstAttribute="bottom" secondItem="3on-hP-32S" secondAttribute="bottom" constant="200" id="WuW-5D-Kbl"/>
-                            <constraint firstItem="Q3i-4H-x9O" firstAttribute="bottom" secondItem="3on-hP-32S" secondAttribute="bottom" constant="560" id="Xhb-fd-nUj"/>
-                            <constraint firstItem="3on-hP-32S" firstAttribute="top" secondItem="Q3i-4H-x9O" secondAttribute="top" id="Xwq-VP-8iR"/>
-                            <constraint firstItem="3on-hP-32S" firstAttribute="leading" secondItem="Q3i-4H-x9O" secondAttribute="leading" id="jcq-Vz-4kn"/>
-                            <constraint firstItem="3on-hP-32S" firstAttribute="top" secondItem="Q3i-4H-x9O" secondAttribute="top" constant="25" id="q6g-mf-bnU"/>
-                            <constraint firstItem="Q3i-4H-x9O" firstAttribute="bottom" secondItem="3on-hP-32S" secondAttribute="bottom" constant="350" id="vkj-we-nZD"/>
+                            <constraint firstItem="Odp-8b-RNS" firstAttribute="centerX" secondItem="Rmy-ji-IQE" secondAttribute="centerX" id="4sM-U0-iIz"/>
+                            <constraint firstItem="3on-hP-32S" firstAttribute="centerX" secondItem="Rmy-ji-IQE" secondAttribute="centerX" id="Fpi-yI-3W6"/>
+                            <constraint firstItem="3on-hP-32S" firstAttribute="top" secondItem="Q3i-4H-x9O" secondAttribute="top" id="Kde-0E-07S"/>
+                            <constraint firstItem="Odp-8b-RNS" firstAttribute="top" secondItem="3on-hP-32S" secondAttribute="bottom" constant="5" id="QJY-Ib-lPF"/>
+                            <constraint firstItem="Q3i-4H-x9O" firstAttribute="bottom" secondItem="3on-hP-32S" secondAttribute="top" constant="1" id="YyY-FN-Wjx"/>
+                            <constraint firstItem="Odp-8b-RNS" firstAttribute="top" secondItem="3on-hP-32S" secondAttribute="bottom" constant="5" id="hQh-v1-uC1"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="gH0-m7-0mQ"/>
                     <connections>
+                        <outlet property="addEventButton" destination="EIw-cR-LrB" id="afM-mA-w6O"/>
                         <outlet property="calendar" destination="3on-hP-32S" id="5GX-eQ-5Pa"/>
+                        <outlet property="inputDate" destination="K3X-kA-i8R" id="Zio-To-CTm"/>
+                        <outlet property="inputEventTitle" destination="WPr-sH-rHk" id="lNt-Xx-1SN"/>
+                        <outlet property="inputTextView" destination="HAb-6T-bZf" id="0bA-CG-ytE"/>
+                        <outlet property="outputTextView" destination="gnz-HU-C1M" id="AEJ-nM-kBG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KcU-j9-r2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4874" y="-214"/>
+            <point key="canvasLocation" x="4873.913043478261" y="-214.28571428571428"/>
         </scene>
         <!--Announcements-->
         <scene sceneID="dYT-oV-OBu">

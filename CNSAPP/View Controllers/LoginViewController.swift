@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    //Connections to View Controller UI
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -18,6 +19,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
 
+    @IBOutlet weak var signUpBackButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,16 +38,20 @@ class LoginViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   
+    //Everything after this point controls button actions after being tapped
+    
+    //Sends user back to sign up page when clicked
+    @IBAction func signUpBackTapped(_ sender: Any) {
+        //Code that transfers user between pages
+        let signUpViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.signUpViewController) as?
+        SignUpViewController
+        
+        self.view.window?.rootViewController = signUpViewController
+        self.view.window?.makeKeyAndVisible()
     }
-    */
-
+    
+    //Function that controls the login button actions after being tapped
     @IBAction func loginTapped(_ sender: Any) {
         
         //Validate Text Fields

@@ -12,7 +12,7 @@
         <!--Entry View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="EntryViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EntryVC" id="BYZ-38-t0r" customClass="EntryViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,13 +70,13 @@
         <!--Sign Up View Controller-->
         <scene sceneID="Mw6-Nm-1Wd">
             <objects>
-                <viewController id="aoR-oS-BSE" customClass="SignUpViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" modalPresentationStyle="fullScreen" id="aoR-oS-BSE" customClass="SignUpViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nev-Dt-gel">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Y8r-Xe-PWN">
-                                <rect key="frame" x="40" y="84" width="334" height="440.5"/>
+                                <rect key="frame" x="40" y="94" width="334" height="440.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Firstname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pIA-Gn-9U1">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -131,17 +131,36 @@
                                     <constraint firstItem="eEh-iA-OMy" firstAttribute="height" secondItem="pIA-Gn-9U1" secondAttribute="height" id="wEH-HP-PVY"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3Q-gl-Qc1">
+                                <rect key="frame" x="20" y="44" width="114" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v77-ci-nhH">
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="&lt; Back">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="BackButtonTapped:" destination="aoR-oS-BSE" eventType="touchUpInside" id="G6Z-VF-U1B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2te-fb-Ay4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="S3Q-gl-Qc1" firstAttribute="leading" secondItem="2te-fb-Ay4" secondAttribute="leading" constant="20" id="4pO-Fh-U5q"/>
+                            <constraint firstItem="S3Q-gl-Qc1" firstAttribute="top" secondItem="2te-fb-Ay4" secondAttribute="top" id="JMv-NE-C3D"/>
                             <constraint firstItem="Y8r-Xe-PWN" firstAttribute="leading" secondItem="2te-fb-Ay4" secondAttribute="leading" constant="40" id="X2W-XV-9aB"/>
-                            <constraint firstItem="Y8r-Xe-PWN" firstAttribute="top" secondItem="2te-fb-Ay4" secondAttribute="top" constant="40" id="kf0-3L-NDE"/>
+                            <constraint firstItem="Y8r-Xe-PWN" firstAttribute="top" secondItem="2te-fb-Ay4" secondAttribute="top" constant="50" id="kf0-3L-NDE"/>
                             <constraint firstItem="2te-fb-Ay4" firstAttribute="trailing" secondItem="Y8r-Xe-PWN" secondAttribute="trailing" constant="40" id="kkv-aP-ONY"/>
+                            <constraint firstItem="2te-fb-Ay4" firstAttribute="trailing" secondItem="S3Q-gl-Qc1" secondAttribute="trailing" constant="280" id="vT8-Nf-P8c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rBA-Ah-w2o"/>
                     <connections>
+                        <outlet property="BackButton" destination="v77-ci-nhH" id="J3G-En-Pbj"/>
                         <outlet property="emailTextField" destination="6Zh-8w-XWE" id="gQA-uV-Bse"/>
                         <outlet property="errorLabel" destination="yNJ-Pz-gET" id="nIJ-Ur-A4A"/>
                         <outlet property="firstNameTextField" destination="pIA-Gn-9U1" id="u8W-xU-OVG"/>
@@ -164,7 +183,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" systemColor="systemYellowColor"/>
                     </tabBar>
                     <connections>
@@ -451,7 +470,6 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xKI-qQ-6KS"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="Fe7-79-2Oi" firstAttribute="bottom" secondItem="xKI-qQ-6KS" secondAttribute="bottom" id="QUh-MM-Vs5"/>
                             <constraint firstItem="Fe7-79-2Oi" firstAttribute="trailing" secondItem="xKI-qQ-6KS" secondAttribute="trailing" id="Zbo-F9-SbK"/>
@@ -523,13 +541,13 @@
         <!--Login View Controller-->
         <scene sceneID="P0Y-Er-aKn">
             <objects>
-                <viewController id="GOQ-8M-pp7" customClass="LoginViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" modalPresentationStyle="fullScreen" id="GOQ-8M-pp7" customClass="LoginViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DdO-sZ-jzn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Omy-vV-Ggd">
-                                <rect key="frame" x="40" y="84" width="334" height="230.5"/>
+                                <rect key="frame" x="40" y="94" width="334" height="230.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vME-Hm-fVH">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -566,13 +584,31 @@
                                     <constraint firstItem="mZy-L8-8vA" firstAttribute="height" secondItem="vME-Hm-fVH" secondAttribute="height" id="r0m-y8-MCq"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYl-sJ-1wJ">
+                                <rect key="frame" x="20" y="50" width="116" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RW-Gf-Nif">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="&lt; Sign Up">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signUpBackTapped:" destination="GOQ-8M-pp7" eventType="touchUpInside" id="pV1-ws-RpZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6J8-l0-k3C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Omy-vV-Ggd" firstAttribute="top" secondItem="6J8-l0-k3C" secondAttribute="top" constant="40" id="CBn-rc-T8E"/>
+                            <constraint firstItem="Omy-vV-Ggd" firstAttribute="top" secondItem="6J8-l0-k3C" secondAttribute="top" constant="50" id="CBn-rc-T8E"/>
+                            <constraint firstItem="6J8-l0-k3C" firstAttribute="trailing" secondItem="XYl-sJ-1wJ" secondAttribute="trailing" constant="278" id="Ojz-NI-Bi4"/>
                             <constraint firstItem="6J8-l0-k3C" firstAttribute="trailing" secondItem="Omy-vV-Ggd" secondAttribute="trailing" constant="40" id="Rh4-Ar-28p"/>
                             <constraint firstItem="Omy-vV-Ggd" firstAttribute="leading" secondItem="6J8-l0-k3C" secondAttribute="leading" constant="40" id="WnT-o1-1U5"/>
+                            <constraint firstItem="XYl-sJ-1wJ" firstAttribute="top" secondItem="DdO-sZ-jzn" secondAttribute="top" constant="50" id="ewZ-bM-FaM"/>
+                            <constraint firstItem="XYl-sJ-1wJ" firstAttribute="leading" secondItem="6J8-l0-k3C" secondAttribute="leading" constant="20" id="t1a-6e-a1i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iTS-eL-jhB"/>
@@ -581,6 +617,7 @@
                         <outlet property="errorLabel" destination="ebz-bs-yej" id="sHs-ae-eGY"/>
                         <outlet property="loginButton" destination="Yfd-Cq-KEz" id="zGW-1c-uKg"/>
                         <outlet property="passwordTextField" destination="mZy-L8-8vA" id="MN4-XD-juD"/>
+                        <outlet property="signUpBackButton" destination="1RW-Gf-Nif" id="PGJ-Pt-edI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53J-if-ZHC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -624,9 +661,6 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

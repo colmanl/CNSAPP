@@ -8,7 +8,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class PhotosViewController: UIViewController, UIScrollViewDelegate{
+class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     let database = Firestore.firestore()
     var imgPath = ""
@@ -57,6 +57,14 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate{
     
     
     @IBAction func addPic(_ sender: Any) {
+        
+        let vc = UIImagePickerController()
+                vc.sourceType = .photoLibrary
+                vc.delegate = self
+                vc.allowsEditing = true
+                present(vc, animated: true)
+        
+        
     }
     
     
@@ -285,6 +293,57 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate{
         
         
     }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
+            if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+                  starterImg.image = image
+                
+                let randomID = UUID.init().uuidString
+                let uploadRef = Storage.storage().reference(withPath: "images/\(randomID).png")
+                guard let imageData = image.pngData() else { return }
+                let uploadMetadata = StorageMetadata.init()
+                uploadMetadata.contentType = "image/png"
+                
+                uploadRef.putData(imageData, metadata: uploadMetadata) { ( downloadMetadata, error ) in
+                    if let error = error {
+                        print("An error happend! \(error.localizedDescription)")
+                        return
+                    }
+                    print("Put is complete and I got this back: \(String(describing: downloadMetadata))")
+                }
+                
+                let numRef = String(numOfPics)
+                
+                database.collection("imageReference").document(numRef).setData([
+                    "imgString": "images/\(randomID).png"
+                ]) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                    }
+                }
+                
+                numOfPics = numOfPics + 1
+                database.collection("imageReference").document("imgCount").setData([ "count": numOfPics ], merge: true)
+                
+                
+                
+                
+                
+            }
+            
+            picker.dismiss(animated: true, completion: nil)
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            picker.dismiss(animated: true, completion: nil)
+        }
+
+
+    
     
     
     }

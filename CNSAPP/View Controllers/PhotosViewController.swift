@@ -298,7 +298,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
             if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-                  starterImg.image = image
+                  //starterImg.image = image
                 
                 let randomID = UUID.init().uuidString
                 let uploadRef = Storage.storage().reference(withPath: "images/\(randomID).png")

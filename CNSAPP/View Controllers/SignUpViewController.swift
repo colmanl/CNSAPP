@@ -27,6 +27,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    @IBOutlet weak var BackButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,6 +59,15 @@ class SignUpViewController: UIViewController {
     */
     //Check the fields and validate the fields to see if the data is correct. Correct returns nil, otherwise error message is sent
     
+    // FUnction to determine what happens when back button is tapped
+    @IBAction func BackButtonTapped(_ sender: Any) {
+        // Sends user to another page
+        let entryViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.entryViewController) as?
+        EntryViewController
+        
+        view.window?.rootViewController = entryViewController
+        view.window?.makeKeyAndVisible()
+    }
     //Password Regular expression  function
     func passwordValidation(_ password : String) -> Bool{
         //Password must be min 8 chars long, have 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character -Zech
@@ -153,8 +164,8 @@ class SignUpViewController: UIViewController {
                             self.showError("Error saving user data")
                         }
                     }
-                    //Transition to the home screen
-                    self.goToHomeScreen()
+                    //Transition to the login screen
+                    self.goToLoginScreen()
                 }
             }
             
@@ -166,12 +177,12 @@ class SignUpViewController: UIViewController {
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    
-    func goToHomeScreen(){
-        let centralViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.centralViewController) as?
-        CentralHomeViewController
+    // Code to transition into the login screen after tap
+    func goToLoginScreen(){
+        let loginViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.loginViewController) as?
+        LoginViewController
         
-        view.window?.rootViewController = centralViewController
+        view.window?.rootViewController = loginViewController
         view.window?.makeKeyAndVisible()
     }
 }

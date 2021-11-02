@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class CalendarViewController: UIViewController, FSCalendarDelegate {
+class CalendarViewController: UIViewController, UITextViewDelegate, FSCalendarDelegate {
 
     @IBOutlet var calendar: FSCalendar!
     
@@ -26,14 +26,14 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
     
     @IBAction func addEventBtnTapped(_ sender: Any) {
         let db = Firestore.firestore()
-        var eventTitle = inputEventTitle.text!
-        var eventDescription = inputTextView.text!
+        let eventTitle = inputEventTitle.text!
+        let eventDescription = inputTextView.text!
         let eventDate = inputDate.date
         
         db.collection("calendarEvents").addDocument(data: ["eventTitle":eventTitle, "eventDescription":eventDescription, "eventDate":eventDate])
         
-        eventTitle = ""
-        eventDescription = ""
+        inputEventTitle.text = nil
+        inputTextView.text = nil
         
         showSimpleAlert()
         // signal on the calendar that an event is there at the eventDate
@@ -42,6 +42,23 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         calendar.delegate = self
+        inputTextView.delegate = self;
+        inputTextView.text = "Enter event description (optional)"
+        inputTextView.textColor = UIColor.lightGray
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Enter event description (optional)"
+            textView.textColor = UIColor.lightGray
+        }
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
@@ -50,7 +67,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM. d"
         let string = formatter.string(from: date)
-        outputTextView.text = "\(string) Announcements:"
+        outputTextView.text = "\(string) Events:"
         /*
         formatter.dateFormat = "MMMM d, YYYY"
         let string2 = formatter.string(from: date)
@@ -77,21 +94,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate {
         // find formatter in db
         // display the eventTitle and eventDescription in the outputTextView
     }
-
-    func textViewBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
-    }
+*/
     
-    func textViewEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "Placeholder"
-            textView.textColor = UIColor.lightGray
-        }
-    }
-    */
     func showSimpleAlert() {
         let alert = UIAlertController(title: "Success!", message: "Your event was successfully added", preferredStyle: UIAlertController.Style.alert)
         self.present(alert, animated: true, completion: nil)

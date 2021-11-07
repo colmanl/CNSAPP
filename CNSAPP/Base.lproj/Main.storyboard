@@ -328,6 +328,13 @@
                                     <constraint firstAttribute="height" constant="300" id="ROf-I5-zbu"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXg-Fi-XfR">
+                                <rect key="frame" x="47" y="675" width="320" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q3i-4H-x9O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -344,6 +351,7 @@
                     <connections>
                         <outlet property="addEventButton" destination="EIw-cR-LrB" id="afM-mA-w6O"/>
                         <outlet property="calendar" destination="3on-hP-32S" id="5GX-eQ-5Pa"/>
+                        <outlet property="errorLabel" destination="AXg-Fi-XfR" id="Iht-tq-Dr4"/>
                         <outlet property="inputDate" destination="K3X-kA-i8R" id="Zio-To-CTm"/>
                         <outlet property="inputEventTitle" destination="WPr-sH-rHk" id="lNt-Xx-1SN"/>
                         <outlet property="inputTextView" destination="HAb-6T-bZf" id="0bA-CG-ytE"/>

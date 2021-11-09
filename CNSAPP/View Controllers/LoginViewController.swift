@@ -21,8 +21,6 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var signUpBackButton: UIButton!
     
-    @IBOutlet weak var forgotPassButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,23 +34,12 @@ class LoginViewController: UIViewController {
         LoginStyling.styleTextField(emailTextField)
         LoginStyling.styleTextField(passwordTextField)
         LoginStyling.styleHollowButton(loginButton)
-        LoginStyling.styleFilledButton(forgotPassButton)
         passwordTextField.isSecureTextEntry = true
     }
     
 
    
     //Everything after this point controls button actions after being tapped
-    
-    //Sends user to the ForgotPassword view controller
-    @IBAction func forgotPassTapped(_ sender: Any) {
-        let forgotPassViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.forgotPassViewController) as?
-        ForgotPasswordViewController
-        
-        self.view.window?.rootViewController = forgotPassViewController
-        self.view.window?.makeKeyAndVisible()
-    }
-    
     
     //Sends user back to sign up page when clicked
     @IBAction func signUpBackTapped(_ sender: Any) {

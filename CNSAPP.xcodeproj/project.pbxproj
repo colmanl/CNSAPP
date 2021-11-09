@@ -16,6 +16,7 @@
 		092FCD60270C9CD8002AF17E /* CNSAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */; };
 		092FCD62270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */; };
 		092FCD6F270C9CFD002AF17E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */; };
+		0954BDC2273A319A004449BE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */; };
 		09590C702733B9F300444A1F /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */; };
 		09D9A94227386F8800934631 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9A94127386F8800934631 /* UserViewController.swift */; };
 		167E6D34271F863C00E37F25 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167E6D33271F863C00E37F25 /* CalendarViewController.swift */; };
@@ -66,6 +67,7 @@
 		092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSAPPUITests.swift; sourceTree = "<group>"; };
 		092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		09590C6A2733873D00444A1F /* CNSAPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CNSAPP.entitlements; sourceTree = "<group>"; };
 		09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
 		09D9A94127386F8800934631 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				594A289A270E5708007E5391 /* HomeViewController.swift */,
 				09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */,
+				0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */,
 				09D9A94127386F8800934631 /* UserViewController.swift */,
 				594A2898270E56DE007E5391 /* LoginViewController.swift */,
 				594A2896270E56AA007E5391 /* SignUpViewController.swift */,
@@ -477,6 +480,7 @@
 				594A289B270E5708007E5391 /* HomeViewController.swift in Sources */,
 				590CB6D72718A9C800B856A5 /* ViewController.swift in Sources */,
 				09590C702733B9F300444A1F /* AnnouncementsViewController.swift in Sources */,
+				0954BDC2273A319A004449BE /* ForgotPasswordViewController.swift in Sources */,
 				8F6895F52723498900DEAEFC /* PhotosViewController.swift in Sources */,
 				594E3B31271782E900FF92BF /* Constants.swift in Sources */,
 				5937B711271F4B1800AEBF5E /* CentralHomeViewController.swift in Sources */,

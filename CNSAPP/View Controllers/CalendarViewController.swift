@@ -8,11 +8,10 @@
 import FSCalendar
 import UIKit
 import Firebase
-import FirebaseAuth
 import FirebaseFirestore
 import Foundation
 
-class CalendarViewController: UIViewController, UITextViewDelegate, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+class CalendarViewController: UIViewController, UITextViewDelegate, ObservableObject, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
 
     @IBOutlet weak var calendar: FSCalendar!
     
@@ -28,6 +27,9 @@ class CalendarViewController: UIViewController, UITextViewDelegate, FSCalendarDe
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    private var db = Firestore.firestore()
+    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         calendar.dataSource = self
@@ -40,7 +42,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, FSCalendarDe
     var testDates = ["2021-08-11", "2021-16-11"]
     
     @IBAction func addEventBtnTapped(_ sender: Any) {
-        let db = Firestore.firestore()
         let eventTitle = inputEventTitle.text!
         let eventDescription = inputTextView.text!
         let eventDate = inputDate.date
@@ -88,6 +89,11 @@ class CalendarViewController: UIViewController, UITextViewDelegate, FSCalendarDe
         formatter.dateFormat = "EEEE, MMM. d"
         let dateString = formatter.string(from: date)
         outputTextView.text = "\(dateString) Events:"
+        /*
+        formatter.dateFormat = "yyyy-dd-MM"
+        let dateStringFromDb = formatter.string(from: date)
+        let dateQuery = db.collection("calendarEvents").whereField("eventDate", isEqualTo: dateStringFromDb )
+        */
         // ADD bool var = query for the calendarEvents db's eventDate contains dateString
         // if var == true
         // outputTextView.text = "\(dateString) Events:\n", display the eventTitle and eventDescription associated with this day

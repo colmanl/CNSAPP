@@ -1,16 +1,17 @@
 //
-//  UsersPageViewController.swift
+//  SearchViewController.swift
 //  CNSAPP
 //
-//  Created by Robert Colman Loch on 11/4/21.
+//  Created by Robert Colman Loch on 11/11/21.
 //
 
-import Foundation
 import SwiftUI
+import UIKit
+import Foundation
+
 import Firebase
 
 struct SearchViewController: View {
-    
     @ObservedObject var data = getUserData()
     @State var isOn = false
     var body: some View {
@@ -103,7 +104,7 @@ struct SearchViewController: View {
             }
         }
     }
-    struct dataType : Identifiable {
+       struct dataType : Identifiable {
         var id : String
         var firstname : String
         var lastname : String
@@ -119,7 +120,4 @@ struct SearchViewController: View {
             Text(data.email)
         }
     }
-
-    
-
 

@@ -16,6 +16,7 @@
 		092FCD60270C9CD8002AF17E /* CNSAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */; };
 		092FCD62270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */; };
 		092FCD6F270C9CFD002AF17E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */; };
+		093F2DF9273DA32B00B88098 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F2DF8273DA32B00B88098 /* SearchViewController.swift */; };
 		0954BDC2273A319A004449BE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */; };
 		09590C702733B9F300444A1F /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */; };
 		09D9A94227386F8800934631 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9A94127386F8800934631 /* UserViewController.swift */; };
@@ -68,6 +69,7 @@
 		092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSAPPUITests.swift; sourceTree = "<group>"; };
 		092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		093F2DF8273DA32B00B88098 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		09590C6A2733873D00444A1F /* CNSAPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CNSAPP.entitlements; sourceTree = "<group>"; };
 		09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */,
 				0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */,
 				09D9A94127386F8800934631 /* UserViewController.swift */,
+				093F2DF8273DA32B00B88098 /* SearchViewController.swift */,
 				594A2898270E56DE007E5391 /* LoginViewController.swift */,
 				594A2896270E56AA007E5391 /* SignUpViewController.swift */,
 				8F6895F42723498900DEAEFC /* PhotosViewController.swift */,
@@ -483,6 +486,7 @@
 				16970704273B023B0021457A /* CalendarEvent.swift in Sources */,
 				092FCD3F270C9CD5002AF17E /* AppDelegate.swift in Sources */,
 				09D9A94227386F8800934631 /* UserViewController.swift in Sources */,
+				093F2DF9273DA32B00B88098 /* SearchViewController.swift in Sources */,
 				594A2897270E56AA007E5391 /* SignUpViewController.swift in Sources */,
 				594A2899270E56DE007E5391 /* LoginViewController.swift in Sources */,
 				167E6D34271F863C00E37F25 /* CalendarViewController.swift in Sources */,
@@ -606,7 +610,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -663,7 +667,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

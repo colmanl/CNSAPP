@@ -75,6 +75,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
                 return
             }
         }
+        print("Hit getData")
     }
     
     func deleteDate(eventToDelete: CalenderEvent){
@@ -149,27 +150,33 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     // FSCalendarDelegate for when user selects a date on the calendar
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
-        print("Hit FSCalendarDelegate")
+        var outputEvents = ""
+        var eventsExist = false
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM. d"
-        let dateString = formatter.string(from: date)
-        
-        outputTextView.text = "\(dateString) Events:\n"
+        let dateStringOutput = formatter.string(from: date)
         
         addDbDatesToDatesArray()
         print("datesArray contains: ", datesArray)
         
         // EXPLANATION: dateQuery attempt
-//        formatter.dateFormat = "MM-dd-yyyy"
-//        let dateStringFromDb = formatter.string(from: date)
-//        let dateQuery = db.collection("calendarEvents")
-//            .whereField("eventDate", isEqualTo: dateStringFromDb )
+        formatter.dateFormat = "MM-dd-yyyy"
+        let dateStringFromDb = formatter.string(from: date)
         
-        // ADD bool var = query for the calendarEvents db's eventDate contains dateString
-        // if var == true
-        // outputTextView.text = "\(dateString) Events:\n", display the eventTitle and eventDescription associated with this day
-        // else
-        // outputTextView.text = "\(dateString) Events:\nThere are no events on this day."
+        for event in eventList {
+            if event.eventDate == dateStringFromDb {
+                outputEvents.append("\t\(event.eventTitle)\n")
+                outputEvents.append("\t\(event.eventDescription)")
+                eventsExist = true
+            }
+        }
+        if eventsExist {
+            outputTextView.text = "\(dateStringOutput) Events:\n\(outputEvents)"
+        }
+        else {
+            outputTextView.text = "\(dateStringOutput) Events:\n\tThere are no events on this day."
+        }
     }
 
     // FSCalendarDataSource

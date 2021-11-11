@@ -9,7 +9,7 @@ import Foundation
 
 struct CalenderEvent: Identifiable {
     
-    var id: String // Document id
+    var id: String // Document id in db
     var eventTitle: String
     var eventDescription: String
     var eventDate: String

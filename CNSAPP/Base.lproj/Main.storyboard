@@ -192,7 +192,6 @@
                         <segue destination="cWM-Xt-3wX" kind="relationship" relationship="viewControllers" id="da7-AR-JTv"/>
                         <segue destination="NAv-dz-5Yd" kind="relationship" relationship="viewControllers" id="3JS-yY-oFN"/>
                         <segue destination="Oxf-i5-oAQ" kind="relationship" relationship="viewControllers" id="b95-YM-FZc"/>
-                        <segue destination="bkA-Bi-CQb" kind="relationship" relationship="viewControllers" id="KoM-OC-7pC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cT0-bG-Y1b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -515,30 +514,6 @@
             </objects>
             <point key="canvasLocation" x="4873.913043478261" y="574.55357142857144"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="Cou-fJ-qaT">
-            <objects>
-                <viewController id="bkA-Bi-CQb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R8O-93-pb9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TestView #6" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVp-WE-dP9">
-                                <rect key="frame" x="20" y="431" width="374" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="AFp-rx-dTB"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="dr5-2v-VQC"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DpN-dA-YDz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5695.652173913044" y="574.55357142857144"/>
-        </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="KHk-Gd-v0f">
             <objects>
@@ -672,10 +647,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYl-sJ-1wJ">
-                                <rect key="frame" x="20" y="50" width="116" height="38"/>
+                                <rect key="frame" x="20" y="50" width="394" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RW-Gf-Nif">
-                                        <rect key="frame" x="0.0" y="0.0" width="116" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="38"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="&lt; Sign Up">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
@@ -691,7 +666,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Omy-vV-Ggd" firstAttribute="top" secondItem="6J8-l0-k3C" secondAttribute="top" constant="50" id="CBn-rc-T8E"/>
-                            <constraint firstItem="6J8-l0-k3C" firstAttribute="trailing" secondItem="XYl-sJ-1wJ" secondAttribute="trailing" constant="278" id="Ojz-NI-Bi4"/>
+                            <constraint firstItem="6J8-l0-k3C" firstAttribute="trailing" secondItem="XYl-sJ-1wJ" secondAttribute="trailing" id="Ojz-NI-Bi4"/>
                             <constraint firstItem="6J8-l0-k3C" firstAttribute="trailing" secondItem="Omy-vV-Ggd" secondAttribute="trailing" constant="40" id="Rh4-Ar-28p"/>
                             <constraint firstItem="Omy-vV-Ggd" firstAttribute="leading" secondItem="6J8-l0-k3C" secondAttribute="leading" constant="40" id="WnT-o1-1U5"/>
                             <constraint firstItem="XYl-sJ-1wJ" firstAttribute="top" secondItem="DdO-sZ-jzn" secondAttribute="top" constant="50" id="ewZ-bM-FaM"/>
@@ -734,7 +709,6 @@
         <image name="AppIcon2x" width="60" height="60"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="hand.raised.fill" catalog="system" width="128" height="124"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>

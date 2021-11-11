@@ -1,39 +1,19 @@
 //
-//  UsersPageViewController.swift
+//  SearchViewController.swift
 //  CNSAPP
 //
-//  Created by Robert Colman Loch on 11/4/21.
+//  Created by Robert Colman Loch on 11/11/21.
 //
+
+import SwiftUI
 import UIKit
 import Foundation
-import SwiftUI
+
 import Firebase
 
-class UserViewController: UIViewController {
- 
-    
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 220, height: 50))
-        view.addSubview(button)
-        button.center=view.center
-        button.setTitle("Search For Parents", for: .normal)
-        button.backgroundColor = UIColor.systemBlue
-        button.layer.cornerRadius = 25.0
-        button.tintColor = UIColor.white
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-    }
-    
-    @objc func didTapButton(){
-        //combinging swift ui and storboard
-        let vc = UIHostingController(rootView: SearchViewController())
-        present(vc, animated: true)
-    }
-    
-}
-    /*
+struct SearchViewController: View {
     @ObservedObject var data = getUserData()
-    
+    @State var isOn = false
     var body: some View {
         NavigationView{
         ZStack(alignment: .top){
@@ -50,7 +30,7 @@ class UserViewController: UIViewController {
 
     struct UserPageView_Previews: PreviewProvider {
        static var previews: some View {
-    UserViewController()
+    SearchViewController()
        }}
 
     struct CustomSearchBar: View {
@@ -124,7 +104,7 @@ class UserViewController: UIViewController {
             }
         }
     }
-     */  /*  struct dataType : Identifiable {
+       struct dataType : Identifiable {
         var id : String
         var firstname : String
         var lastname : String
@@ -140,7 +120,4 @@ class UserViewController: UIViewController {
             Text(data.email)
         }
     }
-*/
-    
-
 

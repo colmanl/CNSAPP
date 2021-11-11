@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -391,48 +390,97 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inr-rT-JJT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1059"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1659"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OHc-ga-IQV">
-                                                <rect key="frame" x="0.0" y="9" width="414" height="1050"/>
+                                                <rect key="frame" x="0.0" y="9" width="414" height="1650"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6J-Jd-5xC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon2x" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jug-Sc-PZM">
-                                                                <rect key="frame" x="50" y="37" width="315" height="276"/>
+                                                                <rect key="frame" x="0.0" y="27" width="414" height="414"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hff-4c-8SA">
+                                                                <rect key="frame" x="28" y="495" width="482" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Eveyone was looking happy on picture day ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="21"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2q-RN-YZi">
+                                                                <rect key="frame" x="28" y="449" width="224" height="38"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="November 20, 2021">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="28"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="350" id="tgw-yY-CaP"/>
+                                                            <constraint firstAttribute="height" constant="550" id="tgw-yY-CaP"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzR-O5-8sN">
-                                                        <rect key="frame" x="0.0" y="350" width="414" height="350"/>
+                                                        <rect key="frame" x="0.0" y="550" width="414" height="550"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon2x" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5XJ-5L-f3X">
-                                                                <rect key="frame" x="50" y="37" width="315" height="276"/>
+                                                                <rect key="frame" x="0.0" y="37" width="414" height="414"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JD-OC-hRQ">
+                                                                <rect key="frame" x="28" y="449" width="224" height="38"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="November 21, 2021">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="28"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKo-4o-v4N">
+                                                                <rect key="frame" x="28" y="495" width="482" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Things keep happening">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="21"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="350" id="LD7-am-a1b"/>
+                                                            <constraint firstAttribute="height" constant="550" id="LD7-am-a1b"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Jl-YB-nDK">
-                                                        <rect key="frame" x="0.0" y="700" width="414" height="350"/>
+                                                        <rect key="frame" x="0.0" y="1100" width="414" height="550"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon2x" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2EX-2f-M7S">
-                                                                <rect key="frame" x="50" y="37" width="315" height="276"/>
+                                                                <rect key="frame" x="0.0" y="37" width="414" height="414"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="350" id="AUG-Rb-QJh"/>
+                                                            <constraint firstAttribute="height" constant="550" id="AUG-Rb-QJh"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -457,12 +505,13 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="2Pb-uz-ZcA"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="2B0-2O-gU3"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-Ui-XN4">
-                                <rect key="frame" x="15" y="80" width="58" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-Ui-XN4">
+                                <rect key="frame" x="0.0" y="770" width="414" height="50"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="photo.artframe" catalog="system" symbolScale="large"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Photo">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                    </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addPic:" destination="NAv-dz-5Yd" eventType="touchUpInside" id="VaD-to-RaG"/>
@@ -471,10 +520,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xKI-qQ-6KS"/>
                         <constraints>
+                            <constraint firstItem="9F2-Ui-XN4" firstAttribute="top" secondItem="xKI-qQ-6KS" secondAttribute="top" constant="726" id="00d-ur-gqb"/>
+                            <constraint firstItem="9F2-Ui-XN4" firstAttribute="trailing" secondItem="xKI-qQ-6KS" secondAttribute="trailing" id="3z9-Ir-l7R"/>
+                            <constraint firstAttribute="bottom" secondItem="9F2-Ui-XN4" secondAttribute="bottom" constant="76" id="NRm-nK-pyB"/>
                             <constraint firstItem="Fe7-79-2Oi" firstAttribute="bottom" secondItem="xKI-qQ-6KS" secondAttribute="bottom" id="QUh-MM-Vs5"/>
+                            <constraint firstItem="xKI-qQ-6KS" firstAttribute="trailing" secondItem="9F2-Ui-XN4" secondAttribute="trailing" id="ZAc-WV-1N0"/>
                             <constraint firstItem="Fe7-79-2Oi" firstAttribute="trailing" secondItem="xKI-qQ-6KS" secondAttribute="trailing" id="Zbo-F9-SbK"/>
+                            <constraint firstItem="9F2-Ui-XN4" firstAttribute="leading" secondItem="xKI-qQ-6KS" secondAttribute="leading" id="kla-PS-eWj"/>
                             <constraint firstItem="Fe7-79-2Oi" firstAttribute="leading" secondItem="xKI-qQ-6KS" secondAttribute="leading" id="t0r-K7-eEX"/>
                             <constraint firstItem="Fe7-79-2Oi" firstAttribute="top" secondItem="ABf-vn-7rf" secondAttribute="top" id="vuF-Tg-HDP"/>
+                            <constraint firstItem="9F2-Ui-XN4" firstAttribute="leading" secondItem="xKI-qQ-6KS" secondAttribute="leading" id="yY4-GU-Agl"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Photo Library" image="photo.artframe" catalog="system" id="XRa-zp-AFo"/>
@@ -650,14 +705,14 @@
         <image name="hand.raised.fill" catalog="system" width="128" height="124"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

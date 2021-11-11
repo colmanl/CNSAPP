@@ -18,7 +18,9 @@ class UserViewController: UIViewController {
         view.addSubview(button)
         button.center=view.center
         button.setTitle("Search For Parents", for: .normal)
-        button.backgroundColor = .systemPink
+        button.backgroundColor = UIColor.systemBlue
+        button.layer.cornerRadius = 25.0
+        button.tintColor = UIColor.white
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
     

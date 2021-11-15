@@ -22,6 +22,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     @IBOutlet weak var inputTextView: UITextView!
     
+    @IBOutlet weak var selectDateLabel: UILabel!
+    
     @IBOutlet weak var inputDate: UIDatePicker!
     
     @IBOutlet weak var addEventButton: UIButton!
@@ -32,11 +34,14 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     @Published var eventList = [CalenderEvent]()
     
+    var userEmailCalendar = LoginViewController.SetUserEmail.userEmail
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
         addDbDatesToDatesArray()
         print("datesArray contains: ", datesArray)
+        reducedPrivileges()
         calendar.dataSource = self
         calendar.delegate = self
         inputTextView.delegate = self;
@@ -150,6 +155,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     // FSCalendarDelegate for when user selects a date on the calendar
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+        
         var outputEvents = ""
         var eventsExist = false
         
@@ -226,5 +232,15 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     func showErrorMessage(_ message:String) {
         errorLabel.text = message
         errorLabel.alpha = 1
+    }
+    
+    func reducedPrivileges(){
+        if ( userEmailCalendar != "Email_test@test.com" ) {
+            inputEventTitle.isHidden = true
+            inputTextView.isHidden = true
+            selectDateLabel.isHidden = true
+            inputDate.isHidden = true
+            addEventButton.isHidden = true
+        }
     }
 }

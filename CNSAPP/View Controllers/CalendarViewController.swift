@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import Foundation
+import SwiftUI
 
 class CalendarViewController: UIViewController, UITextViewDelegate, ObservableObject, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
 
@@ -21,6 +22,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     @IBOutlet weak var inputTextView: UITextView!
     
+    @IBOutlet weak var selectDateLabel: UILabel!
+    
     @IBOutlet weak var inputDate: UIDatePicker!
     
     @IBOutlet weak var addEventButton: UIButton!
@@ -29,9 +32,16 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     private var db = Firestore.firestore()
     
-     
+    @Published var eventList = [CalenderEvent]()
+    
+    var userEmailCalendar = LoginViewController.SetUserEmail.userEmail
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
+        addDbDatesToDatesArray()
+        print("datesArray contains: ", datesArray)
+        reducedPrivileges()
         calendar.dataSource = self
         calendar.delegate = self
         inputTextView.delegate = self;
@@ -39,7 +49,56 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         inputTextView.textColor = UIColor.lightGray
     }
     
-    var testDates = ["2021-08-11", "2021-16-11"]
+    var datesArray = ["11-08-2021"]
+    
+    func addDbDatesToDatesArray() {
+        datesArray.removeAll()
+        for event in eventList {
+            datesArray.append(event.eventDate)
+        }
+    }
+  
+    // code below retrieved from CodeWithChris
+    func getData() {
+        db.collection("calendarEvents").getDocuments{ [self] snapshot, error in
+            if error == nil {
+                if let snapshot = snapshot {
+                    
+                    DispatchQueue.main.async {
+                        self.eventList = snapshot.documents.map { d in
+                            
+                            return CalenderEvent ( id: d.documentID,
+                                                  eventTitle: d["eventTitle"] as? String ?? "",
+                                                  eventDescription: d["eventDescription"] as? String ?? "",
+                                                  eventDate: d["eventDate"] as? String ?? "")
+                        }
+                    }
+                }
+            }
+            else {
+                print("No documents")
+                return
+            }
+        }
+        print("Hit getData")
+    }
+    
+    func deleteDate(eventToDelete: CalenderEvent){
+        db.collection("calendarEvents").document(eventToDelete.id).delete { error in
+            if error == nil
+            {
+                DispatchQueue.main.async {
+                    self.eventList.removeAll { event in
+                        return event.id == eventToDelete.id
+                    }
+                }
+            }
+            else {
+                self.showErrorMessage("ERROR: Unable to delete event")
+            }
+        }
+    }
+    
     
     @IBAction func addEventBtnTapped(_ sender: Any) {
         let eventTitle = inputEventTitle.text!
@@ -48,14 +107,24 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         
         // EXPLANATION: turning date input into a string
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-dd-MM"
+        formatter.dateFormat = "MM-dd-yyyy"
         let dateString = formatter.string(from: eventDate)
 
         if eventTitle == "" {
-            showErrorMessage("Please enter an event title")
+            showErrorMessage("ERROR: Please enter an event title")
         }
         else {
-            db.collection("calendarEvents").addDocument(data: ["eventTitle":eventTitle, "eventDescription":eventDescription, "eventDate":dateString])
+            db.collection("calendarEvents").addDocument(data: ["eventTitle":eventTitle, "eventDescription":eventDescription, "eventDate":dateString]) { error in
+                
+                if error == nil
+                {
+                    self.getData()
+                    self.addDbDatesToDatesArray()
+                }
+                else {
+                    self.showErrorMessage("ERROR: Unable to add event")
+                }
+            }
             
             inputEventTitle.text = nil
             inputTextView.text = nil
@@ -64,9 +133,10 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             showSimpleAlert()
      
             // EXPLANATION: adding new event to the event array
-            testDates.append(dateString)
+            addDbDatesToDatesArray()
+            print("datesArray contains: ", datesArray)
+    
         }
-  
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -85,30 +155,45 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     // FSCalendarDelegate for when user selects a date on the calendar
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+        
+        var outputEvents = ""
+        var eventsExist = false
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM. d"
-        let dateString = formatter.string(from: date)
-        outputTextView.text = "\(dateString) Events:"
-        /*
-        formatter.dateFormat = "yyyy-dd-MM"
+        let dateStringOutput = formatter.string(from: date)
+        
+        addDbDatesToDatesArray()
+        print("datesArray contains: ", datesArray)
+        
+        // EXPLANATION: dateQuery attempt
+        formatter.dateFormat = "MM-dd-yyyy"
         let dateStringFromDb = formatter.string(from: date)
-        let dateQuery = db.collection("calendarEvents").whereField("eventDate", isEqualTo: dateStringFromDb )
-        */
-        // ADD bool var = query for the calendarEvents db's eventDate contains dateString
-        // if var == true
-        // outputTextView.text = "\(dateString) Events:\n", display the eventTitle and eventDescription associated with this day
-        // else
-        // outputTextView.text = "\(dateString) Events:\nThere are no events on this day."
+        
+        for event in eventList {
+            if event.eventDate == dateStringFromDb {
+                outputEvents.append("\t\(event.eventTitle)\n")
+                outputEvents.append("\t\(event.eventDescription)")
+                eventsExist = true
+            }
+        }
+        if eventsExist {
+            outputTextView.text = "\(dateStringOutput) Events:\n\(outputEvents)"
+        }
+        else {
+            outputTextView.text = "\(dateStringOutput) Events:\n\tThere are no events on this day."
+        }
     }
 
     // FSCalendarDataSource
      func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+         print("Hit FSCalendarDataSource")
          let formatter = DateFormatter()
-         formatter.dateFormat = "yyyy-dd-MM"
+         formatter.dateFormat = "MM-dd-yyyy"
          let dateString = formatter.string(from: date)
          // ADD bool var = query for the calendarEvents db's eventDate contains dateString
          // if var == true
-           if self.testDates.contains(dateString) {
+           if self.datesArray.contains(dateString) {
              return 1
            }
          
@@ -119,12 +204,13 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
 
      // FSCalendarDelegateAppearance
      func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
+         print("Hit FSCalendarDelegateAppearance")
          let formatter = DateFormatter()
-         formatter.dateFormat = "yyyy-dd-MM"
+         formatter.dateFormat = "MM-dd-yyyy"
          let dateString = formatter.string(from: date)
          // ADD bool var = query for the calendarEvents db's eventDate contains dateString
          // if var == true
-         if testDates.contains(dateString) {
+         if datesArray.contains(dateString) {
              return [UIColor.blue]
          }
          else {
@@ -147,5 +233,14 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         errorLabel.text = message
         errorLabel.alpha = 1
     }
+    
+    func reducedPrivileges(){
+        if ( userEmailCalendar != "Email_test@test.com" ) {
+            inputEventTitle.isHidden = true
+            inputTextView.isHidden = true
+            selectDateLabel.isHidden = true
+            inputDate.isHidden = true
+            addEventButton.isHidden = true
+        }
+    }
 }
-

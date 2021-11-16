@@ -23,6 +23,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var forgotPassButton: UIButton!
     
+    struct SetUserEmail {
+        static var userEmail = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -110,6 +114,10 @@ class LoginViewController: UIViewController {
         //Clean Fields
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        //Set username to determine privileges
+        SetUserEmail.userEmail = email
+        
         //Signing in User
         Auth.auth().signIn(withEmail: email, password: password) { (result , error) in
             //error signing in

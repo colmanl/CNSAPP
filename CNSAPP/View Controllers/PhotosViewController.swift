@@ -399,8 +399,16 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
         //add
         let newLabel = UILabel(frame: CGRect(x: 8, y: 449, width: 325, height: 37))
-        newLabel.font = UIFont.systemFont(ofSize: 28)
-        newLabel.text = "Testing"
+        //newLabel.font = .systemFont(ofSize: 10)
+        
+        let string = "Testing"
+        let attributedtext = NSMutableAttributedString(string: string)
+        attributedtext.addAttribute(
+            .font,
+            value: UIFont.systemFont(ofSize: 78, weight: .bold),
+            range: NSRange(location: 0, length: string.count)
+        )
+        newLabel.attributedText = attributedtext
         
         let newTextView = UITextView(frame: CGRect(x: 8, y: 482, width: 378, height: 78))
         newLabel.font = UIFont.systemFont(ofSize: 19)
@@ -420,9 +428,18 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                 return
             }
             
+            let string = text
+            let attributedtext = NSMutableAttributedString(string: string)
+            attributedtext.addAttribute(
+                .font,
+                value: UIFont.systemFont(ofSize: 28, weight: .bold),
+                range: NSRange(location: 0, length: string.count)
+            )
+            newLabel.attributedText = attributedtext
+            
             //
             print("label text is: \(text)")
-            newLabel.text = text
+            newLabel.attributedText = attributedtext
             
         }
         

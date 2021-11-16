@@ -18,7 +18,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     var subcounter1 = 0
     var subsubcounter = 0
     var numOfPics = 0
-    let images = ["images/bby.png","images/ABBA_Gold_cover.png","images/VroomVroomEP.png","images/dead-kennedys-plastic-surgery-disasters.png", "images/Exmilitary.png", "images/hounds.png", "images/kidzbop.png", "images/kingcrimson.png"]
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +49,23 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is PhotoPopupViewController{
+            let vc = segue.destination as? PhotoPopupViewController
+            vc?.numOfPics = numOfPics
+            vc?.vc = self
+            
+        }
+    }
+    
+    func addNum(){
+        numOfPics = numOfPics + 1
+        print("*****NEW nop: \(numOfPics)")
+        
+    }
+    
+    
+    
    
     @IBOutlet weak var SkrollView: UIScrollView!
     
@@ -70,9 +87,22 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
     @IBOutlet weak var starterImg: UIImageView!
     
+
+    @IBOutlet weak var title1: UILabel!
+    @IBOutlet weak var caption1: UITextView!
+    
     @IBOutlet weak var starterImg2: UIImageView!
     
+    
+    @IBOutlet weak var title2: UILabel!
+    @IBOutlet weak var caption2: UITextView!
+    
     @IBOutlet weak var starterImg3: UIImageView!
+    
+    
+    @IBOutlet weak var title3: UILabel!
+    @IBOutlet weak var caption3: UITextView!
+    
     
     
     func scrollViewDidScroll(_ SkrollView: UIScrollView) {
@@ -102,32 +132,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             counter = setBaseViewsAutomatically(subKount: counter)
             
             
-//        let newView = UIView()
-//        NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 300).isActive = true
-//        newView.backgroundColor = .systemOrange
-//
-//        let newImageView = UIImageView(frame: CGRect(x: 50, y: 37, width: 315, height: 276))
-//        newImageView.contentMode = UIView.ContentMode.scaleAspectFit
-//
-//
-//
-//
-//
-//        let storageRef = Storage.storage().reference(withPath: images[counter])
-//        storageRef.getData(maxSize: 4 * 1024 * 1024) { data, error in
-//            if let error = error{
-//                print("Got an error fetching data: \(error.localizedDescription)")
-//                return
-//            }
-//            if let data = data {
-//            newImageView.image = UIImage(data: data)
-//            }
-//        }
-//
-//
-//
-//        newView.addSubview(newImageView)
-//        BestStack.addArrangedSubview(newView)
+
         }
 
     
@@ -191,8 +196,42 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             
 
         }
+         
       }
+            let docPath = "imageReference/" + String(subsubcounter)
+            print("subcounter: \(subsubcounter)")
+            print("docpath is: \(docPath)")
             
+            let docRef = database.document(docPath)
+            docRef.getDocument { snapshot, error in
+                guard let data = snapshot?.data(), error == nil else{
+                    return
+                }
+
+                guard let text = data["titleTxt"] as? String else {
+                    return
+                }
+                
+                //weeeeeeee
+                self.title1.text = text
+                
+            }
+            
+            docRef.getDocument { snapshot, error in
+                guard let data = snapshot?.data(), error == nil else{
+                    return
+                }
+
+                guard let text = data["capTxt"] as? String else {
+                    return
+                }
+                
+                //weeeeeeee
+                self.caption1.text = text
+                
+            }
+            
+                
             self.subsubcounter = self.subsubcounter + 1
             print("imageview set :")
             print(self.subsubcounter)
@@ -210,6 +249,43 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
 
             }
           }
+            
+            //
+            let docPath = "imageReference/" + String(subsubcounter)
+            print("subcounter: \(subsubcounter)")
+            print("docpath is: \(docPath)")
+            
+            let docRef = database.document(docPath)
+            docRef.getDocument { snapshot, error in
+                guard let data = snapshot?.data(), error == nil else{
+                    return
+                }
+
+                guard let text = data["titleTxt"] as? String else {
+                    return
+                }
+                
+                //
+                self.title2.text = text
+                
+            }
+            
+            docRef.getDocument { snapshot, error in
+                guard let data = snapshot?.data(), error == nil else{
+                    return
+                }
+
+                guard let text = data["capTxt"] as? String else {
+                    return
+                }
+                
+                //
+                self.caption2.text = text
+                
+            }
+            
+            
+            
             self.subsubcounter = self.subsubcounter + 1
             print("imageview set :")
             print(self.subsubcounter)
@@ -228,6 +304,43 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
 
             }
           }
+        
+        //
+        let docPath = "imageReference/" + String(subsubcounter)
+        print("subcounter: \(subsubcounter)")
+        print("docpath is: \(docPath)")
+        
+        let docRef = database.document(docPath)
+        docRef.getDocument { snapshot, error in
+            guard let data = snapshot?.data(), error == nil else{
+                return
+            }
+
+            guard let text = data["titleTxt"] as? String else {
+                return
+            }
+            
+            //
+            self.title3.text = text
+            
+        }
+        
+        docRef.getDocument { snapshot, error in
+            guard let data = snapshot?.data(), error == nil else{
+                return
+            }
+
+            guard let text = data["capTxt"] as? String else {
+                return
+            }
+            
+            //
+            self.caption3.text = text
+            
+        }
+        
+        
+        
         self.subsubcounter = self.subsubcounter + 1
         print("imageview set :")
         print(self.subsubcounter)
@@ -255,7 +368,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             print("autotext is: \(text)")
             print("auto img path is: \(self.imgPath)")
             print("subcounter in doc ref in auto is: \(subKount)")
-            self.setAutoImage(imagPath: text)
+            self.setAutoImage(imagPath: text, subKount: subKount)
             //subKount = subKount + 1
         }
         
@@ -263,14 +376,14 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
     }
     
-    func setAutoImage(imagPath: String){
+    func setAutoImage(imagPath: String, subKount: Int){
         
         
         let newView = UIView()
-        NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 300).isActive = true
-        newView.backgroundColor = .systemOrange
+        NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 550).isActive = true
+        //newView.backgroundColor =
         
-        let newImageView = UIImageView(frame: CGRect(x: 50, y: 37, width: 315, height: 276))
+        let newImageView = UIImageView(frame: CGRect(x: 0, y: 37, width: 414, height: 414))
         newImageView.contentMode = UIView.ContentMode.scaleAspectFit
         
         let storageRef = Storage.storage().reference(withPath: imagPath)
@@ -284,7 +397,54 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             }
         }
         
+        //add
+        let newLabel = UILabel(frame: CGRect(x: 8, y: 449, width: 325, height: 37))
+        newLabel.font = UIFont.systemFont(ofSize: 28)
+        newLabel.text = "Testing"
+        
+        let newTextView = UITextView(frame: CGRect(x: 8, y: 482, width: 378, height: 78))
+        newLabel.font = UIFont.systemFont(ofSize: 19)
+        newTextView.text = "testing testing 123"
+        
+        let docPath = "imageReference/" + String(subKount)
+        print("text subcounter: \(subKount)")
+        print("text docpath is: \(docPath)")
+        
+        let docRef = database.document(docPath)
+        docRef.getDocument { snapshot, error in
+            guard let data = snapshot?.data(), error == nil else{
+                return
+            }
+
+            guard let text = data["titleTxt"] as? String else {
+                return
+            }
+            
+            //
+            print("label text is: \(text)")
+            newLabel.text = text
+            
+        }
+        
+        docRef.getDocument { snapshot, error in
+            guard let data = snapshot?.data(), error == nil else{
+                return
+            }
+
+            guard let text = data["capTxt"] as? String else {
+                return
+            }
+            
+            //
+            newTextView.text = text
+            
+        }
+        
+        
+        
         newView.addSubview(newImageView)
+        newView.addSubview(newLabel)
+        newView.addSubview(newTextView)
         BestStack.addArrangedSubview(newView)
         
         

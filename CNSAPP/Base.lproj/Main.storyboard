@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1GK-ee-CaP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -403,10 +402,10 @@
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2q-RN-YZi">
-                                                                <rect key="frame" x="8" y="449" width="236" height="37"/>
+                                                                <rect key="frame" x="8" y="449" width="325" height="37"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <attributedString key="attributedText">
-                                                                    <fragment content="November 20, 2021">
+                                                                    <fragment content="change me">
                                                                         <attributes>
                                                                             <font key="NSFont" metaFont="system" size="28"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -415,20 +414,21 @@
                                                                 </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hff-4c-8SA">
-                                                                <rect key="frame" x="8" y="480" width="482" height="30"/>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s3h-5o-Wib">
+                                                                <rect key="frame" x="8" y="482" width="378" height="78"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <attributedString key="attributedText">
-                                                                    <fragment content="Eveyone was looking happy on picture day ">
+                                                                    <fragment>
+                                                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore jbjhbjhbikbniuniuniujnknnkunknjk jjnjnjjnjnjnjnn</string>
                                                                         <attributes>
-                                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                            <font key="NSFont" metaFont="system" size="21"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                                            <font key="NSFont" metaFont="system" size="19"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="550" id="tgw-yY-CaP"/>
@@ -441,11 +441,11 @@
                                                                 <rect key="frame" x="0.0" y="37" width="414" height="414"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JD-OC-hRQ">
-                                                                <rect key="frame" x="28" y="449" width="224" height="38"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0n-Zn-siD">
+                                                                <rect key="frame" x="8" y="449" width="325" height="37"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <attributedString key="attributedText">
-                                                                    <fragment content="November 21, 2021">
+                                                                    <fragment content="change me">
                                                                         <attributes>
                                                                             <font key="NSFont" metaFont="system" size="28"/>
                                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -454,19 +454,21 @@
                                                                 </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKo-4o-v4N">
-                                                                <rect key="frame" x="28" y="495" width="482" height="30"/>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJM-h7-f81">
+                                                                <rect key="frame" x="8" y="482" width="378" height="78"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <attributedString key="attributedText">
-                                                                    <fragment content="Things keep happening">
+                                                                    <fragment>
+                                                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore jbjhbjhbikbniuniuniujnknnkunknjk jjnjnjjnjnjnjnn</string>
                                                                         <attributes>
-                                                                            <font key="NSFont" metaFont="system" size="21"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                                            <font key="NSFont" metaFont="system" size="19"/>
                                                                         </attributes>
                                                                     </fragment>
                                                                 </attributedString>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="550" id="LD7-am-a1b"/>
@@ -479,6 +481,34 @@
                                                                 <rect key="frame" x="0.0" y="37" width="414" height="414"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnr-RJ-YEz">
+                                                                <rect key="frame" x="8" y="449" width="325" height="37"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="change me">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="28"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F9c-aN-g5a">
+                                                                <rect key="frame" x="8" y="482" width="378" height="78"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment>
+                                                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore jbjhbjhbikbniuniuniujnknnkunknjk jjnjnjjnjnjnjnn</string>
+                                                                        <attributes>
+                                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                                            <font key="NSFont" metaFont="system" size="19"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="550" id="AUG-Rb-QJh"/>
@@ -518,6 +548,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addPic:" destination="NAv-dz-5Yd" eventType="touchUpInside" id="VaD-to-RaG"/>
+                                    <segue destination="Vvb-kh-F7t" kind="show" id="eJi-81-AZ6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -539,14 +570,77 @@
                     <connections>
                         <outlet property="BestStack" destination="OHc-ga-IQV" id="IAl-7B-OVG"/>
                         <outlet property="SkrollView" destination="Fe7-79-2Oi" id="Fto-y8-ARf"/>
+                        <outlet property="caption1" destination="s3h-5o-Wib" id="Fje-0f-s6f"/>
+                        <outlet property="caption2" destination="iJM-h7-f81" id="TVt-UR-Syn"/>
+                        <outlet property="caption3" destination="F9c-aN-g5a" id="Jnb-Av-1Xr"/>
                         <outlet property="starterImg" destination="Jug-Sc-PZM" id="3X7-xh-DrR"/>
                         <outlet property="starterImg2" destination="5XJ-5L-f3X" id="eOu-3q-1Aj"/>
                         <outlet property="starterImg3" destination="2EX-2f-M7S" id="PKO-Gl-ENq"/>
+                        <outlet property="title1" destination="Y2q-RN-YZi" id="asN-od-mxE"/>
+                        <outlet property="title2" destination="n0n-Zn-siD" id="Yp8-ws-XLv"/>
+                        <outlet property="title3" destination="gnr-RJ-YEz" id="JGb-Db-7aO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0a-eU-FcH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3976.811594202899" y="574.55357142857144"/>
+        </scene>
+        <!--Photo Popup View Controller-->
+        <scene sceneID="tmr-Lp-dEj">
+            <objects>
+                <viewController id="Vvb-kh-F7t" customClass="PhotoPopupViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z3c-E8-Fhe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DtH-Ej-aiF">
+                                <rect key="frame" x="20" y="80" width="374" height="571"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFi-xI-SBD">
+                                        <rect key="frame" x="25" y="379" width="324" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This is where the description goes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jsr-gu-GsN">
+                                        <rect key="frame" x="25" y="421" width="324" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIe-y3-tZL">
+                                        <rect key="frame" x="77" y="522" width="220" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitPhoto:" destination="Vvb-kh-F7t" eventType="touchUpInside" id="hTG-XK-RON"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon3x" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="50Y-rE-Amz">
+                                        <rect key="frame" x="17" y="29" width="341" height="328"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YRU-mV-XNG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ra3-4G-cuW"/>
+                    <connections>
+                        <outlet property="capSpot" destination="Jsr-gu-GsN" id="VDY-jT-LaL"/>
+                        <outlet property="coolImg" destination="50Y-rE-Amz" id="EL0-dZ-6NL"/>
+                        <outlet property="titleSpot" destination="cFi-xI-SBD" id="7cS-Gf-Wlf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVh-FO-gO5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3986.9565217391309" y="1253.5714285714284"/>
         </scene>
         <!--Help-->
         <scene sceneID="kEs-91-DOB">
@@ -757,11 +851,15 @@
     </scenes>
     <resources>
         <image name="AppIcon2x" width="60" height="60"/>
+        <image name="AppIcon3x" width="60" height="60"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="hand.raised.fill" catalog="system" width="128" height="124"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

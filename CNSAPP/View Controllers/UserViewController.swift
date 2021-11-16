@@ -25,7 +25,7 @@ class UserViewController: UIViewController {
     }
     
     @objc func didTapButton(){
-        combinging swift ui and storboard
+        //combinging swift ui and storyboard
         let vc = UIHostingController(rootView: SearchViewController())
         present(vc, animated: true)
     }

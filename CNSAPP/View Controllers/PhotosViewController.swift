@@ -398,21 +398,28 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         }
         
         //add
-        let newLabel = UILabel(frame: CGRect(x: 8, y: 449, width: 325, height: 37))
+        let newLabel = UILabel(frame: CGRect(x: 13, y: 449, width: 325, height: 37))
         //newLabel.font = .systemFont(ofSize: 10)
         
-        let string = "Testing"
-        let attributedtext = NSMutableAttributedString(string: string)
+        var string = "Testing"
+        var attributedtext = NSMutableAttributedString(string: string)
         attributedtext.addAttribute(
             .font,
-            value: UIFont.systemFont(ofSize: 78, weight: .bold),
+            value: UIFont.systemFont(ofSize: 28, weight: .bold),
             range: NSRange(location: 0, length: string.count)
         )
         newLabel.attributedText = attributedtext
         
         let newTextView = UITextView(frame: CGRect(x: 8, y: 482, width: 378, height: 78))
-        newLabel.font = UIFont.systemFont(ofSize: 19)
-        newTextView.text = "testing testing 123"
+         string = "testing testing 123"
+         attributedtext = NSMutableAttributedString(string: string)
+        attributedtext.addAttribute(
+            .font,
+            value: UIFont.systemFont(ofSize: 19, weight: .regular),
+            range: NSRange(location: 0, length: string.count)
+        )
+      
+        newTextView.attributedText = attributedtext
         
         let docPath = "imageReference/" + String(subKount)
         print("text subcounter: \(subKount)")
@@ -439,7 +446,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             
             //
             print("label text is: \(text)")
-            newLabel.attributedText = attributedtext
+           // newLabel.attributedText = attributedtext
             
         }
         
@@ -453,7 +460,24 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             }
             
             //
-            newTextView.text = text
+            
+            
+            let string = text
+            let attributedtext = NSMutableAttributedString(string: string)
+            attributedtext.addAttribute(
+                .font,
+                value: UIFont.systemFont(ofSize: 19, weight: .regular),
+                range: NSRange(location: 0, length: string.count)
+            )
+           
+            
+            //
+            print("label text is: \(text)")
+          
+            
+            
+            
+            newTextView.attributedText = attributedtext
             
         }
         

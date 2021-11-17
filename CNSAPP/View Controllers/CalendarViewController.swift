@@ -17,7 +17,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     @IBOutlet weak var calendar: FSCalendar!
     
     @IBOutlet weak var outputTextView: UITextView!
-    
+
     @IBOutlet weak var inputEventTitle: UITextField!
     
     @IBOutlet weak var inputTextView: UITextView!
@@ -30,6 +30,17 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    var didLoadData: Bool = false
+     
+    /* New stuff starts */
+    @IBOutlet weak var addNewEventButton: UIButton!
+    
+    @IBOutlet weak var deleteEventButton: UIButton!
+    
+    @IBAction func addNewEvent(_ sender: Any) {
+        
+    }
+    /* New stuff ends */
     private var db = Firestore.firestore()
     
     @Published var eventList = [CalenderEvent]()
@@ -38,12 +49,16 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
+        if didLoadData == false {
+            getData()
+            didLoadData = true
+        }
+        
         addDbDatesToDatesArray()
-        print("datesArray contains: ", datesArray)
         reducedPrivileges()
         calendar.dataSource = self
         calendar.delegate = self
+        outputTextView.delegate = self
         inputTextView.delegate = self;
         inputTextView.text = "Enter event description (optional)"
         inputTextView.textColor = UIColor.lightGray
@@ -58,7 +73,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         }
     }
   
-    // code below retrieved from CodeWithChris
     func getData() {
         db.collection("calendarEvents").getDocuments{ [self] snapshot, error in
             if error == nil {
@@ -72,6 +86,10 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
                                                   eventDescription: d["eventDescription"] as? String ?? "",
                                                   eventDate: d["eventDate"] as? String ?? "")
                         }
+                        calendar.reloadData()
+                        self.viewDidLoad()
+                        self.viewWillAppear(true)
+                        
                     }
                 }
             }
@@ -80,9 +98,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
                 return
             }
         }
-        print("Hit getData")
     }
-    
+    /* comment out for now
     func deleteDate(eventToDelete: CalenderEvent){
         db.collection("calendarEvents").document(eventToDelete.id).delete { error in
             if error == nil
@@ -98,7 +115,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             }
         }
     }
-    
+     */
     
     @IBAction func addEventBtnTapped(_ sender: Any) {
         let eventTitle = inputEventTitle.text!
@@ -134,7 +151,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
      
             // EXPLANATION: adding new event to the event array
             addDbDatesToDatesArray()
-            print("datesArray contains: ", datesArray)
     
         }
     }
@@ -164,7 +180,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         let dateStringOutput = formatter.string(from: date)
         
         addDbDatesToDatesArray()
-        print("datesArray contains: ", datesArray)
         
         // EXPLANATION: dateQuery attempt
         formatter.dateFormat = "MM-dd-yyyy"
@@ -172,13 +187,13 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         
         for event in eventList {
             if event.eventDate == dateStringFromDb {
-                outputEvents.append("\t\(event.eventTitle)\n")
-                outputEvents.append("\t\(event.eventDescription)")
+                outputEvents.append("\n\t\u{2022}\(event.eventTitle)")
+                outputEvents.append("\n\t\t\(event.eventDescription)")
                 eventsExist = true
             }
         }
         if eventsExist {
-            outputTextView.text = "\(dateStringOutput) Events:\n\(outputEvents)"
+            outputTextView.text = "\(dateStringOutput) Events:\(outputEvents)"
         }
         else {
             outputTextView.text = "\(dateStringOutput) Events:\n\tThere are no events on this day."
@@ -187,7 +202,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
 
     // FSCalendarDataSource
      func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-         print("Hit FSCalendarDataSource")
          let formatter = DateFormatter()
          formatter.dateFormat = "MM-dd-yyyy"
          let dateString = formatter.string(from: date)
@@ -204,7 +218,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
 
      // FSCalendarDelegateAppearance
      func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
-         print("Hit FSCalendarDelegateAppearance")
          let formatter = DateFormatter()
          formatter.dateFormat = "MM-dd-yyyy"
          let dateString = formatter.string(from: date)
@@ -217,7 +230,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
              return [UIColor.white]
          }
      }
- 
+    
     // EXPLANATION: Alert when an new event is successfully added
     func showSimpleAlert() {
         let alert = UIAlertController(title: "Success!", message: "Your event was successfully added", preferredStyle: UIAlertController.Style.alert)
@@ -236,11 +249,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     func reducedPrivileges(){
         if ( userEmailCalendar != "Email_test@test.com" ) {
-            inputEventTitle.isHidden = true
-            inputTextView.isHidden = true
-            selectDateLabel.isHidden = true
-            inputDate.isHidden = true
-            addEventButton.isHidden = true
+            addNewEventButton.isHidden = true
+            deleteEventButton.isHidden = true
         }
     }
 }

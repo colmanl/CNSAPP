@@ -22,6 +22,7 @@
 		09D9A94227386F8800934631 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9A94127386F8800934631 /* UserViewController.swift */; };
 		167E6D34271F863C00E37F25 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167E6D33271F863C00E37F25 /* CalendarViewController.swift */; };
 		16970704273B023B0021457A /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970703273B023B0021457A /* CalendarEvent.swift */; };
+		16AFA4F42745789000DD88FC /* AddEventPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFA4F32745789000DD88FC /* AddEventPopupViewController.swift */; };
 		1C46F19CC7D3C72A716E3EA8 /* Pods_CNSAPPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38B9B10BB08DFBE2F8DB2E8 /* Pods_CNSAPPTests.framework */; };
 		590CB6D72718A9C800B856A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590CB6D62718A9C800B856A5 /* ViewController.swift */; };
 		5937B711271F4B1800AEBF5E /* CentralHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5937B710271F4B1800AEBF5E /* CentralHomeViewController.swift */; };
@@ -77,6 +78,7 @@
 		09D9A94127386F8800934631 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		167E6D33271F863C00E37F25 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		16970703273B023B0021457A /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		16AFA4F32745789000DD88FC /* AddEventPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventPopupViewController.swift; sourceTree = "<group>"; };
 		2B28F88937F16A4D2AB4FFD0 /* Pods-CNSAPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPPTests.debug.xcconfig"; path = "Target Support Files/Pods-CNSAPPTests/Pods-CNSAPPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		34EAEE289C2D186AF65A2718 /* Pods-CNSAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPP.release.xcconfig"; path = "Target Support Files/Pods-CNSAPP/Pods-CNSAPP.release.xcconfig"; sourceTree = "<group>"; };
 		4071173097941FB18FB06BF3 /* Pods-CNSAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNSAPPTests.release.xcconfig"; path = "Target Support Files/Pods-CNSAPPTests/Pods-CNSAPPTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				5980B4912718B5D500CF888F /* EntryViewController.swift */,
 				5937B710271F4B1800AEBF5E /* CentralHomeViewController.swift */,
 				167E6D33271F863C00E37F25 /* CalendarViewController.swift */,
+				16AFA4F32745789000DD88FC /* AddEventPopupViewController.swift */,
 				16970702273B01590021457A /* Models */,
 			);
 			path = "View Controllers";
@@ -496,6 +499,7 @@
 				092FCD41270C9CD5002AF17E /* SceneDelegate.swift in Sources */,
 				8F128AD12744234800703449 /* PhotoPopupViewController.swift in Sources */,
 				59B495A32713716E009A0FCF /* LoginStyling.swift in Sources */,
+				16AFA4F42745789000DD88FC /* AddEventPopupViewController.swift in Sources */,
 				5980B4922718B5D500CF888F /* EntryViewController.swift in Sources */,
 				594A289B270E5708007E5391 /* HomeViewController.swift in Sources */,
 				590CB6D72718A9C800B856A5 /* ViewController.swift in Sources */,

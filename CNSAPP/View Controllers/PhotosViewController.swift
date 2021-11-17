@@ -18,6 +18,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     var subcounter1 = 0
     var subsubcounter = 0
     var numOfPics = 0
+    var userEmailPhotos = LoginViewController.SetUserEmail.userEmail
    
     
     override func viewDidLoad() {
@@ -40,6 +41,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             
         }
         
+        reducedPrivileges()
 //        while counter < 3 && counter <= numOfPics{
 //            setBaseViews()
 //            counter = counter + 1
@@ -72,7 +74,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
     @IBOutlet weak var BestStack: UIStackView!
     
-    
+
     @IBAction func addPic(_ sender: Any) {
         
         let vc = UIImagePickerController()
@@ -84,6 +86,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
     }
     
+    @IBOutlet weak var addPicButton: UIButton!
     
     @IBOutlet weak var starterImg: UIImageView!
     
@@ -529,11 +532,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                 
                 numOfPics = numOfPics + 1
                 database.collection("imageReference").document("imgCount").setData([ "count": numOfPics ], merge: true)
-                
-                
-                
-                
-                
+                              
             }
             
             picker.dismiss(animated: true, completion: nil)
@@ -543,10 +542,12 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             picker.dismiss(animated: true, completion: nil)
         }
 
+    func reducedPrivileges(){
+        if ( userEmailPhotos != "Email_test@test.com" ) {
+            addPicButton.isHidden = true
+        }
+    }    
+}
 
-    
-    
-    
-    }
     
 

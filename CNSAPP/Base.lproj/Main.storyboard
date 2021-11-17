@@ -567,6 +567,7 @@
                     <connections>
                         <outlet property="BestStack" destination="OHc-ga-IQV" id="IAl-7B-OVG"/>
                         <outlet property="SkrollView" destination="Fe7-79-2Oi" id="Fto-y8-ARf"/>
+                        <outlet property="addPicButton" destination="9F2-Ui-XN4" id="k1C-TP-kBs"/>
                         <outlet property="caption1" destination="s3h-5o-Wib" id="Fje-0f-s6f"/>
                         <outlet property="caption2" destination="iJM-h7-f81" id="TVt-UR-Syn"/>
                         <outlet property="caption3" destination="F9c-aN-g5a" id="Jnb-Av-1Xr"/>

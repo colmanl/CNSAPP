@@ -16,9 +16,14 @@
 		092FCD60270C9CD8002AF17E /* CNSAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */; };
 		092FCD62270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */; };
 		092FCD6F270C9CFD002AF17E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */; };
+		093C63492744CB6C00E7833C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F2DF8273DA32B00B88098 /* SearchViewController.swift */; };
+		093C634A2744CBF100E7833C /* PhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F128AD02744234700703449 /* PhotoPopupViewController.swift */; };
+		093C634B2744CBF200E7833C /* PhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F128AD02744234700703449 /* PhotoPopupViewController.swift */; };
 		093F2DF9273DA32B00B88098 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F2DF8273DA32B00B88098 /* SearchViewController.swift */; };
 		0954BDC2273A319A004449BE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */; };
 		09590C702733B9F300444A1F /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */; };
+		09D8863F27458769002026B5 /* CNSAPPUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD5B270C9CD8002AF17E /* CNSAPPUITests.xctest */; };
+		09D886402745876E002026B5 /* CNSAPPTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD51270C9CD7002AF17E /* CNSAPPTests.xctest */; };
 		09D9A94227386F8800934631 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9A94127386F8800934631 /* UserViewController.swift */; };
 		167E6D34271F863C00E37F25 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167E6D33271F863C00E37F25 /* CalendarViewController.swift */; };
 		16970704273B023B0021457A /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970703273B023B0021457A /* CalendarEvent.swift */; };
@@ -34,8 +39,6 @@
 		59B495A32713716E009A0FCF /* LoginStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B495A22713716E009A0FCF /* LoginStyling.swift */; };
 		8F128AD12744234800703449 /* PhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F128AD02744234700703449 /* PhotoPopupViewController.swift */; };
 		8F6895F52723498900DEAEFC /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6895F42723498900DEAEFC /* PhotosViewController.swift */; };
-		8F6895F62723498900DEAEFC /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6895F42723498900DEAEFC /* PhotosViewController.swift */; };
-		8F6895F72723498900DEAEFC /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6895F42723498900DEAEFC /* PhotosViewController.swift */; };
 		D268408772C20E21BC29CDC9 /* Pods_CNSAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18FEE9082FBB90D031A6235 /* Pods_CNSAPP.framework */; };
 		D7043B1292F4C2C074B1CAA9 /* Pods_CNSAPP_CNSAPPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498D71FE159F67BBA46F2C79 /* Pods_CNSAPP_CNSAPPUITests.framework */; };
 /* End PBXBuildFile section */
@@ -369,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09D886402745876E002026B5 /* CNSAPPTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09D8863F27458769002026B5 /* CNSAPPUITests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,8 +520,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093C63492744CB6C00E7833C /* SearchViewController.swift in Sources */,
 				092FCD56270C9CD7002AF17E /* CNSAPPTests.swift in Sources */,
-				8F6895F62723498900DEAEFC /* PhotosViewController.swift in Sources */,
+				093C634A2744CBF100E7833C /* PhotoPopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,9 +530,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F6895F72723498900DEAEFC /* PhotosViewController.swift in Sources */,
 				092FCD60270C9CD8002AF17E /* CNSAPPUITests.swift in Sources */,
 				092FCD62270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift in Sources */,
+				093C634B2744CBF200E7833C /* PhotoPopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

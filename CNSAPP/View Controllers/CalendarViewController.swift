@@ -38,7 +38,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     @IBOutlet weak var deleteEventButton: UIButton!
     
     @IBAction func addNewEvent(_ sender: Any) {
-        
+        print("New event tapped")
     }
     /* New stuff ends */
     private var db = Firestore.firestore()

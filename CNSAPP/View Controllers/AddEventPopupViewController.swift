@@ -13,7 +13,7 @@ import Foundation
 import SwiftUI
 
 class AddEventPopupViewController: CalendarViewController {
-    /*
+    
     @IBOutlet weak var inputEventTitle: UITextField!
     
     @IBOutlet weak var inputTextView: UITextView!
@@ -22,20 +22,26 @@ class AddEventPopupViewController: CalendarViewController {
     
     @IBOutlet weak var inputDate: UIDatePicker!
     
-    @IBOutlet weak var addEventButton: UIButton!
+    @IBOutlet weak var submitButton: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
-    */
+    
+    @IBOutlet weak var backButton: UIButton!
+    
     private var db = Firestore.firestore()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+      //  super.viewDidLoad()
         inputTextView.delegate = self;
         inputTextView.text = "Enter event description (optional)"
         inputTextView.textColor = UIColor.lightGray
     }
     
-    @IBAction override func addEventBtnTapped(_ sender: Any) {
+    @IBAction func backBtnTapped(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func submitBtnTapped(_ sender: Any) {
         let eventTitle = inputEventTitle.text!
         let eventDescription = inputTextView.text!
         let eventDate = inputDate.date
@@ -46,24 +52,25 @@ class AddEventPopupViewController: CalendarViewController {
         let dateString = formatter.string(from: eventDate)
 
         if eventTitle == "" {
-            showErrorMessage("ERROR: Please enter an event title")
+            showErrorMessage("Error: Please enter an event title")
         }
         else {
             db.collection("calendarEvents").addDocument(data: ["eventTitle":eventTitle, "eventDescription":eventDescription, "eventDate":dateString]) { error in
                 
                 if error == nil
                 {
-                    self.getData()
+                    //self.getData()
                     self.addDbDatesToDatesArray()
                 }
                 else {
-                    self.showErrorMessage("ERROR: Unable to add event")
+                    self.showErrorMessage("Error: Unable to add event")
                 }
             }
             
             inputEventTitle.text = nil
             inputTextView.text = nil
-     
+            showErrorMessage("")
+            
             // EXPLANATION: adding new event to the event array
             addDbDatesToDatesArray()
             print("datesArray contains: ", datesArray)
@@ -73,14 +80,14 @@ class AddEventPopupViewController: CalendarViewController {
         }
     }
     
-    override func textViewDidBeginEditing(_ textView: UITextView) {
+    func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
             textView.textColor = UIColor.black
         }
     }
     
-    override func textViewDidEndEditing(_ textView: UITextView) {
+    func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "(Optional) Enter event description"
             textView.textColor = UIColor.lightGray
@@ -88,7 +95,7 @@ class AddEventPopupViewController: CalendarViewController {
     }
     
     // EXPLANATION: Alert when an new event is successfully added
-    override func showSimpleAlert() {
+    func showSimpleAlert() {
         let alert = UIAlertController(title: "Success!", message: "Your event was successfully added", preferredStyle: UIAlertController.Style.alert)
         self.present(alert, animated: true, completion: nil)
         
@@ -98,7 +105,7 @@ class AddEventPopupViewController: CalendarViewController {
         }
     }
     
-    override func showErrorMessage(_ message:String) {
+    func showErrorMessage(_ message:String) {
         errorLabel.text = message
         errorLabel.alpha = 1
     }

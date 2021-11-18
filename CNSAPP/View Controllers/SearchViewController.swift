@@ -50,19 +50,20 @@ struct SearchViewController: View {
                    // .foregroundColor(Color("LightGray"))
                 HStack{
                     Image(systemName: "magnifyingglass")
-                    TextField("Tap here to Search", text: self.$txt)
+                    TextField("Tap here to Search", text: self.$txt).frame(height: 30)
                     
                     if self.txt != ""{
                         Button(action: {
                             self.txt = ""
                         }){
-                            Text("Cancel")
+                            Text("Cancel  ")
                         }
                        // .foregroundColor(.black)
                     }
                 }
                 .background(Color("LightGray"))
-                .cornerRadius(13)
+                .cornerRadius(10)
+             //   .frame(height: 40)
                 .padding()
                 
                 if self.txt != ""{
@@ -82,7 +83,7 @@ struct SearchViewController: View {
                                 
                             
                     }.frame(height: 250)
-                            .cornerRadius(13)
+                            .cornerRadius(10)
                     }
 
                 }

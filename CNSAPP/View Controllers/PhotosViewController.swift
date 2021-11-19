@@ -379,7 +379,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
         let newView = UIView()
         NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 550).isActive = true
-        newView.backgroundColor = .systemBackground
+        newView.backgroundColor = .secondarySystemBackground
         
         let newImageView = UIImageView(frame: CGRect(x: 0, y: 37, width: 414, height: 414))
         newImageView.contentMode = UIView.ContentMode.scaleAspectFit
@@ -410,7 +410,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         newLabel.attributedText = attributedtext
         
         let newTextView = UITextView(frame: CGRect(x: 8, y: 482, width: 378, height: 78))
-        newTextView.backgroundColor = .systemBackground
+        newTextView.backgroundColor = .secondarySystemBackground
+        //newTextView.textColor = .label
          string = "testing testing 123"
          attributedtext = NSMutableAttributedString(string: string)
         attributedtext.addAttribute(
@@ -418,6 +419,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             value: UIFont.systemFont(ofSize: 19, weight: .regular),
             range: NSRange(location: 0, length: string.count)
         )
+        attributedtext.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.label, range: NSRange(location: 0, length: string.count))
       
         newTextView.attributedText = attributedtext
         
@@ -468,7 +470,9 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                 .font,
                 value: UIFont.systemFont(ofSize: 19, weight: .regular),
                 range: NSRange(location: 0, length: string.count)
+            
             )
+            attributedtext.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.label, range: NSRange(location: 0, length: string.count))
            
             
             //

@@ -18,12 +18,17 @@ struct SearchViewController: View {
         NavigationView{
         ZStack(alignment: .top){
             GeometryReader{_ in
-            Text("Home")}
-        .background(Color("Color").edgesIgnoringSafeArea(.all))
-        CustomSearchBar(data: self.$data.datas).padding(.top)
+            
+            }
+            
+      //  .background(Color.white.edgesIgnoringSafeArea(.all))
+        .foregroundColor(Color("Light Gray"))
+        CustomSearchBar(data: self.$data.datas)
         
-        }.navigationBarTitle("")
-                .navigationBarHidden(true)
+        }//.navigationBarTitle("")
+        .navigationTitle("Lookup Parents/Staff").padding(.top)
+        
+        .navigationBarHidden(false)
     
 }
     }}
@@ -41,24 +46,31 @@ struct SearchViewController: View {
         var body : some View{
             
             VStack(spacing: 0){
+               // Rectangle()
+                   // .foregroundColor(Color("LightGray"))
                 HStack{
-                    TextField("Search", text: self.$txt)
+                    Image(systemName: "magnifyingglass")
+                    TextField("Tap here to Search", text: self.$txt).frame(height: 30)
                     
                     if self.txt != ""{
                         Button(action: {
                             self.txt = ""
                         }){
-                            Text("Cancel")
+                            Text("Cancel  ")
                         }
-                        .foregroundColor(.white)
+                       // .foregroundColor(.black)
                     }
-                }.padding()
+                }
+                .background(Color("LightGray"))
+                .cornerRadius(10)
+             //   .frame(height: 40)
+                .padding()
                 
                 if self.txt != ""{
                     
                     if  self.data.filter({$0.firstname.lowercased().contains(self.txt.lowercased())}).count == 0{
                         
-                        Text("No Results Found").foregroundColor(Color.black.opacity(0.5)).padding()
+                        Text("No Results Found")
                     }
                     else{
                         
@@ -70,13 +82,17 @@ struct SearchViewController: View {
                         }
                                 
                             
-                        }.frame(height: UIScreen.main.bounds.height / 5)
+                    }.frame(height: 250)
+                            .cornerRadius(10)
                     }
 
                 }
                 
                 
-            }.background(Color.white)
+            }
+       //     .frame(height: 40)
+            //.cornerRadius(13)
+          //  .background(Color.white)
             .padding()
         }
     }
@@ -98,8 +114,9 @@ struct SearchViewController: View {
                     let firstname = i.get("firstname") as! String
                     let lastname = i.get("lastname") as! String
                     let email = i.get("email") as! String
+                    let phoneNumber = i.get("phoneNumber") as! String
                         
-                    self.datas.append(dataType(id: id, firstname: firstname, lastname: lastname, email: email))
+                    self.datas.append(dataType(id: id, firstname: firstname, lastname: lastname, email: email, phoneNumber: phoneNumber))
                 }
             }
         }
@@ -109,6 +126,7 @@ struct SearchViewController: View {
         var firstname : String
         var lastname : String
         var email : String
+        var phoneNumber : String
     }
 
     struct Detail: View {
@@ -118,6 +136,7 @@ struct SearchViewController: View {
             Text(data.firstname)
             Text(data.lastname)
             Text(data.email)
+            Text(data.phoneNumber)
         }
     }
 

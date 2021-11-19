@@ -18,18 +18,16 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     @IBOutlet weak var outputTextView: UITextView!
     
-    @IBOutlet weak var inputEventTitle: UITextField!
-    
-    @IBOutlet weak var inputTextView: UITextView!
-    
-    @IBOutlet weak var selectDateLabel: UILabel!
-    
-    @IBOutlet weak var inputDate: UIDatePicker!
-    
+    var didLoadData: Bool = false
+     
     @IBOutlet weak var addEventButton: UIButton!
     
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var deleteEventButton: UIButton!
     
+    @IBAction func addEvent(_ sender: Any) {
+        
+    }
+
     private var db = Firestore.firestore()
     
     @Published var eventList = [CalenderEvent]()
@@ -38,15 +36,16 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
+        if didLoadData == false {
+            getData()
+            didLoadData = true
+        }
+        
         addDbDatesToDatesArray()
-        print("datesArray contains: ", datesArray)
         reducedPrivileges()
         calendar.dataSource = self
         calendar.delegate = self
-        inputTextView.delegate = self;
-        inputTextView.text = "Enter event description (optional)"
-        inputTextView.textColor = UIColor.lightGray
+        outputTextView.delegate = self
     }
     
     var datesArray = ["11-08-2021"]
@@ -58,7 +57,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         }
     }
   
-    // code below retrieved from CodeWithChris
     func getData() {
         db.collection("calendarEvents").getDocuments{ [self] snapshot, error in
             if error == nil {
@@ -72,6 +70,10 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
                                                   eventDescription: d["eventDescription"] as? String ?? "",
                                                   eventDate: d["eventDate"] as? String ?? "")
                         }
+                        calendar.reloadData()
+                        self.viewDidLoad()
+                        self.viewWillAppear(true)
+                        
                     }
                 }
             }
@@ -80,9 +82,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
                 return
             }
         }
-        print("Hit getData")
     }
-    
+    /* comment out for now
     func deleteDate(eventToDelete: CalenderEvent){
         db.collection("calendarEvents").document(eventToDelete.id).delete { error in
             if error == nil
@@ -98,60 +99,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             }
         }
     }
-    
-    
-    @IBAction func addEventBtnTapped(_ sender: Any) {
-        let eventTitle = inputEventTitle.text!
-        let eventDescription = inputTextView.text!
-        let eventDate = inputDate.date
-        
-        // EXPLANATION: turning date input into a string
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd-yyyy"
-        let dateString = formatter.string(from: eventDate)
-
-        if eventTitle == "" {
-            showErrorMessage("ERROR: Please enter an event title")
-        }
-        else {
-            db.collection("calendarEvents").addDocument(data: ["eventTitle":eventTitle, "eventDescription":eventDescription, "eventDate":dateString]) { error in
-                
-                if error == nil
-                {
-                    self.getData()
-                    self.addDbDatesToDatesArray()
-                }
-                else {
-                    self.showErrorMessage("ERROR: Unable to add event")
-                }
-            }
-            
-            inputEventTitle.text = nil
-            inputTextView.text = nil
-            
-            // ADD: only display this alert when eventTitle is found within the db
-            showSimpleAlert()
-     
-            // EXPLANATION: adding new event to the event array
-            addDbDatesToDatesArray()
-            print("datesArray contains: ", datesArray)
-    
-        }
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "(Optional) Enter event description"
-            textView.textColor = UIColor.lightGray
-        }
-    }
+     */
     
     // FSCalendarDelegate for when user selects a date on the calendar
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
@@ -164,7 +112,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         let dateStringOutput = formatter.string(from: date)
         
         addDbDatesToDatesArray()
-        print("datesArray contains: ", datesArray)
         
         // EXPLANATION: dateQuery attempt
         formatter.dateFormat = "MM-dd-yyyy"
@@ -172,13 +119,13 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         
         for event in eventList {
             if event.eventDate == dateStringFromDb {
-                outputEvents.append("\t\(event.eventTitle)\n")
-                outputEvents.append("\t\(event.eventDescription)")
+                outputEvents.append("\n\t\u{2022}\(event.eventTitle)")
+                outputEvents.append("\n\t\t\(event.eventDescription)")
                 eventsExist = true
             }
         }
         if eventsExist {
-            outputTextView.text = "\(dateStringOutput) Events:\n\(outputEvents)"
+            outputTextView.text = "\(dateStringOutput) Events:\(outputEvents)"
         }
         else {
             outputTextView.text = "\(dateStringOutput) Events:\n\tThere are no events on this day."
@@ -187,7 +134,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
 
     // FSCalendarDataSource
      func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-         print("Hit FSCalendarDataSource")
          let formatter = DateFormatter()
          formatter.dateFormat = "MM-dd-yyyy"
          let dateString = formatter.string(from: date)
@@ -204,7 +150,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
 
      // FSCalendarDelegateAppearance
      func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
-         print("Hit FSCalendarDelegateAppearance")
          let formatter = DateFormatter()
          formatter.dateFormat = "MM-dd-yyyy"
          let dateString = formatter.string(from: date)
@@ -217,30 +162,11 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
              return [UIColor.white]
          }
      }
- 
-    // EXPLANATION: Alert when an new event is successfully added
-    func showSimpleAlert() {
-        let alert = UIAlertController(title: "Success!", message: "Your event was successfully added", preferredStyle: UIAlertController.Style.alert)
-        self.present(alert, animated: true, completion: nil)
-        
-        let when = DispatchTime.now() + 2
-        DispatchQueue.main.asyncAfter(deadline: when){
-          alert.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    func showErrorMessage(_ message:String) {
-        errorLabel.text = message
-        errorLabel.alpha = 1
-    }
     
     func reducedPrivileges(){
         if ( userEmailCalendar != "Email_test@test.com" ) {
-            inputEventTitle.isHidden = true
-            inputTextView.isHidden = true
-            selectDateLabel.isHidden = true
-            inputDate.isHidden = true
             addEventButton.isHidden = true
+            deleteEventButton.isHidden = true
         }
     }
 }

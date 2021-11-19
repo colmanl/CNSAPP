@@ -12,12 +12,7 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
     
     let database = Firestore.firestore()
     var vc:PhotosViewController?
-    var imgPath = ""
     var fetchingMore = false
-    var counter = 0
-    var subcounter = 0
-    var subcounter1 = 0
-    var subsubcounter = 0
     var numOfPics = 0
    
     

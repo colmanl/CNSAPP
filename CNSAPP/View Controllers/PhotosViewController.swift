@@ -42,12 +42,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         }
         
         reducedPrivileges()
-//        while counter < 3 && counter <= numOfPics{
-//            setBaseViews()
-//            counter = counter + 1
-//        }
-        
-        
+
         
     }
     
@@ -114,12 +109,12 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         if offsetY > contentHeight - SkrollView.frame.height{
             if !fetchingMore{
                 if numOfPics > counter{
-                   print("hello")
+                   //print("hello")
                    beginBatchFetch()
-                   //counter = counter + 1
+                   
                 }
             }
-           //print("hello")
+           
         }
     
     }
@@ -145,8 +140,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
        
         let docPath = "imageReference/" + String(subcounter1)
-        print("subcounter: \(subcounter1)")
-        print("docpath is: \(docPath)")
+        //print("subcounter: \(subcounter1)")
+        //print("docpath is: \(docPath)")
         
         let docRef = database.document(docPath)
         docRef.getDocument { snapshot, error in
@@ -158,9 +153,9 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                 return
             }
             self.imgPath = text
-            print("text is: \(text)")
-            print("img path is: \(self.imgPath)")
-            print("subcounter in doc ref is: \(self.subcounter)")
+            //print("text is: \(text)")
+            //print("img path is: \(self.imgPath)")
+           // print("subcounter in doc ref is: \(self.subcounter)")
             self.setImageView()
             self.subcounter = self.subcounter + 1
         }
@@ -202,8 +197,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
          
       }
             let docPath = "imageReference/" + String(subsubcounter)
-            print("subcounter: \(subsubcounter)")
-            print("docpath is: \(docPath)")
+           // print("subcounter: \(subsubcounter)")
+           // print("docpath is: \(docPath)")
             
             let docRef = database.document(docPath)
             docRef.getDocument { snapshot, error in
@@ -215,7 +210,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                     return
                 }
                 
-                //weeeeeeee
+                
                 self.title1.text = text
                 
             }
@@ -229,7 +224,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                     return
                 }
                 
-                //weeeeeeee
+              
                 self.caption1.text = text
                 
             }
@@ -255,8 +250,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             
             //
             let docPath = "imageReference/" + String(subsubcounter)
-            print("subcounter: \(subsubcounter)")
-            print("docpath is: \(docPath)")
+            //print("subcounter: \(subsubcounter)")
+            //print("docpath is: \(docPath)")
             
             let docRef = database.document(docPath)
             docRef.getDocument { snapshot, error in
@@ -290,8 +285,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             
             
             self.subsubcounter = self.subsubcounter + 1
-            print("imageview set :")
-            print(self.subsubcounter)
+            //print("imageview set :")
+            //print(self.subsubcounter)
     }else{
         let storageRef = Storage.storage().reference(withPath: imgPath)
         storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self](data, error) in
@@ -310,8 +305,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
         //
         let docPath = "imageReference/" + String(subsubcounter)
-        print("subcounter: \(subsubcounter)")
-        print("docpath is: \(docPath)")
+       // print("subcounter: \(subsubcounter)")
+       // print("docpath is: \(docPath)")
         
         let docRef = database.document(docPath)
         docRef.getDocument { snapshot, error in
@@ -345,8 +340,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
         
         self.subsubcounter = self.subsubcounter + 1
-        print("imageview set :")
-        print(self.subsubcounter)
+        //print("imageview set :")
+        //print(self.subsubcounter)
       }
         
     }
@@ -355,8 +350,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     func setBaseViewsAutomatically(subKount: Int) -> Int{
         
         let docPath = "imageReference/" + String(subKount)
-        print("auto subcounter: \(subKount)")
-        print(" auto docpath is: \(docPath)")
+        //print("auto subcounter: \(subKount)")
+        //print(" auto docpath is: \(docPath)")
         
         let docRef = database.document(docPath)
         docRef.getDocument { snapshot, error in
@@ -368,11 +363,11 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                 return
             }
             self.imgPath = text
-            print("autotext is: \(text)")
-            print("auto img path is: \(self.imgPath)")
-            print("subcounter in doc ref in auto is: \(subKount)")
+            //print("autotext is: \(text)")
+            //print("auto img path is: \(self.imgPath)")
+            //print("subcounter in doc ref in auto is: \(subKount)")
             self.setAutoImage(imagPath: text, subKount: subKount)
-            //subKount = subKount + 1
+            
         }
         
         return subKount + 1
@@ -384,7 +379,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
         let newView = UIView()
         NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 550).isActive = true
-        //newView.backgroundColor =
+        newView.backgroundColor = .systemBackground
         
         let newImageView = UIImageView(frame: CGRect(x: 0, y: 37, width: 414, height: 414))
         newImageView.contentMode = UIView.ContentMode.scaleAspectFit
@@ -402,7 +397,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
         //add
         let newLabel = UILabel(frame: CGRect(x: 13, y: 449, width: 325, height: 37))
-        //newLabel.font = .systemFont(ofSize: 10)
+        newLabel.textColor = .label
+        // set label color to label. set view and wg
         
         var string = "Testing"
         var attributedtext = NSMutableAttributedString(string: string)
@@ -414,6 +410,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         newLabel.attributedText = attributedtext
         
         let newTextView = UITextView(frame: CGRect(x: 8, y: 482, width: 378, height: 78))
+        newTextView.backgroundColor = .systemBackground
          string = "testing testing 123"
          attributedtext = NSMutableAttributedString(string: string)
         attributedtext.addAttribute(
@@ -425,8 +422,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         newTextView.attributedText = attributedtext
         
         let docPath = "imageReference/" + String(subKount)
-        print("text subcounter: \(subKount)")
-        print("text docpath is: \(docPath)")
+       // print("text subcounter: \(subKount)")
+       // print("text docpath is: \(docPath)")
         
         let docRef = database.document(docPath)
         docRef.getDocument { snapshot, error in
@@ -447,9 +444,9 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             )
             newLabel.attributedText = attributedtext
             
-            //
-            print("label text is: \(text)")
-           // newLabel.attributedText = attributedtext
+        
+            //print("label text is: \(text)")
+           
             
         }
         
@@ -475,7 +472,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
            
             
             //
-            print("label text is: \(text)")
+           // print("label text is: \(text)")
           
             
             
@@ -502,7 +499,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
             if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-                  //starterImg.image = image
+                 
                 
                 let randomID = UUID.init().uuidString
                 let uploadRef = Storage.storage().reference(withPath: "images/\(randomID).png")

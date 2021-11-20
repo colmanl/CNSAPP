@@ -24,6 +24,7 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
         coolImg.addGestureRecognizer(tapGesture)
         
         titleSpot.text = String(numOfPics)
+        setUpElements()
             
         }
     
@@ -52,6 +53,7 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
     
     @IBOutlet weak var capSpot: UITextView!
     
+    @IBOutlet weak var submitButton: UIButton!
     
     @IBAction func submitPhoto(_ sender: Any) {
         
@@ -117,7 +119,16 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
         }
 
 
-    
+    func setUpElements(){
+        //Hide Error Label
+       // errorLabel.alpha = 0
+        
+        //LoginStyling.styleTextField(emailTextField)
+       // LoginStyling.styleTextField(passwordTextField)
+      //  LoginStyling.styleHollowButton(loginButton)
+        LoginStyling.styleFilledButton(submitButton)
+       // passwordTextField.isSecureTextEntry = true
+    }
     
     
     }

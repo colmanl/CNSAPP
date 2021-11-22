@@ -41,4 +41,21 @@ class LoginStyling{
         button.tintColor = UIColor.systemBlue
         
     }
+    static func styleHollowButtonTwo(_ button:UIButton){
+        //Hollow Button
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.systemYellow.cgColor
+        button.layer.cornerRadius = 25.0
+        button.tintColor = UIColor.systemYellow
+        
+    }
+    static func styleHollowButtonThree(_ button:UIButton){
+        //Hollow Button
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.systemRed.cgColor
+        button.layer.cornerRadius = 25.0
+        button.tintColor = UIColor.systemRed
+        
+    }
+  
 }

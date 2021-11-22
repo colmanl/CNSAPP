@@ -42,7 +42,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         }
         
         reducedPrivileges()
-
+        setUpElementsTwo()
         
     }
     
@@ -547,7 +547,19 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         if ( userEmailPhotos != "Email_test@test.com" ) {
             addPicButton.isHidden = true
         }
-    }    
+    }
+    func setUpElementsTwo(){
+        //Hide Error Label
+      //  errorLabel.alpha = 0
+        
+      //  LoginStyling.styleTextField(emailTextField)
+      //  LoginStyling.styleTextField(passwordTextField)
+        LoginStyling.styleHollowButtonTwo(addPicButton)
+       // LoginStyling.styleHollowButtonThree(deleteEventButton)
+
+    //   LoginStyling.styleFilledButton(submitButton)
+       // passwordTextField.isSecureTextEntry = true
+    }
 }
 
     

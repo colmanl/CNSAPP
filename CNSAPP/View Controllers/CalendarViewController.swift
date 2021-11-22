@@ -40,7 +40,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             getData()
             didLoadData = true
         }
-        
+        setUpElements()
         addDbDatesToDatesArray()
         reducedPrivileges()
         calendar.dataSource = self
@@ -168,5 +168,17 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             addEventButton.isHidden = true
             deleteEventButton.isHidden = true
         }
+    }
+    func setUpElements(){
+        //Hide Error Label
+      //  errorLabel.alpha = 0
+        
+      //  LoginStyling.styleTextField(emailTextField)
+      //  LoginStyling.styleTextField(passwordTextField)
+        LoginStyling.styleHollowButtonTwo(addEventButton)
+       LoginStyling.styleHollowButtonThree(deleteEventButton)
+
+     //  LoginStyling.styleFilledButton(submitButton)
+       // passwordTextField.isSecureTextEntry = true
     }
 }

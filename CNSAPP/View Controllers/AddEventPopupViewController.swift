@@ -35,7 +35,7 @@ class AddEventPopupViewController: CalendarViewController {
         inputTextView.delegate = self;
         inputTextView.text = "Enter event description (optional)"
         inputTextView.textColor = UIColor.lightGray
-        setUpElements()
+        setUpElementsTwo()
     }
     
     @IBAction func backBtnTapped(_ sender: Any) {
@@ -110,14 +110,17 @@ class AddEventPopupViewController: CalendarViewController {
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    func setUpElements(){
+  func setUpElementsTwo(){
         //Hide Error Label
       //  errorLabel.alpha = 0
         
       //  LoginStyling.styleTextField(emailTextField)
       //  LoginStyling.styleTextField(passwordTextField)
-      //  LoginStyling.styleHollowButton(loginButton)
-        LoginStyling.styleFilledButton(submitButton)
+      //  LoginStyling.styleHollowButtonTwo(addEventButton)
+       // LoginStyling.styleHollowButtonThree(deleteEventButton)
+
+      LoginStyling.styleFilledButton(submitButton)
        // passwordTextField.isSecureTextEntry = true
     }
+   
 }

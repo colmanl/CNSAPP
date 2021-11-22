@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1GK-ee-CaP">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1GK-ee-CaP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -213,18 +213,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Home Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-K4-wWO">
-                                <rect key="frame" x="58.5" y="433" width="297.5" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="RJh-K3-kCN">
+                                <rect key="frame" x="0.0" y="54" width="414" height="749"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Countryside Nursery School App!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7E-y1-uN6">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Schoolhouse_drawing" translatesAutoresizingMaskIntoConstraints="NO" id="MJL-aJ-FBg">
+                                        <rect key="frame" x="0.0" y="127" width="414" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="C7m-lw-LTJ"/>
+                                            <constraint firstAttribute="height" constant="300" id="zCX-65-CR7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Mission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFp-8z-b4R">
+                                        <rect key="frame" x="0.0" y="509" width="414" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="axf-BP-8Q5">
+                                        <rect key="frame" x="0.0" y="621" width="414" height="128"/>
+                                        <color key="backgroundColor" name="LightGray"/>
+                                        <string key="text">Since 1979, our goal at Countryside has been to provide a happy and positive environment for your child; to help gain an appreciation of the world around them; to experience pleasure through creative expression in art, music and drama; to learn to express themselves; to develop desirable social behavior while learning to deal with his/her feelings and those of their peers.  With these experiences, your child will discover that school and learning is rewarding and fun.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MJL-aJ-FBg" firstAttribute="top" secondItem="z7E-y1-uN6" secondAttribute="bottom" constant="10" id="4kN-W1-isB"/>
+                                    <constraint firstItem="z7E-y1-uN6" firstAttribute="leading" secondItem="RJh-K3-kCN" secondAttribute="leading" constant="10" id="5LG-O2-QLC"/>
+                                    <constraint firstAttribute="height" constant="650" id="Bzu-iQ-mUF"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="Jbb-bx-zKq"/>
+                                    <constraint firstItem="WFp-8z-b4R" firstAttribute="top" secondItem="MJL-aJ-FBg" secondAttribute="bottom" constant="10" id="Omg-Gg-5IG"/>
+                                    <constraint firstItem="axf-BP-8Q5" firstAttribute="top" secondItem="WFp-8z-b4R" secondAttribute="bottom" id="nCN-CL-VGk"/>
+                                    <constraint firstAttribute="trailing" secondItem="z7E-y1-uN6" secondAttribute="trailing" constant="10" id="yKj-Tc-Yh0"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IIk-LM-3Qu"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HZH-K4-wWO" firstAttribute="centerY" secondItem="cja-vI-kDs" secondAttribute="centerY" id="0B7-D3-S0J"/>
-                            <constraint firstItem="HZH-K4-wWO" firstAttribute="centerX" secondItem="cja-vI-kDs" secondAttribute="centerX" id="HRA-R0-LVg"/>
+                            <constraint firstItem="RJh-K3-kCN" firstAttribute="leading" secondItem="IIk-LM-3Qu" secondAttribute="leading" id="Fgj-O0-pBz"/>
+                            <constraint firstItem="RJh-K3-kCN" firstAttribute="top" secondItem="IIk-LM-3Qu" secondAttribute="top" constant="10" id="Hft-Og-OAJ"/>
+                            <constraint firstItem="IIk-LM-3Qu" firstAttribute="bottom" secondItem="RJh-K3-kCN" secondAttribute="bottom" constant="10" id="Yos-7v-Cwy"/>
+                            <constraint firstItem="IIk-LM-3Qu" firstAttribute="trailing" secondItem="RJh-K3-kCN" secondAttribute="trailing" id="hNr-QJ-B5c"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="ded-PS-a8i">
@@ -233,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBU-lb-hfR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3977" y="-213"/>
+            <point key="canvasLocation" x="3976.811594202899" y="-213.61607142857142"/>
         </scene>
         <!--Add Event Popup View Controller-->
         <scene sceneID="Zo4-Tl-Wad">
@@ -964,6 +1001,7 @@
     <resources>
         <image name="AppIcon2x" width="60" height="60"/>
         <image name="AppIcon3x" width="60" height="60"/>
+        <image name="Schoolhouse_drawing" width="738" height="838"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="hand.raised.fill" catalog="system" width="128" height="124"/>
@@ -971,6 +1009,9 @@
         <image name="photo" catalog="system" width="128" height="93"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LightGray">
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -66,6 +66,7 @@ class AddEventPopupViewController: CalendarViewController {
                     self.addDbDatesToDatesArray()
                     print("middle eventList:", self.eventList)
                     print("middle datesArray:", self.datesArray)
+                    self.showSimpleAlert()
                 }
                 else {
                     self.showErrorMessage("Error: Unable to add event")
@@ -80,7 +81,6 @@ class AddEventPopupViewController: CalendarViewController {
             print("ending eventList:", eventList)
             print("ending datesArray:", datesArray)
             
-            showSimpleAlert()
         }
     }
     

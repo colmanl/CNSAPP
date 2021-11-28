@@ -28,11 +28,12 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     var dateStringOutput = ""
     
+    var dateDBFormat = Date()
+    
     func getCurrentDate() {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM. d"
-        print("\(dateFormatter.string(from: date))")
         dateStringOutput = dateFormatter.string(from: date)
     }
     
@@ -42,13 +43,12 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
                 self.dismiss(animated: true)
             }))
-            alert.addAction(UIAlertAction(title: "Delete",
+        alert.addAction(UIAlertAction(title: "Delete",
                                           style: UIAlertAction.Style.destructive,
                                           handler: {(_: UIAlertAction!) in
-                                            //Sign out action
-                self.dismiss(animated: true)
+                self.deleteEvent(self.dateDBFormat)
             }))
-            self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         }
 
     private var db = Firestore.firestore()
@@ -64,7 +64,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             didLoadData = true
         }
         addDbDatesToDatesArray()
-        setUpElements()
+        //setUpElements()
         print("Hit Calendar viewdidload")
         reducedPrivileges()
         calendar.dataSource = self
@@ -110,35 +110,33 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         print("getData Hit")
     }
     
-    /* comment out for now
-    func deleteDate(eventToDelete: CalenderEvent){
-        db.collection("calendarEvents").document(eventToDelete.id).delete { error in
-            if error == nil
-            {
-                DispatchQueue.main.async {
-                    self.eventList.removeAll { event in
-                        return event.id == eventToDelete.id
-                    }
-                }
+    func deleteEvent(_ date: Date) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        let dateStringFromDb = formatter.string(from: date)
+        
+        for event in eventList {
+            if event.eventDate == dateStringFromDb {
+                db.collection("calendarEvents").document(event.id).delete()
             }
             else {
-                self.showErrorMessage("ERROR: Unable to delete event")
+                
             }
         }
+        
     }
-     */
     
     // FSCalendarDelegate for when user selects a date on the calendar
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
         
+        dateDBFormat = date
         var outputEvents = ""
         var eventsExist = false
         
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM. d"
         dateStringOutput = formatter.string(from: date)
-        
-        //addDbDatesToDatesArray()
         
         formatter.dateFormat = "MM-dd-yyyy"
         let dateStringFromDb = formatter.string(from: date)
@@ -194,8 +192,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         }
     }
     func setUpElements(){
-        //LoginStyling.styleHollowButtonTwo(addEventButton)
-        //LoginStyling.styleHollowButtonThree(deleteEventButton)
+        LoginStyling.styleHollowButtonTwo(addEventButton)
+        LoginStyling.styleHollowButtonThree(deleteEventButton)
     }
 
 }

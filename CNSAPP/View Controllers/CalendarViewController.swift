@@ -24,9 +24,32 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     @IBOutlet weak var deleteEventButton: UIButton!
     
-    @IBAction func addEvent(_ sender: Any) {
-        
+    @IBAction func addEvent(_ sender: Any) {}
+    
+    var dateStringOutput = ""
+    
+    func getCurrentDate() {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMM. d"
+        print("\(dateFormatter.string(from: date))")
+        dateStringOutput = dateFormatter.string(from: date)
     }
+    
+    @IBAction func showDeletionAlert() {
+        let alert = UIAlertController(title: "Delete Event(s)?", message: "This will delete all events on \(dateStringOutput)", preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+                self.dismiss(animated: true)
+            }))
+            alert.addAction(UIAlertAction(title: "Delete",
+                                          style: UIAlertAction.Style.destructive,
+                                          handler: {(_: UIAlertAction!) in
+                                            //Sign out action
+                self.dismiss(animated: true)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
 
     private var db = Firestore.firestore()
     
@@ -40,15 +63,17 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             getData()
             didLoadData = true
         }
-        setUpElements()
         addDbDatesToDatesArray()
+        setUpElements()
+        print("Hit Calendar viewdidload")
         reducedPrivileges()
         calendar.dataSource = self
         calendar.delegate = self
         outputTextView.delegate = self
+        getCurrentDate()
     }
     
-    var datesArray = ["11-08-2021"]
+    var datesArray = ["01-01-2021"]
     
     func addDbDatesToDatesArray() {
         datesArray.removeAll()
@@ -82,7 +107,9 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
                 return
             }
         }
+        print("getData Hit")
     }
+    
     /* comment out for now
     func deleteDate(eventToDelete: CalenderEvent){
         db.collection("calendarEvents").document(eventToDelete.id).delete { error in
@@ -109,11 +136,10 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM. d"
-        let dateStringOutput = formatter.string(from: date)
+        dateStringOutput = formatter.string(from: date)
         
-        addDbDatesToDatesArray()
+        //addDbDatesToDatesArray()
         
-        // EXPLANATION: dateQuery attempt
         formatter.dateFormat = "MM-dd-yyyy"
         let dateStringFromDb = formatter.string(from: date)
         
@@ -137,9 +163,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
          let formatter = DateFormatter()
          formatter.dateFormat = "MM-dd-yyyy"
          let dateString = formatter.string(from: date)
-         // ADD bool var = query for the calendarEvents db's eventDate contains dateString
-         // if var == true
-           if self.datesArray.contains(dateString) {
+
+         if self.datesArray.contains(dateString) {
              return 1
            }
          
@@ -153,8 +178,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
          let formatter = DateFormatter()
          formatter.dateFormat = "MM-dd-yyyy"
          let dateString = formatter.string(from: date)
-         // ADD bool var = query for the calendarEvents db's eventDate contains dateString
-         // if var == true
+         
          if datesArray.contains(dateString) {
              return [UIColor.blue]
          }
@@ -170,15 +194,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         }
     }
     func setUpElements(){
-        //Hide Error Label
-      //  errorLabel.alpha = 0
-        
-      //  LoginStyling.styleTextField(emailTextField)
-      //  LoginStyling.styleTextField(passwordTextField)
-        LoginStyling.styleHollowButtonTwo(addEventButton)
-       LoginStyling.styleHollowButtonThree(deleteEventButton)
-
-     //  LoginStyling.styleFilledButton(submitButton)
-       // passwordTextField.isSecureTextEntry = true
+        //LoginStyling.styleHollowButtonTwo(addEventButton)
+        //LoginStyling.styleHollowButtonThree(deleteEventButton)
     }
+
 }

@@ -297,7 +297,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RSF-n9-ntC" userLabel="New Event Stack View">
-                                        <rect key="frame" x="40" y="195" width="320" height="180"/>
+                                        <rect key="frame" x="40" y="195" width="320" height="220"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter event title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccj-Y8-gAX">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
@@ -358,14 +358,14 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5A-K5-AUa" userLabel="Error Label">
-                                                <rect key="frame" x="0.0" y="175" width="320" height="5"/>
+                                                <rect key="frame" x="0.0" y="175" width="320" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="180" id="CVw-z4-tBg"/>
+                                            <constraint firstAttribute="height" constant="220" id="CVw-z4-tBg"/>
                                             <constraint firstItem="Dp1-nM-Tyy" firstAttribute="top" secondItem="JNv-Ns-oTg" secondAttribute="bottom" constant="5" id="xbp-3V-OQF"/>
                                             <constraint firstAttribute="width" constant="320" id="zbF-du-UFe"/>
                                         </constraints>
@@ -402,6 +402,99 @@
             </objects>
             <point key="canvasLocation" x="4873.913043478261" y="-894.64285714285711"/>
         </scene>
+        <!--Delete Event Popup View Controller-->
+        <scene sceneID="oZv-qi-gre">
+            <objects>
+                <viewController id="k8Q-aA-oWC" customClass="DeleteEventPopupViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HKb-CU-DmW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QL4-Yk-3hc">
+                                <rect key="frame" x="20" y="102" width="374" height="553"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEH-r3-Pfi">
+                                        <rect key="frame" x="0.0" y="8" width="85" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="&lt; Back">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backBtnTapped:" destination="k8Q-aA-oWC" eventType="touchUpInside" id="8hl-s6-uAO"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TLB-Pc-f4e" userLabel="New Event Stack View">
+                                        <rect key="frame" x="27" y="166" width="320" height="220"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-at-xtQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiX-OY-IsE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="190" id="1Zf-re-RAR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Bdd-5P-v1P">
+                                                        <rect key="frame" x="210" y="0.0" width="110" height="50"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="110" id="AYU-vV-FgY"/>
+                                                        </constraints>
+                                                    </datePicker>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjj-nf-I9c" userLabel="Submit Button">
+                                                <rect key="frame" x="0.0" y="50" width="320" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ead-bP-3ub"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Submit" cornerStyle="capsule">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" name="AccentColor"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="submitBtnTapped:" destination="VTT-MN-Oza" eventType="touchUpInside" id="e3e-p4-Vl8"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2B-RP-q4D" userLabel="Error Label">
+                                                <rect key="frame" x="0.0" y="100" width="320" height="120"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="220" id="Opx-jA-w21"/>
+                                            <constraint firstAttribute="width" constant="320" id="Yrt-RG-1q8"/>
+                                            <constraint firstItem="Mjj-nf-I9c" firstAttribute="top" secondItem="dsR-at-xtQ" secondAttribute="bottom" constant="5" id="lzr-qy-ZXS"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mG7-mb-6FZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yac-kM-Hi2"/>
+                    <connections>
+                        <outlet property="backButton" destination="mEH-r3-Pfi" id="CBX-ta-5zY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vL6-Qa-Wn7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5701" y="-895"/>
+        </scene>
         <!--Calendar-->
         <scene sceneID="WCI-UZ-6ip">
             <objects>
@@ -411,21 +504,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Odp-8b-RNS">
-                                <rect key="frame" x="47" y="354" width="320" height="330"/>
+                                <rect key="frame" x="27" y="354" width="360" height="350"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Click calendar to view events" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-HU-C1M" userLabel="Output Text View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="299"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                                     </textView>
+                                    <stackView opaque="NO" contentMode="center" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NwG-0m-XC2">
+                                        <rect key="frame" x="0.0" y="299" width="360" height="51"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BN-h9-MMl" userLabel="Add Event Button">
+                                                <rect key="frame" x="0.0" y="10" width="165.5" height="31"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Add Event" cornerStyle="capsule">
+                                                    <backgroundConfiguration key="background" strokeWidth="2">
+                                                        <color key="strokeColor" systemColor="systemYellowColor"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="addEvent:" destination="m2H-hQ-ejL" eventType="touchUpInside" id="PXV-mH-NbG"/>
+                                                    <segue destination="VTT-MN-Oza" kind="show" id="pew-HE-ael"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4A-Yc-IpM">
+                                                <rect key="frame" x="173.5" y="10" width="186.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Delete Event" cornerStyle="capsule">
+                                                    <backgroundConfiguration key="background" strokeWidth="2">
+                                                        <color key="strokeColor" systemColor="systemRedColor"/>
+                                                    </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="showDeletionAlert" destination="m2H-hQ-ejL" eventType="touchUpInside" id="u2B-W1-sP5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="LightGray"/>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="1rr-Ys-6DF"/>
-                                    <constraint firstAttribute="height" constant="330" id="VPb-Ht-wp5"/>
+                                    <constraint firstAttribute="width" constant="360" id="1rr-Ys-6DF"/>
+                                    <constraint firstAttribute="height" constant="350" id="VPb-Ht-wp5"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3on-hP-32S" customClass="FSCalendar">
@@ -441,35 +567,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NwG-0m-XC2">
-                                <rect key="frame" x="146" y="707" width="90" height="31"/>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BN-h9-MMl" userLabel="Add Event Button">
-                                <rect key="frame" x="20" y="763" width="177" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <color key="tintColor" systemColor="systemYellowColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add Event" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background">
-                                        <color key="strokeColor" systemColor="systemYellowColor"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="addEvent:" destination="m2H-hQ-ejL" eventType="touchUpInside" id="PXV-mH-NbG"/>
-                                    <segue destination="VTT-MN-Oza" kind="show" id="pew-HE-ael"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4A-Yc-IpM">
-                                <rect key="frame" x="214" y="762" width="180" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Delete Event" cornerStyle="capsule">
-                                    <backgroundConfiguration key="background">
-                                        <color key="strokeColor" systemColor="systemRedColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
-                                </buttonConfiguration>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q3i-4H-x9O"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
@@ -481,7 +578,6 @@
                             <constraint firstItem="Q3i-4H-x9O" firstAttribute="bottom" secondItem="3on-hP-32S" secondAttribute="top" constant="1" id="YyY-FN-Wjx"/>
                             <constraint firstItem="Odp-8b-RNS" firstAttribute="top" secondItem="3on-hP-32S" secondAttribute="bottom" constant="10" id="hQh-v1-uC1"/>
                             <constraint firstItem="Q3i-4H-x9O" firstAttribute="trailing" secondItem="3on-hP-32S" secondAttribute="trailing" id="nJq-WK-tqG"/>
-                            <constraint firstItem="Q3i-4H-x9O" firstAttribute="bottom" secondItem="NwG-0m-XC2" secondAttribute="bottom" id="qlj-E2-5S8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="gH0-m7-0mQ">

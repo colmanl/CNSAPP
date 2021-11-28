@@ -25,6 +25,7 @@
 		09D8863F27458769002026B5 /* CNSAPPUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD5B270C9CD8002AF17E /* CNSAPPUITests.xctest */; };
 		09D886402745876E002026B5 /* CNSAPPTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD51270C9CD7002AF17E /* CNSAPPTests.xctest */; };
 		09D9A94227386F8800934631 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9A94127386F8800934631 /* UserViewController.swift */; };
+		163701A8274DC89600310A5C /* DeleteEventPopupVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163701A7274DC89600310A5C /* DeleteEventPopupVIewController.swift */; };
 		167E6D34271F863C00E37F25 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167E6D33271F863C00E37F25 /* CalendarViewController.swift */; };
 		16970704273B023B0021457A /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970703273B023B0021457A /* CalendarEvent.swift */; };
 		16AFA4F42745789000DD88FC /* AddEventPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AFA4F32745789000DD88FC /* AddEventPopupViewController.swift */; };
@@ -79,6 +80,7 @@
 		09590C6A2733873D00444A1F /* CNSAPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CNSAPP.entitlements; sourceTree = "<group>"; };
 		09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
 		09D9A94127386F8800934631 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		163701A7274DC89600310A5C /* DeleteEventPopupVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEventPopupVIewController.swift; sourceTree = "<group>"; };
 		167E6D33271F863C00E37F25 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		16970703273B023B0021457A /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		16AFA4F32745789000DD88FC /* AddEventPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventPopupViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				5937B710271F4B1800AEBF5E /* CentralHomeViewController.swift */,
 				167E6D33271F863C00E37F25 /* CalendarViewController.swift */,
 				16AFA4F32745789000DD88FC /* AddEventPopupViewController.swift */,
+				163701A7274DC89600310A5C /* DeleteEventPopupVIewController.swift */,
 				16970702273B01590021457A /* Models */,
 			);
 			path = "View Controllers";
@@ -497,6 +500,7 @@
 				16970704273B023B0021457A /* CalendarEvent.swift in Sources */,
 				092FCD3F270C9CD5002AF17E /* AppDelegate.swift in Sources */,
 				09D9A94227386F8800934631 /* UserViewController.swift in Sources */,
+				163701A8274DC89600310A5C /* DeleteEventPopupVIewController.swift in Sources */,
 				093F2DF9273DA32B00B88098 /* SearchViewController.swift in Sources */,
 				594A2897270E56AA007E5391 /* SignUpViewController.swift in Sources */,
 				594A2899270E56DE007E5391 /* LoginViewController.swift in Sources */,

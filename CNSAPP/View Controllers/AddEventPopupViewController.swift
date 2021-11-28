@@ -31,11 +31,13 @@ class AddEventPopupViewController: CalendarViewController {
     private var db = Firestore.firestore()
     
     override func viewDidLoad() {
-      //  super.viewDidLoad()
+       // super.viewDidLoad()
         inputTextView.delegate = self;
         inputTextView.text = "Enter event description (optional)"
         inputTextView.textColor = UIColor.lightGray
         setUpElementsTwo()
+        print("starting eventList:", eventList)
+        print("starting datesArray:", datesArray)
     }
     
     @IBAction func backBtnTapped(_ sender: Any) {
@@ -46,6 +48,7 @@ class AddEventPopupViewController: CalendarViewController {
         let eventTitle = inputEventTitle.text!
         let eventDescription = inputTextView.text!
         let eventDate = inputDate.date
+        didLoadData = false
         
         // EXPLANATION: turning date input into a string
         let formatter = DateFormatter()
@@ -60,8 +63,9 @@ class AddEventPopupViewController: CalendarViewController {
                 
                 if error == nil
                 {
-                    //self.getData()
                     self.addDbDatesToDatesArray()
+                    print("middle eventList:", self.eventList)
+                    print("middle datesArray:", self.datesArray)
                 }
                 else {
                     self.showErrorMessage("Error: Unable to add event")
@@ -72,11 +76,10 @@ class AddEventPopupViewController: CalendarViewController {
             inputTextView.text = nil
             showErrorMessage("")
             
-            // EXPLANATION: adding new event to the event array
             addDbDatesToDatesArray()
-            print("datesArray contains: ", datesArray)
-    
-            // ADD: only display this alert when eventTitle is found within the db
+            print("ending eventList:", eventList)
+            print("ending datesArray:", datesArray)
+            
             showSimpleAlert()
         }
     }
@@ -95,7 +98,6 @@ class AddEventPopupViewController: CalendarViewController {
         }
     }
     
-    // EXPLANATION: Alert when an new event is successfully added
     func showSimpleAlert() {
         let alert = UIAlertController(title: "Success!", message: "Your event was successfully added", preferredStyle: UIAlertController.Style.alert)
         self.present(alert, animated: true, completion: nil)
@@ -110,17 +112,8 @@ class AddEventPopupViewController: CalendarViewController {
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-  func setUpElementsTwo(){
-        //Hide Error Label
-      //  errorLabel.alpha = 0
-        
-      //  LoginStyling.styleTextField(emailTextField)
-      //  LoginStyling.styleTextField(passwordTextField)
-      //  LoginStyling.styleHollowButtonTwo(addEventButton)
-       // LoginStyling.styleHollowButtonThree(deleteEventButton)
-
-      LoginStyling.styleFilledButton(submitButton)
-       // passwordTextField.isSecureTextEntry = true
+    
+    func setUpElementsTwo(){
+        LoginStyling.styleFilledButton(submitButton)
     }
-   
 }

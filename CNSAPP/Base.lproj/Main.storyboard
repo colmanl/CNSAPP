@@ -274,227 +274,6 @@
             </objects>
             <point key="canvasLocation" x="3976.811594202899" y="-213.61607142857142"/>
         </scene>
-        <!--Add Event Popup View Controller-->
-        <scene sceneID="Zo4-Tl-Wad">
-            <objects>
-                <viewController id="VTT-MN-Oza" customClass="AddEventPopupViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="sPu-ny-zOU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPr-UD-Ni7">
-                                <rect key="frame" x="20" y="80" width="374" height="571"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgE-GN-bAs">
-                                        <rect key="frame" x="9" y="32" width="114" height="38"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="&lt; Back">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="BackButtonTapped:" destination="aoR-oS-BSE" eventType="touchUpInside" id="GS7-VZ-AKO"/>
-                                            <action selector="backBtnTapped:" destination="VTT-MN-Oza" eventType="touchUpInside" id="Hbu-yt-yge"/>
-                                        </connections>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RSF-n9-ntC" userLabel="New Event Stack View">
-                                        <rect key="frame" x="40" y="195" width="320" height="220"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter event title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccj-Y8-gAX">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
-                                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="(Optional) Enter event description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Hz-hJ-2hq" userLabel="Input Text View">
-                                                <rect key="frame" x="0.0" y="34" width="320" height="60"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" selected="YES" adjustable="YES" allowsDirectInteraction="YES"/>
-                                                </accessibility>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="sNI-sX-5Ep"/>
-                                                </constraints>
-                                                <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
-                                            </textView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNv-Ns-oTg">
-                                                <rect key="frame" x="0.0" y="94" width="320" height="31"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEz-DH-M3H">
-                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="31"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="190" id="e10-9z-ixJ"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="ICJ-vP-vbc">
-                                                        <rect key="frame" x="210" y="0.0" width="110" height="31"/>
-                                                        <color key="tintColor" systemColor="labelColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="110" id="2uk-Nt-02X"/>
-                                                        </constraints>
-                                                    </datePicker>
-                                                </subviews>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp1-nM-Tyy" userLabel="Submit Button">
-                                                <rect key="frame" x="0.0" y="125" width="320" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="bbq-cH-pwX"/>
-                                                </constraints>
-                                                <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Submit" cornerStyle="capsule">
-                                                    <backgroundConfiguration key="background">
-                                                        <color key="backgroundColor" name="AccentColor"/>
-                                                    </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="submitBtnTapped:" destination="VTT-MN-Oza" eventType="touchUpInside" id="C6U-wW-7Fd"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5A-K5-AUa" userLabel="Error Label">
-                                                <rect key="frame" x="0.0" y="175" width="320" height="45"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" systemColor="systemRedColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="220" id="CVw-z4-tBg"/>
-                                            <constraint firstItem="Dp1-nM-Tyy" firstAttribute="top" secondItem="JNv-Ns-oTg" secondAttribute="bottom" constant="5" id="xbp-3V-OQF"/>
-                                            <constraint firstAttribute="width" constant="320" id="zbF-du-UFe"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="RSF-n9-ntC" firstAttribute="top" secondItem="fgE-GN-bAs" secondAttribute="bottom" constant="200" id="BU5-tP-mvO"/>
-                                    <constraint firstItem="RSF-n9-ntC" firstAttribute="leading" secondItem="pPr-UD-Ni7" secondAttribute="leading" constant="40" id="Wl2-RM-niH"/>
-                                    <constraint firstAttribute="trailing" secondItem="RSF-n9-ntC" secondAttribute="trailing" constant="40" id="yPa-LX-mbF"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="0bJ-XZ-ngT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="pPr-UD-Ni7" firstAttribute="top" secondItem="0bJ-XZ-ngT" secondAttribute="top" constant="80" id="2gl-1g-ecR"/>
-                            <constraint firstItem="0bJ-XZ-ngT" firstAttribute="trailing" secondItem="pPr-UD-Ni7" secondAttribute="trailing" constant="20" id="DWr-2v-br6"/>
-                            <constraint firstItem="0bJ-XZ-ngT" firstAttribute="bottom" secondItem="pPr-UD-Ni7" secondAttribute="bottom" constant="157" id="IuO-b5-prC"/>
-                            <constraint firstItem="pPr-UD-Ni7" firstAttribute="leading" secondItem="0bJ-XZ-ngT" secondAttribute="leading" constant="20" id="ubq-wT-DNQ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="qda-aS-m5o"/>
-                    <connections>
-                        <outlet property="backButton" destination="fgE-GN-bAs" id="Tkg-Mh-kkH"/>
-                        <outlet property="errorLabel" destination="I5A-K5-AUa" id="Zmy-UN-UPt"/>
-                        <outlet property="inputDate" destination="ICJ-vP-vbc" id="ScH-MG-VE7"/>
-                        <outlet property="inputEventTitle" destination="ccj-Y8-gAX" id="3FS-ao-SAP"/>
-                        <outlet property="inputTextView" destination="4Hz-hJ-2hq" id="QBn-V8-hXT"/>
-                        <outlet property="selectDateLabel" destination="sEz-DH-M3H" id="YEl-FA-cdY"/>
-                        <outlet property="submitButton" destination="Dp1-nM-Tyy" id="58h-BC-RGo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mTH-bR-Xug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4873.913043478261" y="-894.64285714285711"/>
-        </scene>
-        <!--Delete Event Popup View Controller-->
-        <scene sceneID="oZv-qi-gre">
-            <objects>
-                <viewController id="k8Q-aA-oWC" customClass="DeleteEventPopupViewController" customModule="CNSAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HKb-CU-DmW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QL4-Yk-3hc">
-                                <rect key="frame" x="20" y="102" width="374" height="553"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEH-r3-Pfi">
-                                        <rect key="frame" x="0.0" y="8" width="85" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="&lt; Back">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="backBtnTapped:" destination="k8Q-aA-oWC" eventType="touchUpInside" id="8hl-s6-uAO"/>
-                                        </connections>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TLB-Pc-f4e" userLabel="New Event Stack View">
-                                        <rect key="frame" x="27" y="166" width="320" height="220"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsR-at-xtQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiX-OY-IsE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="190" id="1Zf-re-RAR"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Bdd-5P-v1P">
-                                                        <rect key="frame" x="210" y="0.0" width="110" height="50"/>
-                                                        <color key="tintColor" systemColor="labelColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="110" id="AYU-vV-FgY"/>
-                                                        </constraints>
-                                                    </datePicker>
-                                                </subviews>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjj-nf-I9c" userLabel="Submit Button">
-                                                <rect key="frame" x="0.0" y="50" width="320" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="ead-bP-3ub"/>
-                                                </constraints>
-                                                <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Submit" cornerStyle="capsule">
-                                                    <backgroundConfiguration key="background">
-                                                        <color key="backgroundColor" name="AccentColor"/>
-                                                    </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="submitBtnTapped:" destination="VTT-MN-Oza" eventType="touchUpInside" id="e3e-p4-Vl8"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2B-RP-q4D" userLabel="Error Label">
-                                                <rect key="frame" x="0.0" y="100" width="320" height="120"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" systemColor="systemRedColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="220" id="Opx-jA-w21"/>
-                                            <constraint firstAttribute="width" constant="320" id="Yrt-RG-1q8"/>
-                                            <constraint firstItem="Mjj-nf-I9c" firstAttribute="top" secondItem="dsR-at-xtQ" secondAttribute="bottom" constant="5" id="lzr-qy-ZXS"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="mG7-mb-6FZ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="yac-kM-Hi2"/>
-                    <connections>
-                        <outlet property="backButton" destination="mEH-r3-Pfi" id="CBX-ta-5zY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vL6-Qa-Wn7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5701" y="-895"/>
-        </scene>
         <!--Calendar-->
         <scene sceneID="WCI-UZ-6ip">
             <objects>
@@ -504,40 +283,115 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Odp-8b-RNS">
-                                <rect key="frame" x="27" y="354" width="360" height="350"/>
+                                <rect key="frame" x="27" y="349" width="360" height="460"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Click calendar to view events" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-HU-C1M" userLabel="Output Text View">
-                                        <rect key="frame" x="0.0" y="0.0" width="360" height="299"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="125"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="125" id="TZI-X8-Vdz"/>
+                                        </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                                     </textView>
-                                    <stackView opaque="NO" contentMode="center" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NwG-0m-XC2">
-                                        <rect key="frame" x="0.0" y="299" width="360" height="51"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aOT-zi-dn0" userLabel="New Event Stack View">
+                                        <rect key="frame" x="0.0" y="125" width="360" height="335"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BN-h9-MMl" userLabel="Add Event Button">
-                                                <rect key="frame" x="0.0" y="10" width="165.5" height="31"/>
-                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-Na-3rK">
+                                                <rect key="frame" x="0.0" y="0.0" width="360" height="60"/>
+                                                <color key="backgroundColor" name="LightGray"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter event title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-FC-GdB">
+                                                <rect key="frame" x="0.0" y="60" width="360" height="35"/>
+                                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="wzd-g9-bOc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="(Optional) Enter event description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-vP-zTr" userLabel="Input Text View">
+                                                <rect key="frame" x="0.0" y="95" width="360" height="70"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" selected="YES" adjustable="YES" allowsDirectInteraction="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="cjx-Sa-xnz"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5p-OU-xYa">
+                                                <rect key="frame" x="0.0" y="165" width="360" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7H8-06-z8l">
+                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                                        <color key="backgroundColor" name="LightGray"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="190" id="eZf-GI-mQw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="TIn-lK-ZYK">
+                                                        <rect key="frame" x="250" y="0.0" width="110" height="50"/>
+                                                        <color key="backgroundColor" name="LightGray"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="110" id="A8i-UM-CN0"/>
+                                                        </constraints>
+                                                    </datePicker>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="YrU-7k-bnd"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jo4-GC-uNb" userLabel="Submit Button">
+                                                <rect key="frame" x="0.0" y="215" width="360" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="znu-s2-pNF"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Add Event" cornerStyle="capsule">
-                                                    <backgroundConfiguration key="background" strokeWidth="2">
-                                                        <color key="strokeColor" systemColor="systemYellowColor"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Submit" cornerStyle="capsule">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" name="AccentColor"/>
                                                     </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="addEvent:" destination="m2H-hQ-ejL" eventType="touchUpInside" id="PXV-mH-NbG"/>
-                                                    <segue destination="VTT-MN-Oza" kind="show" id="pew-HE-ael"/>
+                                                    <action selector="submitBtnTapped:" destination="m2H-hQ-ejL" eventType="touchUpInside" id="LBt-x3-tsR"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fE8-cX-6sj" userLabel="Error Label">
+                                                <rect key="frame" x="0.0" y="265" width="360" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="iVe-mv-BVa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4A-Yc-IpM">
-                                                <rect key="frame" x="173.5" y="10" width="186.5" height="31"/>
+                                                <rect key="frame" x="0.0" y="285" width="360" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="3ex-HU-IGG"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Delete Event" cornerStyle="capsule">
                                                     <backgroundConfiguration key="background" strokeWidth="2">
                                                         <color key="strokeColor" systemColor="systemRedColor"/>
                                                     </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -546,12 +400,17 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" name="LightGray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="260" id="3rB-5r-XEu"/>
+                                            <constraint firstItem="jo4-GC-uNb" firstAttribute="top" secondItem="W5p-OU-xYa" secondAttribute="bottom" constant="5" id="EIz-uC-hZC"/>
+                                            <constraint firstAttribute="width" constant="320" id="uQw-tU-BF7"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="1rr-Ys-6DF"/>
-                                    <constraint firstAttribute="height" constant="350" id="VPb-Ht-wp5"/>
+                                    <constraint firstAttribute="height" constant="460" id="VPb-Ht-wp5"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3on-hP-32S" customClass="FSCalendar">
@@ -576,7 +435,7 @@
                             <constraint firstItem="3on-hP-32S" firstAttribute="centerX" secondItem="Rmy-ji-IQE" secondAttribute="centerX" id="Fpi-yI-3W6"/>
                             <constraint firstItem="3on-hP-32S" firstAttribute="top" secondItem="Q3i-4H-x9O" secondAttribute="top" id="Kde-0E-07S"/>
                             <constraint firstItem="Q3i-4H-x9O" firstAttribute="bottom" secondItem="3on-hP-32S" secondAttribute="top" constant="1" id="YyY-FN-Wjx"/>
-                            <constraint firstItem="Odp-8b-RNS" firstAttribute="top" secondItem="3on-hP-32S" secondAttribute="bottom" constant="10" id="hQh-v1-uC1"/>
+                            <constraint firstItem="Odp-8b-RNS" firstAttribute="top" secondItem="3on-hP-32S" secondAttribute="bottom" constant="5" id="hQh-v1-uC1"/>
                             <constraint firstItem="Q3i-4H-x9O" firstAttribute="trailing" secondItem="3on-hP-32S" secondAttribute="trailing" id="nJq-WK-tqG"/>
                         </constraints>
                     </view>
@@ -585,10 +444,15 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="YUn-II-uQM"/>
                     <connections>
-                        <outlet property="addEventButton" destination="6BN-h9-MMl" id="6P9-mL-XFT"/>
                         <outlet property="calendar" destination="3on-hP-32S" id="5GX-eQ-5Pa"/>
                         <outlet property="deleteEventButton" destination="A4A-Yc-IpM" id="yMF-bx-zRD"/>
+                        <outlet property="errorLabel" destination="fE8-cX-6sj" id="iEb-Pe-lDv"/>
+                        <outlet property="inputDate" destination="TIn-lK-ZYK" id="WmH-bh-v4q"/>
+                        <outlet property="inputEventTitle" destination="oCg-FC-GdB" id="DCF-qz-LW1"/>
+                        <outlet property="inputTextView" destination="Bvy-vP-zTr" id="znB-Du-pt5"/>
                         <outlet property="outputTextView" destination="gnz-HU-C1M" id="AEJ-nM-kBG"/>
+                        <outlet property="selectDateLabel" destination="7H8-06-z8l" id="jRt-Yc-UW0"/>
+                        <outlet property="submitButton" destination="jo4-GC-uNb" id="omf-2z-IU3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KcU-j9-r2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -835,9 +699,6 @@
                                     <color key="strokeColor" systemColor="systemYellowColor"/>
                                 </backgroundConfiguration>
                             </buttonConfiguration>
-                            <connections>
-                                <action selector="addEvent:" destination="m2H-hQ-ejL" eventType="touchUpInside" id="0jK-Fm-APj"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scp-rN-1BF">
                             <rect key="frame" x="197" y="0.0" width="197" height="31"/>

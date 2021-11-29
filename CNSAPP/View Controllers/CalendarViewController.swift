@@ -19,13 +19,21 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     @IBOutlet weak var outputTextView: UITextView!
     
     var didLoadData: Bool = false
-     
-    @IBOutlet weak var addEventButton: UIButton!
     
     @IBOutlet weak var deleteEventButton: UIButton!
     
-    @IBAction func addEvent(_ sender: Any) {}
+    @IBOutlet weak var inputEventTitle: UITextField!
     
+    @IBOutlet weak var inputTextView: UITextView!
+    
+    @IBOutlet weak var selectDateLabel: UILabel!
+    
+    @IBOutlet weak var inputDate: UIDatePicker!
+    
+    @IBOutlet weak var submitButton: UIButton!
+    
+    @IBOutlet weak var errorLabel: UILabel!
+        
     var dateStringOutput = ""
     
     var dateDBFormat = Date()
@@ -64,13 +72,16 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             didLoadData = true
         }
         addDbDatesToDatesArray()
-        //setUpElements()
+        setUpElements()
         print("Hit Calendar viewdidload")
         reducedPrivileges()
         calendar.dataSource = self
         calendar.delegate = self
         outputTextView.delegate = self
         getCurrentDate()
+        inputTextView.delegate = self;
+        inputTextView.text = "(Optional) Enter event description"
+        inputTextView.textColor = UIColor.lightGray
     }
     
     var datesArray = ["01-01-2021"]
@@ -124,7 +135,9 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
                 
             }
         }
-        
+        didLoadData = true
+        getData()
+        addDbDatesToDatesArray()
     }
     
     // FSCalendarDelegate for when user selects a date on the calendar
@@ -187,13 +200,84 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     func reducedPrivileges(){
         if ( userEmailCalendar != "Email_test@test.com" ) {
-            addEventButton.isHidden = true
+            inputEventTitle.isHidden = true
+            inputTextView.isHidden = true
+            selectDateLabel.isHidden = true
+            inputDate.isHidden = true
+            submitButton.isHidden = true
             deleteEventButton.isHidden = true
         }
     }
     func setUpElements(){
-        LoginStyling.styleHollowButtonTwo(addEventButton)
+        LoginStyling.styleFilledButton(submitButton)
         LoginStyling.styleHollowButtonThree(deleteEventButton)
     }
 
+    @IBAction func submitBtnTapped(_ sender: Any) {
+        let eventTitle = inputEventTitle.text!
+        var eventDescription = inputTextView.text!
+        let eventDate = inputDate.date
+        
+        // EXPLANATION: turning date input into a string
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        let dateString = formatter.string(from: eventDate)
+
+        if eventTitle == "" {
+            showErrorMessage("Error: Please enter an event title")
+        }
+        else {
+            if eventDescription == "(Optional) Enter event description" {
+                eventDescription = ""
+                print("eventDescription =", eventDescription)
+            }
+            print("eventDescription2 =", eventDescription)
+            db.collection("calendarEvents").addDocument(data: ["eventTitle":eventTitle, "eventDescription":eventDescription, "eventDate":dateString]) { error in
+                
+                if error == nil
+                {
+                    self.getData()
+                    self.addDbDatesToDatesArray()
+                    self.showSimpleAlert()
+                }
+                else {
+                    self.showErrorMessage("Error: Unable to add event")
+                }
+            }
+            
+            inputEventTitle.text = nil
+            inputTextView.text = nil
+            showErrorMessage("")
+            
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "(Optional) Enter event description"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
+    func showSimpleAlert() {
+        let alert = UIAlertController(title: "Success!", message: "Your event was successfully added", preferredStyle: UIAlertController.Style.alert)
+        self.present(alert, animated: true, completion: nil)
+        
+        let when = DispatchTime.now() + 2
+        DispatchQueue.main.asyncAfter(deadline: when){
+          alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func showErrorMessage(_ message:String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
 }

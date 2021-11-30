@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1GK-ee-CaP">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1GK-ee-CaP">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -493,8 +493,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fe7-79-2Oi">
-                                <rect key="frame" x="0.0" y="-61" width="414" height="827"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fe7-79-2Oi">
+                                <rect key="frame" x="0.0" y="-61" width="414" height="874"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inr-rT-JJT">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1659"/>
@@ -627,30 +627,26 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="inr-rT-JJT" firstAttribute="leading" secondItem="Fe7-79-2Oi" secondAttribute="leading" id="KJK-ew-TxQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="inr-rT-JJT" secondAttribute="bottom" id="OTM-gb-7aN"/>
-                                    <constraint firstItem="inr-rT-JJT" firstAttribute="width" secondItem="Fe7-79-2Oi" secondAttribute="width" id="RK2-nT-nr4"/>
-                                    <constraint firstAttribute="trailing" secondItem="inr-rT-JJT" secondAttribute="trailing" id="Re3-dc-F6u"/>
-                                    <constraint firstItem="inr-rT-JJT" firstAttribute="top" secondItem="Fe7-79-2Oi" secondAttribute="top" id="eXe-pq-g0B"/>
+                                    <constraint firstItem="inr-rT-JJT" firstAttribute="leading" secondItem="2B0-2O-gU3" secondAttribute="leading" id="PBx-AP-Leo"/>
+                                    <constraint firstItem="inr-rT-JJT" firstAttribute="centerX" secondItem="Fe7-79-2Oi" secondAttribute="centerX" id="UK8-DQ-tlI"/>
+                                    <constraint firstAttribute="bottom" secondItem="inr-rT-JJT" secondAttribute="bottom" constant="-563" id="YTL-ur-qvR"/>
+                                    <constraint firstAttribute="trailing" secondItem="inr-rT-JJT" secondAttribute="trailing" id="miY-wC-WJX"/>
+                                    <constraint firstItem="inr-rT-JJT" firstAttribute="top" secondItem="2Pb-uz-ZcA" secondAttribute="top" id="yry-6L-OCc"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="2Pb-uz-ZcA"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="2B0-2O-gU3"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-c2-YcH">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-c2-YcH">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-Ui-XN4">
-                                <rect key="frame" x="20" y="763" width="374" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-Ui-XN4">
+                                <rect key="frame" x="0.0" y="763" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Photo" cornerStyle="capsule">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                        <color key="strokeColor" systemColor="systemYellowColor"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
@@ -660,11 +656,20 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xKI-qQ-6KS"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fe7-79-2Oi" firstAttribute="bottom" secondItem="xKI-qQ-6KS" secondAttribute="bottom" constant="80" id="QUh-MM-Vs5"/>
-                            <constraint firstItem="Fe7-79-2Oi" firstAttribute="trailing" secondItem="xKI-qQ-6KS" secondAttribute="trailing" id="Zbo-F9-SbK"/>
-                            <constraint firstItem="Fe7-79-2Oi" firstAttribute="leading" secondItem="xKI-qQ-6KS" secondAttribute="leading" id="t0r-K7-eEX"/>
-                            <constraint firstItem="Fe7-79-2Oi" firstAttribute="top" secondItem="ABf-vn-7rf" secondAttribute="top" id="vuF-Tg-HDP"/>
+                            <constraint firstItem="Fe7-79-2Oi" firstAttribute="top" secondItem="ABf-vn-7rf" secondAttribute="top" constant="-61" id="0DN-Ye-THz"/>
+                            <constraint firstItem="hSW-c2-YcH" firstAttribute="top" secondItem="ABf-vn-7rf" secondAttribute="topMargin" constant="-44" id="CET-Ta-c8N"/>
+                            <constraint firstItem="9F2-Ui-XN4" firstAttribute="bottom" secondItem="xKI-qQ-6KS" secondAttribute="bottom" id="Gs4-W9-vJv"/>
+                            <constraint firstItem="9F2-Ui-XN4" firstAttribute="leading" secondItem="xKI-qQ-6KS" secondAttribute="leading" id="HcK-lM-bqZ"/>
+                            <constraint firstItem="Fe7-79-2Oi" firstAttribute="leading" secondItem="hSW-c2-YcH" secondAttribute="leading" id="JFb-cs-3sk"/>
+                            <constraint firstItem="Fe7-79-2Oi" firstAttribute="trailing" secondItem="hSW-c2-YcH" secondAttribute="trailing" id="Lbg-vd-Vzg"/>
+                            <constraint firstItem="Fe7-79-2Oi" firstAttribute="centerX" secondItem="ABf-vn-7rf" secondAttribute="centerX" id="bSz-JN-GmF"/>
+                            <constraint firstItem="9F2-Ui-XN4" firstAttribute="top" secondItem="xKI-qQ-6KS" secondAttribute="top" constant="719" id="fLz-AY-EZu"/>
+                            <constraint firstAttribute="bottom" secondItem="hSW-c2-YcH" secondAttribute="bottom" constant="854" id="iyO-rM-i2u"/>
+                            <constraint firstItem="9F2-Ui-XN4" firstAttribute="leading" secondItem="hSW-c2-YcH" secondAttribute="leading" id="jht-3S-8tm"/>
+                            <constraint firstItem="xKI-qQ-6KS" firstAttribute="bottom" secondItem="Fe7-79-2Oi" secondAttribute="bottom" id="jm8-zd-j52"/>
+                            <constraint firstItem="9F2-Ui-XN4" firstAttribute="trailing" secondItem="hSW-c2-YcH" secondAttribute="trailing" id="sa3-Hc-Ypl"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Photo Library" image="photo" catalog="system" id="XRa-zp-AFo">

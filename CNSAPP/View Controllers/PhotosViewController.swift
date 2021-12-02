@@ -457,7 +457,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         newButton.backgroundColor = .systemRed
         newButton.setBackgroundImage(UIImage(systemName: "trash"), for: .normal)
         //newButton.adjustsImageSizeForAccessibilityContentSizeCategory = true
-        newButton.currentTitleColor = .systemBackground
+        //newButton.currentTitleColor = .systemBackground
         //newButton.setTitle("Delete", for: .normal)
         //newButton.setTitleColor(.blue, for: .normal)
         newButton.tag = subKount

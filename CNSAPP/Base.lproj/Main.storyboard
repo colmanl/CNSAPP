@@ -213,58 +213,120 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="RJh-K3-kCN">
-                                <rect key="frame" x="0.0" y="54" width="414" height="749"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kdC-QZ-2tn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Countryside Nursery School App!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7E-y1-uN6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Church_border" translatesAutoresizingMaskIntoConstraints="NO" id="MJL-aJ-FBg">
-                                        <rect key="frame" x="0.0" y="127" width="414" height="300"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="C7m-lw-LTJ"/>
-                                            <constraint firstAttribute="height" constant="300" id="zCX-65-CR7"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Mission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFp-8z-b4R">
-                                        <rect key="frame" x="0.0" y="509" width="414" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="axf-BP-8Q5">
-                                        <rect key="frame" x="0.0" y="621" width="414" height="128"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gmL-tf-YQk">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="825"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7u-gv-a2K">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="425"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a3G-Mc-k3u">
+                                                        <rect key="frame" x="10" y="0.0" width="394" height="425"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Countryside Nursery School App!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8A-qp-fgO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="100" id="xJk-Je-Ijz"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Church_border" translatesAutoresizingMaskIntoConstraints="NO" id="T1T-kq-vMW">
+                                                                <rect key="frame" x="0.0" y="108" width="394" height="317"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="8jb-j2-kwp"/>
+                                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="YPr-2R-pTm"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="LightGray"/>
+                                                        <constraints>
+                                                            <constraint firstItem="g8A-qp-fgO" firstAttribute="top" secondItem="a3G-Mc-k3u" secondAttribute="top" id="0yb-3W-ot2"/>
+                                                            <constraint firstItem="T1T-kq-vMW" firstAttribute="top" secondItem="g8A-qp-fgO" secondAttribute="bottom" constant="10" id="ISN-Av-zuz"/>
+                                                            <constraint firstAttribute="bottom" secondItem="T1T-kq-vMW" secondAttribute="bottom" constant="10" id="U0p-64-GHl"/>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="hpE-JP-9S4"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="LightGray"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="a3G-Mc-k3u" secondAttribute="trailing" constant="10" id="9MP-Vh-D0I"/>
+                                                    <constraint firstAttribute="bottom" secondItem="a3G-Mc-k3u" secondAttribute="bottom" id="QmN-T9-n00"/>
+                                                    <constraint firstItem="a3G-Mc-k3u" firstAttribute="top" secondItem="e7u-gv-a2K" secondAttribute="top" id="UC9-6j-Oja"/>
+                                                    <constraint firstAttribute="trailing" secondItem="a3G-Mc-k3u" secondAttribute="trailing" constant="10" id="W89-ls-K8u"/>
+                                                    <constraint firstAttribute="trailing" secondItem="a3G-Mc-k3u" secondAttribute="trailing" constant="10" id="Z59-hw-g6B"/>
+                                                    <constraint firstAttribute="height" constant="425" id="mSd-QF-acJ"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="414" id="tEK-28-ZPG"/>
+                                                    <constraint firstItem="a3G-Mc-k3u" firstAttribute="leading" secondItem="e7u-gv-a2K" secondAttribute="leading" constant="10" id="wJ1-wV-MwH"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bk3-cf-1Sl">
+                                                <rect key="frame" x="0.0" y="425" width="414" height="400"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Jt-be-aTn">
+                                                        <rect key="frame" x="10" y="0.0" width="325" height="447"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Mission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owp-eY-L2u">
+                                                                <rect key="frame" x="0.0" y="0.0" width="325" height="29"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" scrollEnabled="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ynp-hE-TnT">
+                                                                <rect key="frame" x="0.0" y="37" width="325" height="410"/>
+                                                                <color key="backgroundColor" name="LightGray"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="325" id="cLk-ex-Zh4"/>
+                                                                </constraints>
+                                                                <string key="text">     Since 1979, our goal at Countryside has been to provide a happy and positive environment for your child; to help gain an appreciation of the world around them; to experience pleasure through creative expression in art, music and drama; to learn to express themselves; to develop desirable social behavior while learning to deal with his/her feelings and those of their peers.  With these experiences, your child will discover that school and learning is rewarding and fun.</string>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" name="LightGray"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="ynp-hE-TnT" secondAttribute="trailing" constant="5" id="UnF-1s-fGF"/>
+                                                            <constraint firstItem="Owp-eY-L2u" firstAttribute="top" secondItem="8Jt-be-aTn" secondAttribute="top" constant="20" id="hsV-Ph-oJ3"/>
+                                                            <constraint firstItem="ynp-hE-TnT" firstAttribute="leading" secondItem="8Jt-be-aTn" secondAttribute="leading" constant="5" id="jla-sL-XR9"/>
+                                                            <constraint firstItem="ynp-hE-TnT" firstAttribute="top" secondItem="Owp-eY-L2u" secondAttribute="bottom" id="k9w-1N-bG8"/>
+                                                            <constraint firstAttribute="width" constant="325" id="nYR-va-6xY"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="LightGray"/>
+                                                <constraints>
+                                                    <constraint firstItem="8Jt-be-aTn" firstAttribute="leading" secondItem="bk3-cf-1Sl" secondAttribute="leading" constant="10" id="6aI-wK-Gf0"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8Jt-be-aTn" secondAttribute="trailing" constant="10" id="eMl-EZ-am9"/>
+                                                    <constraint firstItem="8Jt-be-aTn" firstAttribute="top" secondItem="bk3-cf-1Sl" secondAttribute="top" id="ieS-GA-d55"/>
+                                                    <constraint firstAttribute="height" constant="400" id="k6z-lK-6K5"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="414" id="uGy-GJ-0rG"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" name="LightGray"/>
-                                        <string key="text">Since 1979, our goal at Countryside has been to provide a happy and positive environment for your child; to help gain an appreciation of the world around them; to experience pleasure through creative expression in art, music and drama; to learn to express themselves; to develop desirable social behavior while learning to deal with his/her feelings and those of their peers.  With these experiences, your child will discover that school and learning is rewarding and fun.</string>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <constraints>
+                                            <constraint firstItem="bk3-cf-1Sl" firstAttribute="top" secondItem="e7u-gv-a2K" secondAttribute="bottom" constant="15" id="IcT-22-vhp"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="MJL-aJ-FBg" firstAttribute="top" secondItem="z7E-y1-uN6" secondAttribute="bottom" constant="10" id="4kN-W1-isB"/>
-                                    <constraint firstItem="z7E-y1-uN6" firstAttribute="leading" secondItem="RJh-K3-kCN" secondAttribute="leading" constant="10" id="5LG-O2-QLC"/>
-                                    <constraint firstAttribute="height" constant="650" id="Bzu-iQ-mUF"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="Jbb-bx-zKq"/>
-                                    <constraint firstItem="MJL-aJ-FBg" firstAttribute="leading" secondItem="RJh-K3-kCN" secondAttribute="leading" constant="20" id="OWb-tO-uAX"/>
-                                    <constraint firstItem="WFp-8z-b4R" firstAttribute="top" secondItem="MJL-aJ-FBg" secondAttribute="bottom" constant="10" id="Omg-Gg-5IG"/>
-                                    <constraint firstAttribute="trailing" secondItem="MJL-aJ-FBg" secondAttribute="trailing" constant="20" id="mPs-Cf-gqJ"/>
-                                    <constraint firstItem="axf-BP-8Q5" firstAttribute="top" secondItem="WFp-8z-b4R" secondAttribute="bottom" id="nCN-CL-VGk"/>
-                                    <constraint firstAttribute="trailing" secondItem="z7E-y1-uN6" secondAttribute="trailing" constant="10" id="yKj-Tc-Yh0"/>
+                                    <constraint firstItem="gmL-tf-YQk" firstAttribute="width" secondItem="4Zl-hu-Oxk" secondAttribute="width" id="NIO-xO-NZu"/>
+                                    <constraint firstItem="gmL-tf-YQk" firstAttribute="leading" secondItem="wn0-6s-MNb" secondAttribute="leading" id="PlW-Ge-KQ0"/>
+                                    <constraint firstItem="gmL-tf-YQk" firstAttribute="trailing" secondItem="wn0-6s-MNb" secondAttribute="trailing" id="Udj-07-jsH"/>
+                                    <constraint firstItem="gmL-tf-YQk" firstAttribute="bottom" secondItem="wn0-6s-MNb" secondAttribute="bottom" id="eOd-eb-Qza"/>
+                                    <constraint firstItem="gmL-tf-YQk" firstAttribute="top" secondItem="wn0-6s-MNb" secondAttribute="top" id="x64-4a-gm2"/>
                                 </constraints>
-                            </stackView>
+                                <viewLayoutGuide key="contentLayoutGuide" id="wn0-6s-MNb"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="4Zl-hu-Oxk"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IIk-LM-3Qu"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="RJh-K3-kCN" firstAttribute="leading" secondItem="IIk-LM-3Qu" secondAttribute="leading" id="Fgj-O0-pBz"/>
-                            <constraint firstItem="RJh-K3-kCN" firstAttribute="top" secondItem="IIk-LM-3Qu" secondAttribute="top" constant="10" id="Hft-Og-OAJ"/>
-                            <constraint firstItem="IIk-LM-3Qu" firstAttribute="bottom" secondItem="RJh-K3-kCN" secondAttribute="bottom" constant="10" id="Yos-7v-Cwy"/>
-                            <constraint firstItem="IIk-LM-3Qu" firstAttribute="trailing" secondItem="RJh-K3-kCN" secondAttribute="trailing" id="hNr-QJ-B5c"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="ded-PS-a8i">
                         <color key="badgeColor" systemColor="secondarySystemBackgroundColor"/>
@@ -457,7 +519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KcU-j9-r2J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4873.913043478261" y="-214.28571428571428"/>
+            <point key="canvasLocation" x="5488" y="-74"/>
         </scene>
         <!--Announcements-->
         <scene sceneID="dYT-oV-OBu">

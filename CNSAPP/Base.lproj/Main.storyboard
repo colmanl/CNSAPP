@@ -793,7 +793,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fh-jh-tNc">
-                                                                <rect key="frame" x="342" y="74" width="43" height="31"/>
+                                                                <rect key="frame" x="342" y="74" width="43" height="42"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                                 <state key="normal" title="Button"/>

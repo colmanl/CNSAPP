@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1GK-ee-CaP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1GK-ee-CaP">
     <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -219,16 +218,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gmL-tf-YQk">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="825"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="825"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7u-gv-a2K">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="425"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="425"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a3G-Mc-k3u">
-                                                        <rect key="frame" x="10" y="0.0" width="325" height="425"/>
+                                                        <rect key="frame" x="10" y="0.0" width="394" height="425"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Countryside Nursery School App!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8A-qp-fgO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="325" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="100" id="xJk-Je-Ijz"/>
                                                                 </constraints>
@@ -237,7 +236,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Church_border" translatesAutoresizingMaskIntoConstraints="NO" id="T1T-kq-vMW">
-                                                                <rect key="frame" x="0.0" y="108" width="325" height="317"/>
+                                                                <rect key="frame" x="0.0" y="108" width="394" height="317"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="YPr-2R-pTm"/>
                                                                 </constraints>
@@ -263,7 +262,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bk3-cf-1Sl">
-                                                <rect key="frame" x="0.0" y="425" width="345" height="400"/>
+                                                <rect key="frame" x="0.0" y="425" width="414" height="400"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Jt-be-aTn">
                                                         <rect key="frame" x="10" y="0.0" width="325" height="446.66666666666669"/>
@@ -532,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6FD-RV-8je" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5822" y="173"/>
+            <point key="canvasLocation" x="6254" y="178"/>
         </scene>
         <!--Photo Library-->
         <scene sceneID="hgQ-oP-LDO">
@@ -708,8 +707,11 @@
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F2-Ui-XN4">
-                                <rect key="frame" x="0.0" y="714" width="414" height="99"/>
+                                <rect key="frame" x="0.0" y="763" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6bu-l5-aVH"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Photo" cornerStyle="capsule">
                                     <backgroundConfiguration key="background">
@@ -732,7 +734,6 @@
                             <constraint firstItem="Fe7-79-2Oi" firstAttribute="leading" secondItem="hSW-c2-YcH" secondAttribute="leading" id="JFb-cs-3sk"/>
                             <constraint firstItem="Fe7-79-2Oi" firstAttribute="trailing" secondItem="hSW-c2-YcH" secondAttribute="trailing" id="Lbg-vd-Vzg"/>
                             <constraint firstItem="Fe7-79-2Oi" firstAttribute="centerX" secondItem="ABf-vn-7rf" secondAttribute="centerX" id="bSz-JN-GmF"/>
-                            <constraint firstItem="9F2-Ui-XN4" firstAttribute="top" secondItem="xKI-qQ-6KS" secondAttribute="top" constant="670" id="fLz-AY-EZu"/>
                             <constraint firstAttribute="bottom" secondItem="hSW-c2-YcH" secondAttribute="bottom" constant="854" id="iyO-rM-i2u"/>
                             <constraint firstItem="9F2-Ui-XN4" firstAttribute="leading" secondItem="hSW-c2-YcH" secondAttribute="leading" id="jht-3S-8tm"/>
                             <constraint firstItem="xKI-qQ-6KS" firstAttribute="bottom" secondItem="Fe7-79-2Oi" secondAttribute="bottom" id="jm8-zd-j52"/>

@@ -51,7 +51,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             
         }
         
-        deleteButton1.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
+       // deleteButton1.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
         
         reducedPrivileges()
         setUpElementsTwo()
@@ -455,6 +455,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
         let newButton = UIButton(frame: CGRect(x: 363, y: 44, width: 43, height: 42))
         newButton.backgroundColor = .systemRed
+        //newButton.setTitleColor(.white, for: .normal)
+        newButton.tintColor = .white
         newButton.setBackgroundImage(UIImage(systemName: "trash"), for: .normal)
         //newButton.adjustsImageSizeForAccessibilityContentSizeCategory = true
         //newButton.currentTitleColor = .systemBackground

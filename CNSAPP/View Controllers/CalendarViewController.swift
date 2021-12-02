@@ -12,7 +12,7 @@ import FirebaseFirestore
 import Foundation
 import SwiftUI
 
-class CalendarViewController: UIViewController, UITextViewDelegate, ObservableObject, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+class CalendarViewController: UIViewController, UITextViewDelegate, ObservableObject, UITextFieldDelegate, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
 
     @IBOutlet weak var calendar: FSCalendar!
     
@@ -38,6 +38,37 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     var dateDBFormat = Date()
     
+    var datesArray = ["01-01-2021"]
+
+    private var db = Firestore.firestore()
+    
+    @Published var eventList = [CalenderEvent]()
+    
+    var userEmailCalendar = LoginViewController.SetUserEmail.userEmail
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if didLoadData == false {
+            getData()
+            didLoadData = true
+        }
+        
+        addDbDatesToDatesArray()
+        setUpElements()
+        reducedPrivileges()
+        calendar.dataSource = self
+        calendar.delegate = self
+        outputTextView.delegate = self
+        inputEventTitle.delegate = self
+        getCurrentDate()
+        inputTextView.delegate = self;
+        //inputTextView.text = "(Optional) Enter event description"
+        inputTextView.textColor = UIColor.lightGray
+        //let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        //view.addGestureRecognizer(tap)
+        
+    }
+    
     func getCurrentDate() {
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -59,39 +90,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             }))
         self.present(alert, animated: true, completion: nil)
         }
-
-    private var db = Firestore.firestore()
-    
-    @Published var eventList = [CalenderEvent]()
-    
-    var userEmailCalendar = LoginViewController.SetUserEmail.userEmail
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if didLoadData == false {
-            getData()
-            didLoadData = true
-        }
-        
-        addDbDatesToDatesArray()
-        setUpElements()
-        print("Hit Calendar viewdidload")
-        reducedPrivileges()
-        calendar.dataSource = self
-        calendar.delegate = self
-        outputTextView.delegate = self
-        inputEventTitle.delegate = self
-        getCurrentDate()
-        inputTextView.delegate = self;
-        inputTextView.text = "(Optional) Enter event description"
-        inputTextView.textColor = UIColor.label
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        view.addGestureRecognizer(tap)
-        
-    }
-    
-  
-    var datesArray = ["01-01-2021"]
     
     @objc func handleTap(){
         inputTextView.resignFirstResponder()
@@ -292,22 +290,14 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    func textViewShouldReturn(_ inputTextView: UITextView) -> Bool {
-        inputTextView.resignFirstResponder()
-        return true
-     }
     
-}
-extension CalendarViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ inputEventTitle: UITextField) -> Bool{
         inputEventTitle.resignFirstResponder()
         return true
     }
     
+    func textViewShouldReturn(_ inputTextView: UITextView) -> Bool {
+        inputTextView.resignFirstResponder()
+        return true
+     }
 }
-//extension CalendarViewController: UITextViewDelegate{
-   // func textViewShouldReturn(_ inputTextView: UITextView) -> Bool {
-   //     inputTextView.resignFirstResponder()
-     //   return true
-   // }
-//}//

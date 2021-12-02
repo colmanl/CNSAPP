@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    //Connections to View Controller UI
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -18,6 +19,14 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
 
+    @IBOutlet weak var signUpBackButton: UIButton!
+    
+    @IBOutlet weak var forgotPassButton: UIButton!
+    
+    struct SetUserEmail {
+        static var userEmail = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,20 +40,35 @@ class LoginViewController: UIViewController {
         LoginStyling.styleTextField(emailTextField)
         LoginStyling.styleTextField(passwordTextField)
         LoginStyling.styleHollowButton(loginButton)
+        LoginStyling.styleFilledButton(forgotPassButton)
         passwordTextField.isSecureTextEntry = true
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   
+    //Everything after this point controls button actions after being tapped
+    
+    //Sends user to the ForgotPassword view controller
+    @IBAction func forgotPassTapped(_ sender: Any) {
+        let forgotPassViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.forgotPassViewController) as?
+        ForgotPasswordViewController
+        
+        self.view.window?.rootViewController = forgotPassViewController
+        self.view.window?.makeKeyAndVisible()
     }
-    */
-
+    
+    
+    //Sends user back to sign up page when clicked
+    @IBAction func signUpBackTapped(_ sender: Any) {
+        //Code that transfers user between pages
+        let signUpViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.signUpViewController) as?
+        SignUpViewController
+        
+        self.view.window?.rootViewController = signUpViewController
+        self.view.window?.makeKeyAndVisible()
+    }
+    
+    //Function that controls the login button actions after being tapped
     @IBAction func loginTapped(_ sender: Any) {
         
         //Validate Text Fields
@@ -90,6 +114,10 @@ class LoginViewController: UIViewController {
         //Clean Fields
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        //Set username to determine privileges
+        SetUserEmail.userEmail = email
+        
         //Signing in User
         Auth.auth().signIn(withEmail: email, password: password) { (result , error) in
             //error signing in

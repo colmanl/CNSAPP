@@ -90,6 +90,10 @@ let gcmMessageIDKey = "CNUCap.me"
                                   withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
                                     -> Void) {
         let userInfo = notification.request.content.userInfo
+        for (key, value) in userInfo{
+            print(String(describing: key))
+            print(String(describing: value))
+        }
 
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         Messaging.messaging().appDidReceiveMessage(userInfo)

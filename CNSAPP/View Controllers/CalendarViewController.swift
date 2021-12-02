@@ -43,6 +43,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM. d"
         dateStringOutput = dateFormatter.string(from: date)
+        
     }
     
     @IBAction func showDeletionAlert() {
@@ -71,6 +72,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             getData()
             didLoadData = true
         }
+        
         addDbDatesToDatesArray()
         setUpElements()
         print("Hit Calendar viewdidload")
@@ -78,13 +80,23 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         calendar.dataSource = self
         calendar.delegate = self
         outputTextView.delegate = self
+        inputEventTitle.delegate = self
         getCurrentDate()
         inputTextView.delegate = self;
         inputTextView.text = "(Optional) Enter event description"
-        inputTextView.textColor = UIColor.lightGray
+        inputTextView.textColor = UIColor.label
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tap)
+        
     }
     
+  
     var datesArray = ["01-01-2021"]
+    
+    @objc func handleTap(){
+        inputTextView.resignFirstResponder()
+        inputEventTitle.resignFirstResponder()
+    }
     
     func addDbDatesToDatesArray() {
         datesArray.removeAll()
@@ -280,4 +292,22 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         errorLabel.text = message
         errorLabel.alpha = 1
     }
+    func textViewShouldReturn(_ inputTextView: UITextView) -> Bool {
+        inputTextView.resignFirstResponder()
+        return true
+     }
+    
 }
+extension CalendarViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ inputEventTitle: UITextField) -> Bool{
+        inputEventTitle.resignFirstResponder()
+        return true
+    }
+    
+}
+//extension CalendarViewController: UITextViewDelegate{
+   // func textViewShouldReturn(_ inputTextView: UITextView) -> Bool {
+   //     inputTextView.resignFirstResponder()
+     //   return true
+   // }
+//}//

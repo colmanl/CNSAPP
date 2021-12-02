@@ -54,7 +54,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         deleteButton1.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
         
         reducedPrivileges()
-
+        setUpElementsTwo()
         
     }
     
@@ -660,10 +660,21 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             addPicButton.isHidden = true
         }
     }
-    
-    
-    
+
+    func setUpElementsTwo(){
+        //Hide Error Label
+      //  errorLabel.alpha = 0
+        
+      //  LoginStyling.styleTextField(emailTextField)
+      //  LoginStyling.styleTextField(passwordTextField)
+        //LoginStyling.styleHollowButtonTwo(addPicButton)
+       // LoginStyling.styleHollowButtonThree(deleteEventButton)
+
+       LoginStyling.styleFilledButton(addPicButton)
+       // passwordTextField.isSecureTextEntry = true
+    }
 }
+
 
 public struct Photo: Codable {
 

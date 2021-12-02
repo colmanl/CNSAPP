@@ -68,17 +68,23 @@ struct SearchViewController: View {
                 
                 if self.txt != ""{
                     
-                    if  self.data.filter({$0.firstname.lowercased().contains(self.txt.lowercased())}).count == 0{
+                    if  self.data.filter({$0.firstname.lowercased().contains(self.txt.lowercased())}).count == 0
+                            //&& self.data.filter({$0.lastname.lowercased().contains(self.txt.lowercased())}).count == 0
+                    {
+                        
                         
                         Text("No Results Found")
                     }
+                  //  else if self.data.filter({$0.lastname.lowercased().contains(self.txt.lowercased())}).count == 0{
+                    //    Text("No Results Found")
+                    //}
                     else{
                         
                     List(self.data.filter{$0.firstname.lowercased().contains(self.txt.lowercased())}){i in
                                 
                         NavigationLink(destination: Detail(data: i)) {
                             
-                            Text(i.firstname)
+                            Text(i.firstname) + Text(" ") + Text(i.lastname)
                         }
                                 
                             
@@ -87,6 +93,31 @@ struct SearchViewController: View {
                     }
 
                 }
+         /*       else if self.txt != ""{
+                    if  self.data.filter({$0.lastname/*.lowercased()*/.contains(self.txt.lowercased())}).count == 0
+                            //&& self.data.filter({$0.lastname.lowercased().contains(self.txt.lowercased())}).count == 0
+                    {
+                        
+                        
+                        Text("No Results Found")
+                    }
+                  //  else if self.data.filter({$0.lastname.lowercased().contains(self.txt.lowercased())}).count == 0{
+                    //    Text("No Results Found")
+                    //}
+                    else{
+                        
+                    List(self.data.filter{$0.firstname.lowercased().contains(self.txt.lowercased())}){i in
+                                
+                        NavigationLink(destination: Detail(data: i)) {
+                            
+                            Text(i.firstname) + Text(" ") + Text(i.lastname)
+                        }
+                                
+                            
+                    }.frame(height: 250)
+                            .cornerRadius(10)
+                    }
+                }*/
                 
                 
             }
@@ -133,10 +164,30 @@ struct SearchViewController: View {
         
         var data: dataType
         var body : some View{
-            Text(data.firstname)
-            Text(data.lastname)
-            Text(data.email)
-            Text(data.phoneNumber)
+            NavigationView{
+                
+                List{
+                    
+                    Section{
+                
+                        Text(data.firstname)
+                    }   header:{ Text("First Name")}
+                    Section{
+                        Text(data.lastname)
+            
+                    }header:{ Text("Last Name")}
+                    Section{
+                        Text(data.email)
+                    }header:{ Text("Email")}
+                    Section{
+                    
+                        Text(data.phoneNumber)
+                    
+                    } header:{ Text("Phone Number")}
+                }.listStyle(.insetGrouped)
+                    .navigationTitle("Contact Information")
+            
         }
+            
     }
-
+}

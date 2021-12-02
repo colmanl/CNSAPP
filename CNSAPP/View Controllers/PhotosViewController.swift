@@ -554,10 +554,10 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
       //  LoginStyling.styleTextField(emailTextField)
       //  LoginStyling.styleTextField(passwordTextField)
-        LoginStyling.styleHollowButtonTwo(addPicButton)
+        //LoginStyling.styleHollowButtonTwo(addPicButton)
        // LoginStyling.styleHollowButtonThree(deleteEventButton)
 
-    //   LoginStyling.styleFilledButton(submitButton)
+       LoginStyling.styleFilledButton(addPicButton)
        // passwordTextField.isSecureTextEntry = true
     }
 }

@@ -20,6 +20,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     var didLoadData: Bool = false
     
+    @IBOutlet weak var newEventLabel: UILabel!
+    
     @IBOutlet weak var deleteEventButton: UIButton!
     
     @IBOutlet weak var inputEventTitle: UITextField!
@@ -209,7 +211,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
      }
     
     func reducedPrivileges(){
-        if ( userEmailCalendar != "Email_test@test.com" ) {
+        if ( userEmailCalendar != "cnskids@gmail.com" ) {
+            newEventLabel.isHidden = true
             inputEventTitle.isHidden = true
             inputTextView.isHidden = true
             selectDateLabel.isHidden = true
@@ -290,13 +293,13 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    
+    /*
     func textFieldShouldReturn(_ inputEventTitle: UITextField) -> Bool{
         inputEventTitle.resignFirstResponder()
         return true
     }
-    
-    func textViewShouldReturn(_ inputTextView: UITextView) -> Bool {
+    */
+    private func textViewShouldReturn(_ inputTextView: UITextView) -> Bool {
         inputTextView.resignFirstResponder()
         return true
      }

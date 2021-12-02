@@ -338,10 +338,10 @@
                                 <rect key="frame" x="25" y="349" width="364" height="464"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" text="Click calendar to view events" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-HU-C1M" userLabel="Output Text View">
-                                        <rect key="frame" x="0.0" y="0.0" width="364" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="120"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="W87-p0-CEM"/>
+                                            <constraint firstAttribute="height" constant="120" id="W87-p0-CEM"/>
                                         </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -349,17 +349,20 @@
                                         <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aOT-zi-dn0" userLabel="New Event Stack View">
-                                        <rect key="frame" x="0.0" y="100" width="364" height="364"/>
+                                        <rect key="frame" x="0.0" y="120" width="364" height="344"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-Na-3rK">
-                                                <rect key="frame" x="0.0" y="0.0" width="364" height="78"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="30"/>
                                                 <color key="backgroundColor" name="LightGray"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="tJo-JK-USA"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter event title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-FC-GdB">
-                                                <rect key="frame" x="0.0" y="78" width="364" height="35"/>
+                                                <rect key="frame" x="0.0" y="30" width="364" height="35"/>
                                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="wzd-g9-bOc"/>
@@ -367,32 +370,31 @@
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" text="(Optional) Enter event description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-vP-zTr" userLabel="Input Text View">
-                                                <rect key="frame" x="0.0" y="113" width="364" height="125"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" text="(Optional) Enter event description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-vP-zTr" userLabel="Input Text View">
+                                                <rect key="frame" x="0.0" y="65" width="364" height="120"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" selected="YES" adjustable="YES" allowsDirectInteraction="YES"/>
                                                 </accessibility>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="125" id="MhO-GC-a6X"/>
+                                                    <constraint firstAttribute="height" constant="120" id="FhF-zJ-UPs"/>
                                                 </constraints>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                                                <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5p-OU-xYa">
-                                                <rect key="frame" x="0.0" y="238" width="364" height="56"/>
+                                                <rect key="frame" x="0.0" y="185" width="364" height="89"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7H8-06-z8l">
-                                                        <rect key="frame" x="0.0" y="0.0" width="254" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="254" height="89"/>
                                                         <color key="backgroundColor" name="LightGray"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="TIn-lK-ZYK">
-                                                        <rect key="frame" x="254" y="0.0" width="110" height="56"/>
+                                                        <rect key="frame" x="254" y="0.0" width="110" height="89"/>
                                                         <color key="backgroundColor" name="LightGray"/>
                                                         <color key="tintColor" systemColor="labelColor"/>
                                                         <constraints>
@@ -405,7 +407,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6b-lC-MiY">
-                                                <rect key="frame" x="0.0" y="294" width="364" height="50"/>
+                                                <rect key="frame" x="0.0" y="274" width="364" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jo4-GC-uNb" userLabel="Submit Button">
                                                         <rect key="frame" x="0.0" y="0.0" width="182" height="50"/>
@@ -448,7 +450,7 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fE8-cX-6sj" userLabel="Error Label">
-                                                <rect key="frame" x="0.0" y="344" width="364" height="20"/>
+                                                <rect key="frame" x="0.0" y="324" width="364" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="iVe-mv-BVa"/>
                                                 </constraints>
@@ -458,6 +460,9 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" name="LightGray"/>
+                                        <constraints>
+                                            <constraint firstItem="Bvy-vP-zTr" firstAttribute="top" secondItem="oCg-FC-GdB" secondAttribute="bottom" constant="20" id="jqa-f6-1Og"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -499,6 +504,7 @@
                         <outlet property="inputDate" destination="TIn-lK-ZYK" id="WmH-bh-v4q"/>
                         <outlet property="inputEventTitle" destination="oCg-FC-GdB" id="DCF-qz-LW1"/>
                         <outlet property="inputTextView" destination="Bvy-vP-zTr" id="znB-Du-pt5"/>
+                        <outlet property="newEventLabel" destination="DrY-Na-3rK" id="m3L-Ex-bqb"/>
                         <outlet property="outputTextView" destination="gnz-HU-C1M" id="AEJ-nM-kBG"/>
                         <outlet property="selectDateLabel" destination="7H8-06-z8l" id="jRt-Yc-UW0"/>
                         <outlet property="submitButton" destination="jo4-GC-uNb" id="omf-2z-IU3"/>
@@ -977,13 +983,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Omy-vV-Ggd">
                                 <rect key="frame" x="40" y="94" width="334" height="300.33333333333331"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email_test@test.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vME-Hm-fVH">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cnskids@gmail.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vME-Hm-fVH">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Test 123!" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZy-L8-8vA">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cnsKids567!" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZy-L8-8vA">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>

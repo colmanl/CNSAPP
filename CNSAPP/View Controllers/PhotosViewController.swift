@@ -658,7 +658,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
 
     func reducedPrivileges(){
-        if ( userEmailPhotos != "Email_test@test.com" ) {
+        if ( userEmailPhotos != "cnskids@gmail.com" ) {
             addPicButton.isHidden = true
         }
     }

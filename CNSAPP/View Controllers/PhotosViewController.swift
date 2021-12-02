@@ -12,7 +12,10 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
     let database = Firestore.firestore()
     var imgPath = ""
+    var delArray = [String]()
+    var delArray2 = [Photo]()
     var fetchingMore = false
+    var dataFetch = false
     var counter = 0
     var subcounter = 0
     var subcounter1 = 0
@@ -37,9 +40,18 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             }
             self?.numOfPics = text
             print(text)
+            
+            self?.getThoseImages()
+            
+            
+//            let timeInterval = String(NSDate().timeIntervalSince1970)
+//            print(timeInterval)
+    //bbbbbbbbbbbb
             self?.firstLoad()
             
         }
+        
+        deleteButton1.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
         
         reducedPrivileges()
 
@@ -55,15 +67,41 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         }
     }
     
-    func addNum(){
+    func addNum(ref: Double){
         numOfPics = numOfPics + 1
         print("*****NEW nop: \(numOfPics)")
+        
+        
+        let dataRef = database.collection("imageReference")
+        dataRef.whereField("postID", isEqualTo: ref).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+
+                    let fark = document.data()
+
+                    var newPhoto = Photo(name: document.documentID)
+
+                    newPhoto.capTxt = fark["capTxt"] as? String
+                    newPhoto.titleTxt = fark["titleTxt"] as? String
+                    newPhoto.postID = fark["postID"] as? Double
+                    newPhoto.imgString = fark["imgString"] as? String
+                    let fork = fark["imgString"] as? String
+                    self.delArray.append(fork ?? "oops")
+                    self.delArray2.append(newPhoto)
+
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
         
     }
     
     
     
-   
+    @IBOutlet var mainThing: UIView!
+    
     @IBOutlet weak var SkrollView: UIScrollView!
     
     
@@ -81,7 +119,10 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
     }
     
+
     @IBOutlet weak var addPicButton: UIButton!
+    
+    @IBOutlet weak var deleteButton1: UIButton!
     
     @IBOutlet weak var starterImg: UIImageView!
     
@@ -107,17 +148,58 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         let offsetY = SkrollView.contentOffset.y
         let contentHeight = SkrollView.contentSize.height
         if offsetY > contentHeight - SkrollView.frame.height{
-            if !fetchingMore{
+            
+
+            
+                if !fetchingMore{
+         
                 if numOfPics > counter{
-                   //print("hello")
-                   beginBatchFetch()
                    
+                   beginBatchFetch()
+                
                 }
+                
+                
+                
             }
            
         }
     
     }
+    
+    
+    func getThoseImages(){
+        
+        let dataRef = database.collection("imageReference")
+        dataRef.order(by: "postID").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    
+                    
+                    
+                    let fark = document.data()
+                    
+                    var newPhoto = Photo(name: document.documentID)
+                    
+                    newPhoto.capTxt = fark["capTxt"] as? String
+                    newPhoto.titleTxt = fark["titleTxt"] as? String
+                    newPhoto.postID = fark["postID"] as? Double
+                    newPhoto.imgString = fark["imgString"] as? String
+                    let fork = fark["imgString"] as? String
+                    self.delArray.append(fork ?? "oops")
+                    self.delArray2.append(newPhoto)
+                    
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+        
+       
+        
+    }
+    
     
     func beginBatchFetch(){
         fetchingMore = true
@@ -197,8 +279,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
          
       }
             let docPath = "imageReference/" + String(subsubcounter)
-           // print("subcounter: \(subsubcounter)")
-           // print("docpath is: \(docPath)")
+       
             
             let docRef = database.document(docPath)
             docRef.getDocument { snapshot, error in
@@ -349,26 +430,17 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
     func setBaseViewsAutomatically(subKount: Int) -> Int{
         
-        let docPath = "imageReference/" + String(subKount)
-        //print("auto subcounter: \(subKount)")
-        //print(" auto docpath is: \(docPath)")
+        var coolPath = "erm"
         
-        let docRef = database.document(docPath)
-        docRef.getDocument { snapshot, error in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
-
-            guard let text = data["imgString"] as? String else {
-                return
-            }
-            self.imgPath = text
-            //print("autotext is: \(text)")
-            //print("auto img path is: \(self.imgPath)")
-            //print("subcounter in doc ref in auto is: \(subKount)")
-            self.setAutoImage(imagPath: text, subKount: subKount)
-            
+        if counter != delArray2.count{
+            coolPath = delArray2[subKount].imgString ?? "nil"
+        
         }
+    
+    
+        
+        self.setAutoImage(imagPath: coolPath, subKount: subKount)
+        
         
         return subKount + 1
         
@@ -378,8 +450,18 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
         
         let newView = UIView()
-        NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 550).isActive = true
+        NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 570).isActive = true
         newView.backgroundColor = .secondarySystemBackground
+        
+        let newButton = UIButton(frame: CGRect(x: 363, y: 44, width: 43, height: 42))
+        newButton.backgroundColor = .systemRed
+        newButton.setBackgroundImage(UIImage(systemName: "trash"), for: .normal)
+        //newButton.adjustsImageSizeForAccessibilityContentSizeCategory = true
+        newButton.currentTitleColor = .systemBackground
+        //newButton.setTitle("Delete", for: .normal)
+        //newButton.setTitleColor(.blue, for: .normal)
+        newButton.tag = subKount
+        newButton.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
         
         let newImageView = UIImageView(frame: CGRect(x: 0, y: 37, width: 414, height: 414))
         newImageView.contentMode = UIView.ContentMode.scaleAspectFit
@@ -396,11 +478,11 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         }
         
         //add
-        let newLabel = UILabel(frame: CGRect(x: 13, y: 449, width: 325, height: 37))
+        let newLabel = UILabel(frame: CGRect(x: 13, y: 449, width: 393, height: 37))
         newLabel.textColor = .label
         // set label color to label. set view and wg
         
-        var string = "Testing"
+        var string = self.delArray2[subKount].capTxt ?? "No Title"
         var attributedtext = NSMutableAttributedString(string: string)
         attributedtext.addAttribute(
             .font,
@@ -411,8 +493,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         
         let newTextView = UITextView(frame: CGRect(x: 8, y: 482, width: 378, height: 78))
         newTextView.backgroundColor = .secondarySystemBackground
-        //newTextView.textColor = .label
-         string = "testing testing 123"
+       
+         string = self.delArray2[subKount].titleTxt ?? "Nothing to see here"
          attributedtext = NSMutableAttributedString(string: string)
         attributedtext.addAttribute(
             .font,
@@ -423,73 +505,11 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
       
         newTextView.attributedText = attributedtext
         
-        let docPath = "imageReference/" + String(subKount)
-       // print("text subcounter: \(subKount)")
-       // print("text docpath is: \(docPath)")
-        
-        let docRef = database.document(docPath)
-        docRef.getDocument { snapshot, error in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
-
-            guard let text = data["titleTxt"] as? String else {
-                return
-            }
-            
-            let string = text
-            let attributedtext = NSMutableAttributedString(string: string)
-            attributedtext.addAttribute(
-                .font,
-                value: UIFont.systemFont(ofSize: 28, weight: .bold),
-                range: NSRange(location: 0, length: string.count)
-            )
-            newLabel.attributedText = attributedtext
-            
-        
-            //print("label text is: \(text)")
-           
-            
-        }
-        
-        docRef.getDocument { snapshot, error in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
-
-            guard let text = data["capTxt"] as? String else {
-                return
-            }
-            
-            //
-            
-            
-            let string = text
-            let attributedtext = NSMutableAttributedString(string: string)
-            attributedtext.addAttribute(
-                .font,
-                value: UIFont.systemFont(ofSize: 19, weight: .regular),
-                range: NSRange(location: 0, length: string.count)
-            
-            )
-            attributedtext.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.label, range: NSRange(location: 0, length: string.count))
-           
-            
-            //
-           // print("label text is: \(text)")
-          
-            
-            
-            
-            newTextView.attributedText = attributedtext
-            
-        }
-        
-        
         
         newView.addSubview(newImageView)
         newView.addSubview(newLabel)
         newView.addSubview(newTextView)
+        newView.addSubview(newButton)
         BestStack.addArrangedSubview(newView)
         
         
@@ -542,13 +562,133 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             picker.dismiss(animated: true, completion: nil)
         }
+    
+    @objc func deletePhoto(sender:UIButton){
+        
+        let dog = sender.tag
+        var numberPix = 0
+        print(dog)
+        //Replace view in UIStackview
+            let newView = UIView()
+            NSLayoutConstraint(item: newView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 650).isActive = true
+            newView.backgroundColor = .secondarySystemBackground
+        
+       
+        
+            let newImageView = UIImageView(frame: CGRect(x: 0, y: 37, width: 414, height: 414))
+            newImageView.contentMode = UIView.ContentMode.scaleAspectFit
+            
+            newImageView.image = UIImage(named: "redx")
+            newView.addSubview(newImageView)
+            
+        
+            BestStack.replaceView(atIndex: dog, withView: newView)
+            BestStack.reloadInputViews()
+        
+        //delete database reference
+        
+             //   let strink = String(dog)
+        let imageSubstring = delArray2[dog].imgString ?? "ohno"
+        let start = imageSubstring.index(imageSubstring.startIndex, offsetBy: 7)
+        let range = start...
+        let daSting = String(imageSubstring[range])
+
+        let schmeckle = delArray2[dog].postID
+        
+        database.collection("imageReference").whereField("postID", isEqualTo: schmeckle ?? -1)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                        document.reference.delete()
+                    }
+                }
+        }
+        
+        
+        
+        
+        
+
+
+                    let storageRef = Storage.storage().reference(withPath: "images")
+                    let desertRef = storageRef.child(daSting)
+
+                    // Delete the file
+                    desertRef.delete { error in
+                      if let error = error {
+                        // Uh-oh, an error occurred!
+                          print("error: \(error)")
+                      } else {
+                        // File deleted successfully
+                          print("suck sess")
+                      }
+                    }
+
+
+
+
+
+        //Change Image count
+            let docRef = database.document("imageReference/imgCount")
+            docRef.getDocument { snapshot, error in
+                guard let data = snapshot?.data(), error == nil else{
+                    return
+                }
+
+                guard let text = data["count"] as? Int else {
+                    return
+                }
+                numberPix = text
+                numberPix = numberPix - 1
+                self.database.collection("imageReference").document("imgCount").setData([ "count": numberPix ], merge: true)
+
+
+            }
+
+
+
+    }
+    
+    
+    
 
     func reducedPrivileges(){
         if ( userEmailPhotos != "Email_test@test.com" ) {
             addPicButton.isHidden = true
         }
-    }    
+    }
+    
+    
+    
 }
 
-    
+public struct Photo: Codable {
+
+    let name: String
+    var imgString: String?
+    var postID: Double?
+    var titleTxt: String?
+    var capTxt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case imgString = "nope"
+        case postID
+        case titleTxt = "No Title"
+        case capTxt = "No caption entered."
+    }
+
+}
+
+@available(iOS 9.0, *)
+extension UIStackView {
+    func replaceView(atIndex index: Int, withView view: UIView) {
+        let viewToRemove = arrangedSubviews[index]
+        removeArrangedSubview(viewToRemove)
+        insertArrangedSubview(view, at: index)
+    }
+}
 

@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -487,17 +488,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fe7-79-2Oi">
-                                <rect key="frame" x="0.0" y="-61" width="414" height="901"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fe7-79-2Oi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inr-rT-JJT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1659"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1847"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OHc-ga-IQV">
-                                                <rect key="frame" x="0.0" y="9" width="414" height="1650"/>
+                                                <rect key="frame" x="0.0" y="9" width="414" height="1838"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1SW-Af-cIQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="128" id="Crl-fZ-Ta1"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6J-Jd-5xC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
+                                                        <rect key="frame" x="0.0" y="128" width="414" height="570"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon2x" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jug-Sc-PZM">
                                                                 <rect key="frame" x="0.0" y="27" width="414" height="414"/>
@@ -520,19 +528,28 @@
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="change me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2q-RN-YZi">
-                                                                <rect key="frame" x="13" y="449" width="325" height="37"/>
+                                                                <rect key="frame" x="13" y="449" width="393" height="37"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Rs-fi-6Sm">
+                                                                <rect key="frame" x="363" y="34" width="43" height="42"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="filled" title="">
+                                                                    <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
+                                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                                                </buttonConfiguration>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="550" id="tgw-yY-CaP"/>
+                                                            <constraint firstAttribute="height" constant="570" id="tgw-yY-CaP"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzR-O5-8sN">
-                                                        <rect key="frame" x="0.0" y="550" width="414" height="550"/>
+                                                        <rect key="frame" x="0.0" y="698" width="414" height="570"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon2x" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5XJ-5L-f3X">
                                                                 <rect key="frame" x="0.0" y="37" width="414" height="414"/>
@@ -540,7 +557,7 @@
                                                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="change me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0n-Zn-siD">
-                                                                <rect key="frame" x="13" y="449" width="325" height="37"/>
+                                                                <rect key="frame" x="13" y="449" width="393" height="37"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                                 <nil key="textColor"/>
@@ -561,14 +578,23 @@
                                                                 </attributedString>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcO-km-Q3k">
+                                                                <rect key="frame" x="363" y="40" width="43" height="42"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="filled" title="">
+                                                                    <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
+                                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                                                </buttonConfiguration>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="550" id="LD7-am-a1b"/>
+                                                            <constraint firstAttribute="height" constant="570" id="LD7-am-a1b"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Jl-YB-nDK">
-                                                        <rect key="frame" x="0.0" y="1100" width="414" height="550"/>
+                                                        <rect key="frame" x="0.0" y="1268" width="414" height="570"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon2x" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2EX-2f-M7S">
                                                                 <rect key="frame" x="0.0" y="37" width="414" height="414"/>
@@ -576,7 +602,7 @@
                                                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="change me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnr-RJ-YEz">
-                                                                <rect key="frame" x="13" y="449" width="325" height="37"/>
+                                                                <rect key="frame" x="13" y="449" width="393" height="37"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                                 <nil key="textColor"/>
@@ -597,10 +623,19 @@
                                                                 </attributedString>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gk-9S-0Y3">
+                                                                <rect key="frame" x="363" y="40" width="43" height="42"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="filled" title="">
+                                                                    <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
+                                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                                                </buttonConfiguration>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="550" id="AUG-Rb-QJh"/>
+                                                            <constraint firstAttribute="height" constant="570" id="AUG-Rb-QJh"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -671,6 +706,8 @@
                         <outlet property="caption1" destination="s3h-5o-Wib" id="Fje-0f-s6f"/>
                         <outlet property="caption2" destination="iJM-h7-f81" id="TVt-UR-Syn"/>
                         <outlet property="caption3" destination="F9c-aN-g5a" id="Jnb-Av-1Xr"/>
+                        <outlet property="deleteButton1" destination="5Rs-fi-6Sm" id="Z41-VR-M89"/>
+                        <outlet property="mainThing" destination="ABf-vn-7rf" id="q7x-A3-txY"/>
                         <outlet property="starterImg" destination="Jug-Sc-PZM" id="3X7-xh-DrR"/>
                         <outlet property="starterImg2" destination="5XJ-5L-f3X" id="eOu-3q-1Aj"/>
                         <outlet property="starterImg3" destination="2EX-2f-M7S" id="PKO-Gl-ENq"/>
@@ -742,7 +779,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVh-FO-gO5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3986.9565217391309" y="1253.5714285714284"/>
+            <point key="canvasLocation" x="3977" y="1317"/>
         </scene>
         <!--Help-->
         <scene sceneID="kEs-91-DOB">
@@ -961,6 +998,7 @@
         <image name="hand.raised.fill" catalog="system" width="128" height="124"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -221,8 +221,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         }
     }
     func setUpElements(){
-        LoginStyling.styleFilledButton(submitButton)
-        LoginStyling.styleHollowButtonThree(deleteEventButton)
+        //LoginStyling.styleFilledButton(submitButton)
+        //LoginStyling.styleHollowButtonThree(deleteEventButton)
     }
 
     @IBAction func submitBtnTapped(_ sender: Any) {

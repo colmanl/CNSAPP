@@ -57,7 +57,9 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
     
     @IBAction func submitPhoto(_ sender: Any) {
         
-    
+     var numberPix = 100000
+     let timeInterval = Double(NSDate().timeIntervalSince1970)
+     print(timeInterval)
         
      let randomID = UUID.init().uuidString
      let uploadRef = Storage.storage().reference(withPath: "images/\(randomID).png")
@@ -73,7 +75,7 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
                             print("Put is complete and I got this back: \(String(describing: downloadMetadata))")
                         }
         
-        let numRef = String(numOfPics)
+        let numRef = UUID.init().uuidString
         print("******vc =num of pics is: \(numOfPics) *****")
         
         database.collection("imageReference").document(numRef).setData([
@@ -86,8 +88,28 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
                             }
                         }
         
-        numOfPics = numOfPics + 1
-        database.collection("imageReference").document("imgCount").setData([ "count": numOfPics ], merge: true)
+        //numOfPics = numOfPics + 1
+        
+        let docRef = database.document("imageReference/imgCount")
+        docRef.getDocument { snapshot, error in
+            guard let data = snapshot?.data(), error == nil else{
+                return
+            }
+
+            guard let text = data["count"] as? Int else {
+                return
+            }
+            numberPix = text
+            numberPix = numberPix + 1
+            self.database.collection("imageReference").document("imgCount").setData([ "count": numberPix ], merge: true)
+
+
+        }
+        
+        
+        
+       // database.collection("imageReference").document("imgCount").setData([ "count": numOfPics ], merge: true)
+        database.collection("imageReference").document(numRef).setData([ "postID": timeInterval ], merge: true)
         
         let newTitle = titleSpot.text
         let newCap = capSpot.text
@@ -97,7 +119,7 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
         database.collection("imageReference").document(numRef).setData([ "capTxt": newCap ?? "" ], merge: true)
         
         
-        vc?.addNum()
+        vc?.addNum(ref: timeInterval)
         
         self.dismiss(animated: true)
         

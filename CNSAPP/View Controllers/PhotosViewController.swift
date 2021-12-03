@@ -51,7 +51,12 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             
         }
         
-       // deleteButton1.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
+        deleteButton1.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
+        deleteButton2.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
+        deleteButton3.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
+        
+        
+        
         
         reducedPrivileges()
         setUpElementsTwo()
@@ -124,6 +129,11 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
     @IBOutlet weak var deleteButton1: UIButton!
     
+    @IBOutlet weak var deleteButton2: UIButton!
+    
+    @IBOutlet weak var deleteButton3: UIButton!
+    
+    
     @IBOutlet weak var starterImg: UIImageView!
     
 
@@ -191,7 +201,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                     self.delArray.append(fork ?? "oops")
                     self.delArray2.append(newPhoto)
                     
-                    print("\(document.documentID) => \(document.data())")
+                   // print("\(document.documentID) => \(document.data())")
                 }
             }
         }

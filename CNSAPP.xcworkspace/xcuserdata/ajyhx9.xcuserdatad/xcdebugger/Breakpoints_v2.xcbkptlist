@@ -3,4 +3,130 @@
    uuid = "EE37220D-5E83-4D9C-89D9-A3E52ABC0AB7"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B1361AE-2677-42CF-BF42-413A0B256231"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CNSAPP/View Controllers/PhotosViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "addPic(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F77D856F-BAB7-4028-95F7-5666118A3C19"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CNSAPP/View Controllers/PhotosViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "PhotosViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "F77D856F-BAB7-4028-95F7-5666118A3C19 - 29e6c92814af2d4c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CNSAPP.PhotosViewController.deleteButton2.getter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "CNSAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajyhx9/Documents/GitHub/CNSAPP/CNSAPP/View%20Controllers/PhotosViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "F77D856F-BAB7-4028-95F7-5666118A3C19 - d0d2b8087a389d58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CNSAPP.PhotosViewController.deleteButton2.setter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "CNSAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajyhx9/Documents/GitHub/CNSAPP/CNSAPP/View%20Controllers/PhotosViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "F77D856F-BAB7-4028-95F7-5666118A3C19 - 6929c165fc406e6a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CNSAPP.PhotosViewController.deleteButton2.modify : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "CNSAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajyhx9/Documents/GitHub/CNSAPP/CNSAPP/View%20Controllers/PhotosViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "F77D856F-BAB7-4028-95F7-5666118A3C19 - 54b768cc185e21a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CNSAPP.PhotosViewController.deleteButton2.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CNSAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajyhx9/Documents/GitHub/CNSAPP/CNSAPP/View%20Controllers/PhotosViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "F77D856F-BAB7-4028-95F7-5666118A3C19 - d4c95266c22e91fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CNSAPP.PhotosViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CNSAPP.PhotosViewController"
+                  moduleName = "CNSAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajyhx9/Documents/GitHub/CNSAPP/CNSAPP/View%20Controllers/PhotosViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1085">
+               </Location>
+               <Location
+                  uuid = "F77D856F-BAB7-4028-95F7-5666118A3C19 - 3acf39fd9df100a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CNSAPP.PhotosViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CNSAPP.PhotosViewController&gt;"
+                  moduleName = "CNSAPP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajyhx9/Documents/GitHub/CNSAPP/CNSAPP/View%20Controllers/PhotosViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1027">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

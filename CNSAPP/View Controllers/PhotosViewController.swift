@@ -47,7 +47,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
 //            let timeInterval = String(NSDate().timeIntervalSince1970)
 //            print(timeInterval)
     //bbbbbbbbbbbb
-            self?.firstLoad()
+//            self?.firstLoad()
             
         }
         
@@ -105,7 +105,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
     
     
-    @IBOutlet var mainThing: UIView!
+   // @IBOutlet var mainThing: UIView!
     
     @IBOutlet weak var SkrollView: UIScrollView!
     
@@ -203,6 +203,9 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                     
                    // print("\(document.documentID) => \(document.data())")
                 }
+                
+                self.firstLoad()
+                
             }
         }
         
@@ -231,27 +234,28 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     func setBaseViews(){
         
        
-        let docPath = "imageReference/" + String(subcounter1)
-        //print("subcounter: \(subcounter1)")
-        //print("docpath is: \(docPath)")
+//    ""    let docPath = "imageReference/" + String(subcounter1)""
         
-        let docRef = database.document(docPath)
-        docRef.getDocument { snapshot, error in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
-
-            guard let text = data["imgString"] as? String else {
-                return
-            }
-            self.imgPath = text
-            //print("text is: \(text)")
-            //print("img path is: \(self.imgPath)")
-           // print("subcounter in doc ref is: \(self.subcounter)")
-            self.setImageView()
-            self.subcounter = self.subcounter + 1
-        }
         
+        self.imgPath = delArray2[subcounter1].imgString ?? "error"
+        
+        
+//        let docRef = database.document(docPath)
+//        docRef.getDocument { snapshot, error in
+//            guard let data = snapshot?.data(), error == nil else{
+//                return
+//            }
+//
+//            guard let text = data["imgString"] as? String else {
+//                return
+//            }
+//            self.imgPath = text
+//            self.setImageView()
+//            self.subcounter = self.subcounter + 1
+//        }
+        
+        self.setImageView()
+        self.subcounter = self.subcounter + 1
         subcounter1 = subcounter1 + 1
         
         
@@ -288,37 +292,40 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         }
          
       }
-            let docPath = "imageReference/" + String(subsubcounter)
-       
+//            let docPath = "imageReference/" + String(subsubcounter)
+//
+//
+//            let docRef = database.document(docPath)
+//            docRef.getDocument { snapshot, error in
+//                guard let data = snapshot?.data(), error == nil else{
+//                    return
+//                }
+//
+//                guard let text = data["titleTxt"] as? String else {
+//                    return
+//                }
+//
+//
+//                self.title1.text = text
+//
+//            }
+//
+//            docRef.getDocument { snapshot, error in
+//                guard let data = snapshot?.data(), error == nil else{
+//                    return
+//                }
+//
+//                guard let text = data["capTxt"] as? String else {
+//                    return
+//                }
+//
+//
+//                self.caption1.text = text
+//
+//            }
             
-            let docRef = database.document(docPath)
-            docRef.getDocument { snapshot, error in
-                guard let data = snapshot?.data(), error == nil else{
-                    return
-                }
-
-                guard let text = data["titleTxt"] as? String else {
-                    return
-                }
-                
-                
-                self.title1.text = text
-                
-            }
-            
-            docRef.getDocument { snapshot, error in
-                guard let data = snapshot?.data(), error == nil else{
-                    return
-                }
-
-                guard let text = data["capTxt"] as? String else {
-                    return
-                }
-                
-              
-                self.caption1.text = text
-                
-            }
+            title1.text = delArray2[subcounter1].titleTxt
+            caption1.text = delArray2[subcounter1].capTxt
             
                 
             self.subsubcounter = self.subsubcounter + 1
@@ -340,39 +347,41 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
           }
             
             //
-            let docPath = "imageReference/" + String(subsubcounter)
-            //print("subcounter: \(subsubcounter)")
-            //print("docpath is: \(docPath)")
+//            let docPath = "imageReference/" + String(subsubcounter)
+//            //print("subcounter: \(subsubcounter)")
+//            //print("docpath is: \(docPath)")
+//
+//            let docRef = database.document(docPath)
+//            docRef.getDocument { snapshot, error in
+//                guard let data = snapshot?.data(), error == nil else{
+//                    return
+//                }
+//
+//                guard let text = data["titleTxt"] as? String else {
+//                    return
+//                }
+//
+//                //
+//                self.title2.text = text
+//
+//            }
+//
+//            docRef.getDocument { snapshot, error in
+//                guard let data = snapshot?.data(), error == nil else{
+//                    return
+//                }
+//
+//                guard let text = data["capTxt"] as? String else {
+//                    return
+//                }
+//
+//                //
+//                self.caption2.text = text
+//
+//            }
             
-            let docRef = database.document(docPath)
-            docRef.getDocument { snapshot, error in
-                guard let data = snapshot?.data(), error == nil else{
-                    return
-                }
-
-                guard let text = data["titleTxt"] as? String else {
-                    return
-                }
-                
-                //
-                self.title2.text = text
-                
-            }
-            
-            docRef.getDocument { snapshot, error in
-                guard let data = snapshot?.data(), error == nil else{
-                    return
-                }
-
-                guard let text = data["capTxt"] as? String else {
-                    return
-                }
-                
-                //
-                self.caption2.text = text
-                
-            }
-            
+            title2.text = delArray2[subcounter1].titleTxt
+            caption2.text = delArray2[subcounter1].capTxt
             
             
             self.subsubcounter = self.subsubcounter + 1
@@ -395,40 +404,42 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
           }
         
         //
-        let docPath = "imageReference/" + String(subsubcounter)
-       // print("subcounter: \(subsubcounter)")
-       // print("docpath is: \(docPath)")
+//        let docPath = "imageReference/" + String(subsubcounter)
+//       // print("subcounter: \(subsubcounter)")
+//       // print("docpath is: \(docPath)")
+//
+//        let docRef = database.document(docPath)
+//        docRef.getDocument { snapshot, error in
+//            guard let data = snapshot?.data(), error == nil else{
+//                return
+//            }
+//
+//            guard let text = data["titleTxt"] as? String else {
+//                return
+//            }
+//
+//            //
+//            self.title3.text = text
+//
+//        }
+//
+//        docRef.getDocument { snapshot, error in
+//            guard let data = snapshot?.data(), error == nil else{
+//                return
+//            }
+//
+//            guard let text = data["capTxt"] as? String else {
+//                return
+//            }
+//
+//            //
+//            self.caption3.text = text
+//
+//        }
         
-        let docRef = database.document(docPath)
-        docRef.getDocument { snapshot, error in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
-
-            guard let text = data["titleTxt"] as? String else {
-                return
-            }
-            
-            //
-            self.title3.text = text
-            
-        }
         
-        docRef.getDocument { snapshot, error in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
-
-            guard let text = data["capTxt"] as? String else {
-                return
-            }
-            
-            //
-            self.caption3.text = text
-            
-        }
-        
-        
+        title3.text = delArray2[subcounter1].titleTxt
+        caption3.text = delArray2[subcounter1].capTxt
         
         self.subsubcounter = self.subsubcounter + 1
         //print("imageview set :")

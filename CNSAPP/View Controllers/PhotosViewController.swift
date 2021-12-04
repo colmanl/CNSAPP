@@ -12,7 +12,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
     let database = Firestore.firestore()
     var imgPath = ""
-    var delArray = [String]()
+    var reduce = false
+    //var delArray = [String]()
     var delArray2 = [Photo]()
     var fetchingMore = false
     var dataFetch = false
@@ -93,7 +94,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                     newPhoto.postID = fark["postID"] as? Double
                     newPhoto.imgString = fark["imgString"] as? String
                     let fork = fark["imgString"] as? String
-                    self.delArray.append(fork ?? "oops")
+                  //  self.delArray.append(fork ?? "oops")
                     self.delArray2.append(newPhoto)
 
                     print("\(document.documentID) => \(document.data())")
@@ -197,8 +198,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                     newPhoto.titleTxt = fark["titleTxt"] as? String
                     newPhoto.postID = fark["postID"] as? Double
                     newPhoto.imgString = fark["imgString"] as? String
-                    let fork = fark["imgString"] as? String
-                    self.delArray.append(fork ?? "oops")
+                   // let fork = fark["imgString"] as? String
+                   // self.delArray.append(fork ?? "oops")
                     self.delArray2.append(newPhoto)
                     
                    // print("\(document.documentID) => \(document.data())")
@@ -532,7 +533,10 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         newView.addSubview(newImageView)
         newView.addSubview(newLabel)
         newView.addSubview(newTextView)
+        
+        if(!reduce){
         newView.addSubview(newButton)
+        }
         BestStack.addArrangedSubview(newView)
         
         
@@ -681,6 +685,10 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     func reducedPrivileges(){
         if ( userEmailPhotos != "cnskids@gmail.com" ) {
             addPicButton.isHidden = true
+            deleteButton1.isHidden = true
+            deleteButton2.isHidden = true
+            deleteButton3.isHidden = true
+            reduce = true
         }
     }
 

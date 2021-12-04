@@ -222,8 +222,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         }
     }
     func setUpElements(){
-        //LoginStyling.styleFilledButton(submitButton)
-        //LoginStyling.styleHollowButtonThree(deleteEventButton)
+        LoginStyling.styleFilledButton(submitButton)
+        LoginStyling.styleHollowButtonThree(deleteEventButton)
     }
 
     @IBAction func submitBtnTapped(_ sender: Any) {
@@ -293,12 +293,12 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    /*
+    
     func textFieldShouldReturn(_ inputEventTitle: UITextField) -> Bool{
         inputEventTitle.resignFirstResponder()
         return true
     }
-    */
+    
     private func textViewShouldReturn(_ inputTextView: UITextView) -> Bool {
         inputTextView.resignFirstResponder()
         return true

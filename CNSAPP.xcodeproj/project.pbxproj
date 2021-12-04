@@ -15,13 +15,18 @@
 		092FCD56270C9CD7002AF17E /* CNSAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD55270C9CD7002AF17E /* CNSAPPTests.swift */; };
 		092FCD60270C9CD8002AF17E /* CNSAPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */; };
 		092FCD62270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */; };
-		092FCD6F270C9CFD002AF17E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */; };
 		093C63492744CB6C00E7833C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F2DF8273DA32B00B88098 /* SearchViewController.swift */; };
 		093C634A2744CBF100E7833C /* PhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F128AD02744234700703449 /* PhotoPopupViewController.swift */; };
 		093C634B2744CBF200E7833C /* PhotoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F128AD02744234700703449 /* PhotoPopupViewController.swift */; };
 		093F2DF9273DA32B00B88098 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F2DF8273DA32B00B88098 /* SearchViewController.swift */; };
 		0954BDC2273A319A004449BE /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */; };
-		09590C702733B9F300444A1F /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */; };
+		097A154F275968DE0051A827 /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A154E275968DE0051A827 /* DateParser.swift */; };
+		097A15512759787F0051A827 /* AnnouncementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A15502759787F0051A827 /* AnnouncementsTableViewController.swift */; };
+		097A1553275BF9F10051A827 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 097A1552275BF9F10051A827 /* GoogleService-Info.plist */; };
+		099199F62759621F00993599 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099199F52759621E00993599 /* NewsItem.swift */; };
+		099199F82759633000993599 /* NewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099199F72759633000993599 /* NewsStore.swift */; };
+		099199FA2759642700993599 /* NewsItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099199F92759642700993599 /* NewsItemCell.swift */; };
+		099199FC2759648F00993599 /* WenderSafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099199FB2759648F00993599 /* WenderSafariViewController.swift */; };
 		09D8863F27458769002026B5 /* CNSAPPUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD5B270C9CD8002AF17E /* CNSAPPUITests.xctest */; };
 		09D886402745876E002026B5 /* CNSAPPTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD51270C9CD7002AF17E /* CNSAPPTests.xctest */; };
 		09D9A94227386F8800934631 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9A94127386F8800934631 /* UserViewController.swift */; };
@@ -72,11 +77,16 @@
 		092FCD5B270C9CD8002AF17E /* CNSAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNSAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		092FCD5F270C9CD8002AF17E /* CNSAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSAPPUITests.swift; sourceTree = "<group>"; };
 		092FCD61270C9CD8002AF17E /* CNSAPPUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNSAPPUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		093F2DF8273DA32B00B88098 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		09590C6A2733873D00444A1F /* CNSAPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CNSAPP.entitlements; sourceTree = "<group>"; };
-		09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
+		097A154E275968DE0051A827 /* DateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
+		097A15502759787F0051A827 /* AnnouncementsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsTableViewController.swift; sourceTree = "<group>"; };
+		097A1552275BF9F10051A827 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		099199F52759621E00993599 /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		099199F72759633000993599 /* NewsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStore.swift; sourceTree = "<group>"; };
+		099199F92759642700993599 /* NewsItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemCell.swift; sourceTree = "<group>"; };
+		099199FB2759648F00993599 /* WenderSafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WenderSafariViewController.swift; sourceTree = "<group>"; };
 		09D9A94127386F8800934631 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		167E6D33271F863C00E37F25 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		16970703273B023B0021457A /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
@@ -164,7 +174,7 @@
 				092FCD47270C9CD7002AF17E /* Assets.xcassets */,
 				092FCD49270C9CD7002AF17E /* LaunchScreen.storyboard */,
 				092FCD4C270C9CD7002AF17E /* Info.plist */,
-				092FCD6E270C9CFD002AF17E /* GoogleService-Info.plist */,
+				097A1552275BF9F10051A827 /* GoogleService-Info.plist */,
 				594E3B30271782E900FF92BF /* Constants.swift */,
 			);
 			path = CNSAPP;
@@ -190,6 +200,9 @@
 		16970702273B01590021457A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				099199F92759642700993599 /* NewsItemCell.swift */,
+				099199F72759633000993599 /* NewsStore.swift */,
+				099199F52759621E00993599 /* NewsItem.swift */,
 				16970703273B023B0021457A /* CalendarEvent.swift */,
 			);
 			path = Models;
@@ -221,8 +234,9 @@
 		594A289C270E5732007E5391 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				097A15502759787F0051A827 /* AnnouncementsTableViewController.swift */,
+				099199FB2759648F00993599 /* WenderSafariViewController.swift */,
 				594A289A270E5708007E5391 /* HomeViewController.swift */,
-				09590C6F2733B9F300444A1F /* AnnouncementsViewController.swift */,
 				0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */,
 				09D9A94127386F8800934631 /* UserViewController.swift */,
 				093F2DF8273DA32B00B88098 /* SearchViewController.swift */,
@@ -233,6 +247,7 @@
 				5980B4912718B5D500CF888F /* EntryViewController.swift */,
 				5937B710271F4B1800AEBF5E /* CentralHomeViewController.swift */,
 				167E6D33271F863C00E37F25 /* CalendarViewController.swift */,
+				097A154E275968DE0051A827 /* DateParser.swift */,
 				16970702273B01590021457A /* Models */,
 			);
 			path = "View Controllers";
@@ -359,7 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				092FCD4B270C9CD7002AF17E /* LaunchScreen.storyboard in Resources */,
-				092FCD6F270C9CFD002AF17E /* GoogleService-Info.plist in Resources */,
+				097A1553275BF9F10051A827 /* GoogleService-Info.plist in Resources */,
 				092FCD48270C9CD7002AF17E /* Assets.xcassets in Resources */,
 				092FCD46270C9CD5002AF17E /* Main.storyboard in Resources */,
 			);
@@ -491,20 +506,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				099199FC2759648F00993599 /* WenderSafariViewController.swift in Sources */,
 				16970704273B023B0021457A /* CalendarEvent.swift in Sources */,
 				092FCD3F270C9CD5002AF17E /* AppDelegate.swift in Sources */,
 				09D9A94227386F8800934631 /* UserViewController.swift in Sources */,
 				093F2DF9273DA32B00B88098 /* SearchViewController.swift in Sources */,
 				594A2897270E56AA007E5391 /* SignUpViewController.swift in Sources */,
+				097A15512759787F0051A827 /* AnnouncementsTableViewController.swift in Sources */,
 				594A2899270E56DE007E5391 /* LoginViewController.swift in Sources */,
+				099199F62759621F00993599 /* NewsItem.swift in Sources */,
 				167E6D34271F863C00E37F25 /* CalendarViewController.swift in Sources */,
 				092FCD41270C9CD5002AF17E /* SceneDelegate.swift in Sources */,
 				8F128AD12744234800703449 /* PhotoPopupViewController.swift in Sources */,
 				59B495A32713716E009A0FCF /* LoginStyling.swift in Sources */,
 				5980B4922718B5D500CF888F /* EntryViewController.swift in Sources */,
+				099199F82759633000993599 /* NewsStore.swift in Sources */,
+				099199FA2759642700993599 /* NewsItemCell.swift in Sources */,
 				594A289B270E5708007E5391 /* HomeViewController.swift in Sources */,
 				590CB6D72718A9C800B856A5 /* ViewController.swift in Sources */,
-				09590C702733B9F300444A1F /* AnnouncementsViewController.swift in Sources */,
+				097A154F275968DE0051A827 /* DateParser.swift in Sources */,
 				0954BDC2273A319A004449BE /* ForgotPasswordViewController.swift in Sources */,
 				8F6895F52723498900DEAEFC /* PhotosViewController.swift in Sources */,
 				594E3B31271782E900FF92BF /* Constants.swift in Sources */,
@@ -620,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -677,7 +697,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -696,7 +716,7 @@
 				CODE_SIGN_ENTITLEMENTS = CNSAPP/CNSAPP.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4FNJNUQ3AD;
+				DEVELOPMENT_TEAM = N6PADY32LT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
@@ -718,6 +738,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -725,7 +746,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsuCapstone.CNSAPP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsuCapstone.CNSAPP2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -742,13 +763,14 @@
 				CODE_SIGN_ENTITLEMENTS = CNSAPP/CNSAPP.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4FNJNUQ3AD;
+				DEVELOPMENT_TEAM = N6PADY32LT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CNSAPP/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please Allow Access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -756,7 +778,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsuCapstone.CNSAPP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsuCapstone.CNSAPP2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -773,7 +795,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4FNJNUQ3AD;
+				DEVELOPMENT_TEAM = N6PADY32LT;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -802,7 +824,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4FNJNUQ3AD;
+				DEVELOPMENT_TEAM = N6PADY32LT;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -831,7 +853,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4FNJNUQ3AD;
+				DEVELOPMENT_TEAM = N6PADY32LT;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -859,7 +881,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4FNJNUQ3AD;
+				DEVELOPMENT_TEAM = N6PADY32LT;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -12,9 +12,11 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
     let database = Firestore.firestore()
     var imgPath = ""
-    var delArray = [String]()
+    var reduce = false
+    //var delArray = [String]()
     var delArray2 = [Photo]()
     var fetchingMore = false
+    var scrollEnabled = false
     var dataFetch = false
     var counter = 0
     var subcounter = 0
@@ -44,14 +46,15 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             self?.getThoseImages()
             
             
-//            let timeInterval = String(NSDate().timeIntervalSince1970)
-//            print(timeInterval)
-    //bbbbbbbbbbbb
-            self?.firstLoad()
             
         }
         
-       // deleteButton1.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
+        deleteButton1.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
+        deleteButton2.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
+        deleteButton3.addTarget(self, action: #selector(deletePhoto), for:.touchUpInside)
+        
+        
+        
         
         reducedPrivileges()
         setUpElementsTwo()
@@ -87,8 +90,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                     newPhoto.titleTxt = fark["titleTxt"] as? String
                     newPhoto.postID = fark["postID"] as? Double
                     newPhoto.imgString = fark["imgString"] as? String
-                    let fork = fark["imgString"] as? String
-                    self.delArray.append(fork ?? "oops")
+                  //  let fork = fark["imgString"] as? String
+                  //  self.delArray.append(fork ?? "oops")
                     self.delArray2.append(newPhoto)
 
                     print("\(document.documentID) => \(document.data())")
@@ -100,7 +103,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
     
     
-    @IBOutlet var mainThing: UIView!
+   // @IBOutlet var mainThing: UIView!
     
     @IBOutlet weak var SkrollView: UIScrollView!
     
@@ -123,6 +126,11 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     @IBOutlet weak var addPicButton: UIButton!
     
     @IBOutlet weak var deleteButton1: UIButton!
+    
+    @IBOutlet weak var deleteButton2: UIButton!
+    
+    @IBOutlet weak var deleteButton3: UIButton!
+    
     
     @IBOutlet weak var starterImg: UIImageView!
     
@@ -149,8 +157,8 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         let contentHeight = SkrollView.contentSize.height
         if offsetY > contentHeight - SkrollView.frame.height{
             
-
-            
+         
+            if scrollEnabled{
                 if !fetchingMore{
          
                 if numOfPics > counter{
@@ -163,6 +171,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                 
             }
            
+        }
         }
     
     }
@@ -187,12 +196,16 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                     newPhoto.titleTxt = fark["titleTxt"] as? String
                     newPhoto.postID = fark["postID"] as? Double
                     newPhoto.imgString = fark["imgString"] as? String
-                    let fork = fark["imgString"] as? String
-                    self.delArray.append(fork ?? "oops")
+                   
                     self.delArray2.append(newPhoto)
                     
-                    print("\(document.documentID) => \(document.data())")
+                   
                 }
+                
+                self.firstLoad()
+                self.scrollEnabled = true
+               
+                
             }
         }
         
@@ -221,27 +234,28 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     func setBaseViews(){
         
        
-        let docPath = "imageReference/" + String(subcounter1)
-        //print("subcounter: \(subcounter1)")
-        //print("docpath is: \(docPath)")
+//    ""    let docPath = "imageReference/" + String(subcounter1)""
         
-        let docRef = database.document(docPath)
-        docRef.getDocument { snapshot, error in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
-
-            guard let text = data["imgString"] as? String else {
-                return
-            }
-            self.imgPath = text
-            //print("text is: \(text)")
-            //print("img path is: \(self.imgPath)")
-           // print("subcounter in doc ref is: \(self.subcounter)")
-            self.setImageView()
-            self.subcounter = self.subcounter + 1
-        }
         
+        self.imgPath = delArray2[subcounter1].imgString ?? "error"
+        
+        
+//        let docRef = database.document(docPath)
+//        docRef.getDocument { snapshot, error in
+//            guard let data = snapshot?.data(), error == nil else{
+//                return
+//            }
+//
+//            guard let text = data["imgString"] as? String else {
+//                return
+//            }
+//            self.imgPath = text
+//            self.setImageView()
+//            self.subcounter = self.subcounter + 1
+//        }
+        
+        self.setImageView()
+        self.subcounter = self.subcounter + 1
         subcounter1 = subcounter1 + 1
         
         
@@ -278,37 +292,10 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         }
          
       }
-            let docPath = "imageReference/" + String(subsubcounter)
-       
-            
-            let docRef = database.document(docPath)
-            docRef.getDocument { snapshot, error in
-                guard let data = snapshot?.data(), error == nil else{
-                    return
-                }
 
-                guard let text = data["titleTxt"] as? String else {
-                    return
-                }
-                
-                
-                self.title1.text = text
-                
-            }
             
-            docRef.getDocument { snapshot, error in
-                guard let data = snapshot?.data(), error == nil else{
-                    return
-                }
-
-                guard let text = data["capTxt"] as? String else {
-                    return
-                }
-                
-              
-                self.caption1.text = text
-                
-            }
+            title1.text = delArray2[subcounter1].titleTxt
+            caption1.text = delArray2[subcounter1].capTxt
             
                 
             self.subsubcounter = self.subsubcounter + 1
@@ -329,40 +316,9 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             }
           }
             
-            //
-            let docPath = "imageReference/" + String(subsubcounter)
-            //print("subcounter: \(subsubcounter)")
-            //print("docpath is: \(docPath)")
             
-            let docRef = database.document(docPath)
-            docRef.getDocument { snapshot, error in
-                guard let data = snapshot?.data(), error == nil else{
-                    return
-                }
-
-                guard let text = data["titleTxt"] as? String else {
-                    return
-                }
-                
-                //
-                self.title2.text = text
-                
-            }
-            
-            docRef.getDocument { snapshot, error in
-                guard let data = snapshot?.data(), error == nil else{
-                    return
-                }
-
-                guard let text = data["capTxt"] as? String else {
-                    return
-                }
-                
-                //
-                self.caption2.text = text
-                
-            }
-            
+            title2.text = delArray2[subcounter1].titleTxt
+            caption2.text = delArray2[subcounter1].capTxt
             
             
             self.subsubcounter = self.subsubcounter + 1
@@ -384,41 +340,10 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             }
           }
         
-        //
-        let docPath = "imageReference/" + String(subsubcounter)
-       // print("subcounter: \(subsubcounter)")
-       // print("docpath is: \(docPath)")
-        
-        let docRef = database.document(docPath)
-        docRef.getDocument { snapshot, error in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
 
-            guard let text = data["titleTxt"] as? String else {
-                return
-            }
             
-            //
-            self.title3.text = text
-            
-        }
-        
-        docRef.getDocument { snapshot, error in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
-
-            guard let text = data["capTxt"] as? String else {
-                return
-            }
-            
-            //
-            self.caption3.text = text
-            
-        }
-        
-        
+        title3.text = delArray2[subcounter1].titleTxt
+        caption3.text = delArray2[subcounter1].capTxt
         
         self.subsubcounter = self.subsubcounter + 1
         //print("imageview set :")
@@ -484,7 +409,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         newLabel.textColor = .label
         // set label color to label. set view and wg
         
-        var string = self.delArray2[subKount].capTxt ?? "No Title"
+        var string = self.delArray2[subKount].titleTxt ?? "No Title"
         var attributedtext = NSMutableAttributedString(string: string)
         attributedtext.addAttribute(
             .font,
@@ -496,7 +421,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         let newTextView = UITextView(frame: CGRect(x: 8, y: 482, width: 378, height: 78))
         newTextView.backgroundColor = .secondarySystemBackground
        
-         string = self.delArray2[subKount].titleTxt ?? "Nothing to see here"
+         string = self.delArray2[subKount].capTxt ?? "Nothing to see here"
          attributedtext = NSMutableAttributedString(string: string)
         attributedtext.addAttribute(
             .font,
@@ -511,7 +436,10 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
         newView.addSubview(newImageView)
         newView.addSubview(newLabel)
         newView.addSubview(newTextView)
+        
+        if(!reduce){
         newView.addSubview(newButton)
+        }
         BestStack.addArrangedSubview(newView)
         
         
@@ -583,7 +511,7 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
             newImageView.image = UIImage(named: "redx")
             newView.addSubview(newImageView)
             
-        
+
             BestStack.replaceView(atIndex: dog, withView: newView)
             BestStack.reloadInputViews()
         
@@ -658,8 +586,12 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
 
     func reducedPrivileges(){
-        if ( userEmailPhotos != "Email_test@test.com" ) {
+        if ( userEmailPhotos != "cnskids@gmail.com" ) {
             addPicButton.isHidden = true
+            deleteButton1.isHidden = true
+            deleteButton2.isHidden = true
+            deleteButton3.isHidden = true
+            reduce = true
         }
     }
 
@@ -700,6 +632,12 @@ public struct Photo: Codable {
 extension UIStackView {
     func replaceView(atIndex index: Int, withView view: UIView) {
         let viewToRemove = arrangedSubviews[index]
+        
+        for subUIView in viewToRemove.subviews as [UIView] {
+            subUIView.removeFromSuperview()
+        }
+        
+        
         removeArrangedSubview(viewToRemove)
         insertArrangedSubview(view, at: index)
     }

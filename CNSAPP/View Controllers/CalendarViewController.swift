@@ -28,10 +28,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     @IBOutlet weak var inputTextView: UITextView!
     
-    @IBOutlet weak var selectDateLabel: UILabel!
-    
-    @IBOutlet weak var inputDate: UIDatePicker!
-    
     @IBOutlet weak var submitButton: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
@@ -215,8 +211,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             newEventLabel.isHidden = true
             inputEventTitle.isHidden = true
             inputTextView.isHidden = true
-            selectDateLabel.isHidden = true
-            inputDate.isHidden = true
             submitButton.isHidden = true
             deleteEventButton.isHidden = true
         }
@@ -229,7 +223,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     @IBAction func submitBtnTapped(_ sender: Any) {
         let eventTitle = inputEventTitle.text!
         var eventDescription = inputTextView.text!
-        let eventDate = inputDate.date
+        let eventDate = dateDBFormat
         
         // EXPLANATION: turning date input into a string
         let formatter = DateFormatter()

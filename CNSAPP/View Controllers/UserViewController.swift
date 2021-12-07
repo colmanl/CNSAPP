@@ -11,43 +11,89 @@ import Firebase
 
 class UserViewController: UIViewController {
  
+    @IBOutlet weak var searchParents: UIButton!
     
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var phoneText: UITextField!
+    @IBOutlet weak var logoutButton: UIButton!
     override func viewDidLoad(){
         super.viewDidLoad()
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
+    /*    let button = UIButton(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
         view.addSubview(button)
         button.center=view.center
-        button.setTitle("Search For Parents", for: .normal)
+        button.setTitle("Search For Parents/Staff", for: .normal)
         button.backgroundColor = UIColor.systemBlue
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.white
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        */
+        setUpElementsTwo()
+        emailText.isUserInteractionEnabled = false
+        phoneText.isUserInteractionEnabled = false
+        
     }
     
-    @objc func didTapButton(){
+  @IBAction @objc func didTapButton(){
         //combinging swift ui and storyboard
         let vc = UIHostingController(rootView: SearchViewController())
         present(vc, animated: true)
     }
     
-}
-    /*
-    @ObservedObject var data = getUserData()
+    @IBAction func logout(){
+        let firebaseAuth = Auth.auth()
+        do{
+            try firebaseAuth.signOut()
+            let entryViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.entryViewController) as? EntryViewController
+            
+            self.view.window?.rootViewController = entryViewController
+            self.view.window?.makeKeyAndVisible()
+        }catch let signOutError as NSError {
+            print("Error Signing Out: %@", signOutError)
+        }
+    }
+    func setUpElementsTwo(){
+        //Hide Error Label
+      //  errorLabel.alpha = 0
+        
+      //  LoginStyling.styleTextField(emailTextField)
+      //  LoginStyling.styleTextField(passwordTextField)
+        //LoginStyling.styleHollowButtonTwo(addPicButton)
+       // LoginStyling.styleHollowButtonThree(deleteEventButton)
+
+       LoginStyling.styleFilledButton(logoutButton)
+        LoginStyling.styleFilledButton(searchParents)
+       // passwordTextField.isSecureTextEntry = true
+    }
     
+}
+    
+   // @ObservedObject var data = getUserData()
+ /*
     var body: some View {
         NavigationView{
-        ZStack(alignment: .top){
-            GeometryReader{_ in
-            Text("Home")}
-        .background(Color("Color").edgesIgnoringSafeArea(.all))
-        CustomSearchBar(data: self.$data.datas).padding(.top)
+            
+            List{
+                
+                Section{
+            
+                    Text("1320 Fairview Road Columbia, Missouri 65203")
+                }   header:{ Text("Address")}
+                Section{
+                    Text("573-445-4111")
         
-        }.navigationBarTitle("")
-                .navigationBarHidden(true)
+                }header:{ Text("Phone Number")}
+                Section{
+                    Text("cnskids@gmail.com")
+                }header:{ Text("Email")
+            }.listStyle(.insetGrouped)
+                .navigationTitle("Contact Information")
+        
+    }
+            
     
 }
-    }}
-
+    } }
+/*
     struct UserPageView_Previews: PreviewProvider {
        static var previews: some View {
     UserViewController()
@@ -143,4 +189,4 @@ class UserViewController: UIViewController {
 */
     
 
-
+  */

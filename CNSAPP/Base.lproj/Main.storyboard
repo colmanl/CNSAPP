@@ -348,7 +348,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                                     </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="aOT-zi-dn0" userLabel="New Event Stack View">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aOT-zi-dn0" userLabel="New Event Stack View">
                                         <rect key="frame" x="0.0" y="120" width="364" height="344"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-Na-3rK">
@@ -362,7 +362,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter event title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oCg-FC-GdB">
-                                                <rect key="frame" x="0.0" y="41" width="364" height="35"/>
+                                                <rect key="frame" x="0.0" y="30" width="364" height="35"/>
                                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="wzd-g9-bOc"/>
@@ -370,8 +370,8 @@
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" text="(Optional) Enter event description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-vP-zTr" userLabel="Input Text View">
-                                                <rect key="frame" x="0.0" y="87" width="364" height="120"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" text="(Optional) Enter event description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-vP-zTr" userLabel="Input Text View">
+                                                <rect key="frame" x="0.0" y="65" width="364" height="120"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" selected="YES" adjustable="YES" allowsDirectInteraction="YES"/>
@@ -384,34 +384,33 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5p-OU-xYa">
-                                                <rect key="frame" x="0.0" y="218" width="364" height="50"/>
+                                                <rect key="frame" x="0.0" y="185" width="364" height="89"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Event Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7H8-06-z8l">
-                                                        <rect key="frame" x="0.0" y="0.0" width="244" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="254" height="89"/>
                                                         <color key="backgroundColor" name="LightGray"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="TIn-lK-ZYK">
-                                                        <rect key="frame" x="244" y="0.0" width="120" height="50"/>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="TIn-lK-ZYK">
+                                                        <rect key="frame" x="254" y="0.0" width="110" height="89"/>
                                                         <color key="backgroundColor" name="LightGray"/>
                                                         <color key="tintColor" systemColor="labelColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="I0e-AB-t9Q"/>
-                                                            <constraint firstAttribute="width" constant="120" id="I9C-1E-8JH"/>
+                                                            <constraint firstAttribute="width" constant="110" id="A8i-UM-CN0"/>
                                                         </constraints>
                                                     </datePicker>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="YrU-7k-bnd"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="YrU-7k-bnd"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6b-lC-MiY">
-                                                <rect key="frame" x="0.0" y="279" width="364" height="34"/>
+                                                <rect key="frame" x="0.0" y="274" width="364" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jo4-GC-uNb" userLabel="Submit Button">
-                                                        <rect key="frame" x="0.0" y="0.0" width="182" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="182" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="182" id="NeU-1A-wTl"/>
                                                             <constraint firstAttribute="height" constant="50" id="ia0-vR-WaB"/>
@@ -429,7 +428,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4A-Yc-IpM">
-                                                        <rect key="frame" x="182" y="0.0" width="182" height="34"/>
+                                                        <rect key="frame" x="182" y="0.0" width="182" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="182" id="oaB-8H-1Mt"/>
                                                         </constraints>
@@ -461,6 +460,9 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" name="LightGray"/>
+                                        <constraints>
+                                            <constraint firstItem="Bvy-vP-zTr" firstAttribute="top" secondItem="oCg-FC-GdB" secondAttribute="bottom" constant="20" id="jqa-f6-1Og"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

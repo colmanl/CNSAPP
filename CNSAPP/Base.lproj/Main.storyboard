@@ -753,11 +753,11 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="inr-rT-JJT" firstAttribute="leading" secondItem="2B0-2O-gU3" secondAttribute="leading" id="PBx-AP-Leo"/>
                                     <constraint firstItem="inr-rT-JJT" firstAttribute="centerX" secondItem="Fe7-79-2Oi" secondAttribute="centerX" id="UK8-DQ-tlI"/>
-                                    <constraint firstAttribute="bottom" secondItem="inr-rT-JJT" secondAttribute="bottom" constant="-563" id="YTL-ur-qvR"/>
+                                    <constraint firstAttribute="bottom" secondItem="inr-rT-JJT" secondAttribute="bottom" id="YTL-ur-qvR"/>
                                     <constraint firstAttribute="trailing" secondItem="inr-rT-JJT" secondAttribute="trailing" id="miY-wC-WJX"/>
                                     <constraint firstItem="inr-rT-JJT" firstAttribute="top" secondItem="2Pb-uz-ZcA" secondAttribute="top" id="yry-6L-OCc"/>
                                 </constraints>

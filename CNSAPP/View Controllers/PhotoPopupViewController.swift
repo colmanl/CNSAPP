@@ -23,7 +23,7 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
 
         coolImg.addGestureRecognizer(tapGesture)
         
-        titleSpot.text = String(numOfPics)
+        
         setUpElements()
             
         }

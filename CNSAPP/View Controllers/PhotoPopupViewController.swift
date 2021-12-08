@@ -27,6 +27,7 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
         
         
         setUpElements()
+        
            
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tap)
@@ -61,6 +62,9 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
     
     @IBAction func submitPhoto(_ sender: Any) {
         
+        
+        vc?.toggleScroll()
+        
      var numberPix = 100000
      let timeInterval = Double(NSDate().timeIntervalSince1970)
      print(timeInterval)
@@ -77,6 +81,7 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
                                 return
                             }
                             print("Put is complete and I got this back: \(String(describing: downloadMetadata))")
+         self.vc?.toggleScroll()
                         }
         
         let numRef = UUID.init().uuidString

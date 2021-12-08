@@ -90,9 +90,9 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
                     newPhoto.titleTxt = fark["titleTxt"] as? String
                     newPhoto.postID = fark["postID"] as? Double
                     newPhoto.imgString = fark["imgString"] as? String
-                  //  let fork = fark["imgString"] as? String
-                  //  self.delArray.append(fork ?? "oops")
+               
                     self.delArray2.append(newPhoto)
+                 
 
                     print("\(document.documentID) => \(document.data())")
                 }
@@ -582,7 +582,13 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
 
     }
     
-    
+    func toggleScroll(){
+        if !scrollEnabled{
+            scrollEnabled = true
+        }else{
+            scrollEnabled = false
+        }
+    }
     
 
     func reducedPrivileges(){

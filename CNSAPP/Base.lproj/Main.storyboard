@@ -276,7 +276,7 @@
                                                 <rect key="frame" x="0.0" y="425" width="414" height="400"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Jt-be-aTn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="325" height="446.66666666666669"/>
+                                                        <rect key="frame" x="10" y="10" width="325" height="446.66666666666669"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Mission" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owp-eY-L2u">
                                                                 <rect key="frame" x="0.0" y="0.0" width="325" height="28.666666666666668"/>
@@ -285,7 +285,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" scrollEnabled="NO" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ynp-hE-TnT">
-                                                                <rect key="frame" x="0.0" y="36.666666666666686" width="325" height="410"/>
+                                                                <rect key="frame" x="0.0" y="36.666666666666629" width="325" height="410"/>
                                                                 <color key="backgroundColor" name="LightGray"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="325" id="cLk-ex-Zh4"/>

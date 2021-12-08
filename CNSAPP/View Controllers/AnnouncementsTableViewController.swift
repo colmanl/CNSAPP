@@ -11,9 +11,9 @@ class AnnouncementsTableViewController: UITableViewController {
     static let refreshNewsFeedNotification = Notification.Name(rawValue: "RefreshNewsFeedNotification")
     let newsStore = NewsStore.shared
 
-    override var prefersStatusBarHidden: Bool {
+ /*   override var prefersStatusBarHidden: Bool {
       return true
-    }
+    }*/
 
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -23,11 +23,11 @@ class AnnouncementsTableViewController: UITableViewController {
       tableView.rowHeight = UITableView.automaticDimension
       tableView.estimatedRowHeight = 75
 
-      if let patternImage = UIImage(named: "pattern-grey") {
+   /*   if let patternImage = UIImage(named: "pattern-grey") {
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor(patternImage: patternImage)
         tableView.backgroundView = backgroundView
-      } 
+      }*/
 
       NotificationCenter.default.addObserver(
         self,
@@ -57,25 +57,25 @@ class AnnouncementsTableViewController: UITableViewController {
       return cell
     }
 
-    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+/*   override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
       let item = newsStore.items[indexPath.row]
-      if let url = URL(string: item.link), url.scheme == "https" {
+      if let title = URL(string: item.title) {
         return true
-      }
+     }
       return false
-    }
+    } */
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+/*    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       let item = newsStore.items[indexPath.row]
 
-      guard let url = URL(string: item.link) else {
-        return
-      }
-      let safari = WenderSafariViewController(url: url)
-      present(safari, animated: true, completion: nil)
-    }
+      guard let title = URL(string: item.title) else {
+          return
+      }*/
+     // let safari = WenderSafariViewController(url: url)
+     // present(safari, animated: true, completion: nil)
+    //}
   }
-
+  
 
 
 

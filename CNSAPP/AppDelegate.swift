@@ -17,8 +17,24 @@ enum Identifiers {
   static let viewAction = "VIEW_IDENTIFIER"
   static let newsCategory = "NEWS_CATEGORY"
 }
-//@main
-@UIApplicationMain
+struct Payload: Decodable {
+    let aps: APS
+    let acme1: String?
+    let acme2: [String]?
+}
+
+struct APS: Decodable {
+    let alert: Alert
+    let badge: Int?
+}
+
+struct Alert: Decodable {
+    let title: String
+    let body: String?
+    let action: String?
+}
+@main
+//@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
 let gcmMessageIDKey = "CNUCap.me"
@@ -27,6 +43,8 @@ let gcmMessageIDKey = "CNUCap.me"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        registerForPushNotifications()
+
 
         if #available(iOS 10.0, *) {
           // For iOS 10 display notification (sent via APNS)
@@ -54,26 +72,25 @@ let gcmMessageIDKey = "CNUCap.me"
             print("Remote FCM registration token: \(token)")
           }
         }
-        let notificationOption = launchOptions?[.remoteNotification]
+       let notificationOption = launchOptions?[.remoteNotification]
 
         // 1
-        if
-          let notification = notificationOption as? [String: AnyObject],
+        if let notification = notificationOption as? [String: AnyObject],
           let aps = notification["aps"] as? [String: AnyObject] {
           // 2
-          NewsItem.makeNewsItem(aps)
-          
+      //    NewsItem.makeNewsItem(aps)
+        let main = window?.rootViewController as! AnnouncementsTableViewController
           // 3
-         (window?.rootViewController as? UITabBarController)?.selectedIndex = 4
+       //  (window?.rootViewController as? UITabBarController)?.selectedIndex = 5
         }
         
-        /*  let notificationOption = launchOptions?[.remoteNotification]
+            /*  let notificationOption = launchOptions?[.remoteNotification]
                if let notification = notificationOption as? [String: AnyObject],
                    let aps = notification["aps"] as? [String: AnyObject] {
                    // Process remote notification in the view
-                   let main = window?.rootViewController as! AnnouncementsViewController
-                   main.initialNotification = aps
-               } */
+                   let main = window?.rootViewController as! AnnouncementsTableViewController
+                //   main.initialieNotification = aps
+               }*/
                
 
       //  FirebaseApp.configure()
@@ -120,11 +137,23 @@ let gcmMessageIDKey = "CNUCap.me"
                                   withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
                                     -> Void) {
         let userInfo = notification.request.content.userInfo
-        for (key, value) in userInfo{
-            print(String(describing: key))
-            print(String(describing: value))
-            
+        
+        let aps = userInfo["aps"] as? [String: Any]
+        let alert = aps?["alert"] as? [String: String]
+        let title = alert?["title"]
+        let body = alert?["body"]
+        print(title ?? "nil")
+        print(body ?? "nil")
+        
+        
+     /*   guard let aps = userInfo["aps"] as? [String: AnyObject] else {
+         //   completionHandler(.failed)
+            return
+          }*/
+        if let title = title , let body = body {
+            NewsItem.makeNewsItem(title: title, body: body)
         }
+       //  completionHandler(.newData)
        // print(String(describing: v))
 
         // With swizzling disabled you must let Messaging know about the message, for Analytics
@@ -142,10 +171,20 @@ let gcmMessageIDKey = "CNUCap.me"
       func userNotificationCenter(_ center: UNUserNotificationCenter,
                                   didReceive response: UNNotificationResponse,
                                   withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
+       // let userInfo = response.notification.request.content.userInfo
 
-        // ...
-
+          let userInfo = response.notification.request.content.userInfo
+      /*    let aps = userInfo["aps"] as! [String:AnyObject]
+          
+          if let newsItem = NewsItem.makeNewsItem(aps) {
+            (window?.rootViewController as? UITabBarController)?.selectedIndex = 4
+            
+          /*  if response.actionIdentifier == viewAction,
+              let url = URL(string: newsItem.link) {
+              let safari = SFSafariViewController(url: url)
+              window?.rootViewController?.present(safari, animated: true, completion: nil)
+            }*/
+          }*/
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         Messaging.messaging().appDidReceiveMessage(userInfo)
 
@@ -165,7 +204,8 @@ let gcmMessageIDKey = "CNUCap.me"
            completionHandler(.failed)
            return
          }
-         NewsItem.makeNewsItem(aps)
+       //  NewsItem.makeNewsItem(aps)
+        completionHandler(.newData)
 
       // With swizzling disabled you must let Messaging know about the message, for Analytics
       Messaging.messaging().appDidReceiveMessage(userInfo)
@@ -180,8 +220,72 @@ let gcmMessageIDKey = "CNUCap.me"
 
       completionHandler(UIBackgroundFetchResult.newData)
     }
+    func getNotificationSettings() {
+      UNUserNotificationCenter.current().getNotificationSettings { settings in
+        print("Notification settings: \(settings)")
+        guard settings.authorizationStatus == .authorized else { return }
+        DispatchQueue.main.async {
+          UIApplication.shared.registerForRemoteNotifications()
+        }
+      }
+    }
+    func application(
+      _ application: UIApplication,
+      didFailToRegisterForRemoteNotificationsWithError error: Error
+    ) {
+      print("Failed to register: \(error)")
+    }
+    func application(
+      _ application: UIApplication,
+      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+    ) {
+      let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+      let token = tokenParts.joined()
+      print("Device Token: \(token)")
+    }
+    
+    func registerForPushNotifications() {
+      UNUserNotificationCenter.current()
+        .requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted, error in
+          print("Permission granted: \(granted)")
+          guard granted else { return }
+          let viewAction = UNNotificationAction(
+            identifier: Identifiers.viewAction,
+            title: "View",
+            options: [.foreground])
+          let newsCategory = UNNotificationCategory(
+            identifier: Identifiers.newsCategory,
+            actions: [viewAction],
+            intentIdentifiers: [],
+            options: []
+          )
+          UNUserNotificationCenter.current().setNotificationCategories([newsCategory])
+          self?.getNotificationSettings()
+        }
+    }
 
     
 
 }
-
+/*extension AppDelegate{
+  
+  func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    
+    let userInfo = response.notification.request.content.userInfo
+    let aps = userInfo["aps"] as! [String:AnyObject]
+    
+    if let newsItem = NewsItem.makeNewsItem(aps) {
+      (window?.rootViewController as? UITabBarController)?.selectedIndex = 1
+      
+    /*  if response.actionIdentifier == viewAction,
+        let url = URL(string: newsItem.link) {
+        let safari = SFSafariViewController(url: url)
+        window?.rootViewController?.present(safari, animated: true, completion: nil)
+      }*/
+    }
+    
+    completionHandler()
+  }
+  
+}
+*/

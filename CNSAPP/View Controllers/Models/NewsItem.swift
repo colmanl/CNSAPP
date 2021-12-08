@@ -33,22 +33,38 @@
 import Foundation
 
 struct NewsItem: Codable {
-  let title: String
-  let date: Date
-  let link: String
+  // let alert: String
+    let title: String
+    let body: String
+  //let link: String
+    
 
   @discardableResult
-  static func makeNewsItem(_ notification: [String: AnyObject]) -> NewsItem? {
-    guard
+    static func makeNewsItem(title: String, body: String) -> NewsItem? {
+/*    guard
       let news = notification["alert"] as? String,
-      let url = notification["link_url"] as? String
+      let body = notification["body"] as? String
+   //   let url = notification["link_url"] as? String
     else {
       return nil
     }
-
-    let newsItem = NewsItem(title: news, date: Date(), link: url)
+  
+ let newsItem = NewsItem(title: news, body: body)*/
+   /*   let aps = userInfo["aps"] as? [String: Any]
+      let alert = aps?["alert"] as? [String: String]
+      let title = alert?["title"]
+      let body = alert?["body"]
+      print(title ?? "nil")
+      print(body ?? "nil")*/
+    
+     
     let newsStore = NewsStore.shared
+
+        let newsItem = NewsItem(title: title, body: body)
     newsStore.add(item: newsItem)
+      
+    
+    
 
     NotificationCenter.default.post(
       name: AnnouncementsTableViewController.refreshNewsFeedNotification,

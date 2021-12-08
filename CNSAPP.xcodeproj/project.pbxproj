@@ -25,7 +25,6 @@
 		099199F62759621F00993599 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099199F52759621E00993599 /* NewsItem.swift */; };
 		099199F82759633000993599 /* NewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099199F72759633000993599 /* NewsStore.swift */; };
 		099199FA2759642700993599 /* NewsItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099199F92759642700993599 /* NewsItemCell.swift */; };
-		099199FC2759648F00993599 /* WenderSafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099199FB2759648F00993599 /* WenderSafariViewController.swift */; };
 		09D8863F27458769002026B5 /* CNSAPPUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD5B270C9CD8002AF17E /* CNSAPPUITests.xctest */; };
 		09D886402745876E002026B5 /* CNSAPPTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 092FCD51270C9CD7002AF17E /* CNSAPPTests.xctest */; };
 		09D9A94227386F8800934631 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D9A94127386F8800934631 /* UserViewController.swift */; };
@@ -85,7 +84,6 @@
 		099199F52759621E00993599 /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		099199F72759633000993599 /* NewsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsStore.swift; sourceTree = "<group>"; };
 		099199F92759642700993599 /* NewsItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemCell.swift; sourceTree = "<group>"; };
-		099199FB2759648F00993599 /* WenderSafariViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WenderSafariViewController.swift; sourceTree = "<group>"; };
 		09D9A94127386F8800934631 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		160E3DF6275C053900E58D2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		167E6D33271F863C00E37F25 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				097A15502759787F0051A827 /* AnnouncementsTableViewController.swift */,
-				099199FB2759648F00993599 /* WenderSafariViewController.swift */,
 				594A289A270E5708007E5391 /* HomeViewController.swift */,
 				0954BDC1273A319A004449BE /* ForgotPasswordViewController.swift */,
 				09D9A94127386F8800934631 /* UserViewController.swift */,
@@ -506,7 +503,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				099199FC2759648F00993599 /* WenderSafariViewController.swift in Sources */,
 				16970704273B023B0021457A /* CalendarEvent.swift in Sources */,
 				092FCD3F270C9CD5002AF17E /* AppDelegate.swift in Sources */,
 				09D9A94227386F8800934631 /* UserViewController.swift in Sources */,
@@ -640,7 +636,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -697,7 +693,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -741,6 +737,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -773,6 +770,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

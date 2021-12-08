@@ -31,6 +31,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     @IBOutlet weak var submitButton: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
+    
+    @IBOutlet weak var nonCalendarStackView: UIStackView!
         
     var dateStringOutput = ""
     
@@ -62,8 +64,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         inputTextView.delegate = self;
         //inputTextView.text = "(Optional) Enter event description"
         inputTextView.textColor = UIColor.lightGray
-        //let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        //view.addGestureRecognizer(tap)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        nonCalendarStackView.addGestureRecognizer(tap)
         
     }
     

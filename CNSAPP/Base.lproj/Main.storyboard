@@ -508,6 +508,7 @@
                         <outlet property="inputEventTitle" destination="oCg-FC-GdB" id="DCF-qz-LW1"/>
                         <outlet property="inputTextView" destination="Bvy-vP-zTr" id="znB-Du-pt5"/>
                         <outlet property="newEventLabel" destination="DrY-Na-3rK" id="m3L-Ex-bqb"/>
+                        <outlet property="nonCalendarStackView" destination="Odp-8b-RNS" id="4Xx-fq-p0q"/>
                         <outlet property="outputTextView" destination="gnz-HU-C1M" id="AEJ-nM-kBG"/>
                         <outlet property="submitButton" destination="jo4-GC-uNb" id="omf-2z-IU3"/>
                     </connections>
@@ -933,6 +934,8 @@
                     <connections>
                         <outlet property="capSpot" destination="Jsr-gu-GsN" id="VDY-jT-LaL"/>
                         <outlet property="coolImg" destination="50Y-rE-Amz" id="EL0-dZ-6NL"/>
+                        <outlet property="inputPhotoDescription" destination="Jsr-gu-GsN" id="f9f-8u-V5r"/>
+                        <outlet property="inputPhotoTitle" destination="cFi-xI-SBD" id="kz7-wa-YFM"/>
                         <outlet property="submitButton" destination="vIe-y3-tZL" id="2oR-Hd-JCP"/>
                         <outlet property="titleSpot" destination="cFi-xI-SBD" id="7cS-Gf-Wlf"/>
                     </connections>

@@ -14,6 +14,8 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
     var vc:PhotosViewController?
     var fetchingMore = false
     var numOfPics = 0
+    @IBOutlet weak var inputPhotoTitle: UITextField!
+    @IBOutlet weak var inputPhotoDescription: UITextView!
    
     
     override func viewDidLoad() {
@@ -25,7 +27,9 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
         
         titleSpot.text = String(numOfPics)
         setUpElements()
-            
+           
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tap)
         }
     
     @objc func imageTapped(gesture: UITapGestureRecognizer){
@@ -152,7 +156,11 @@ class PhotoPopupViewController: UIViewController, UIScrollViewDelegate, UINaviga
        // passwordTextField.isSecureTextEntry = true
     }
     
-    
+    @objc func handleTap(){
+        inputPhotoTitle.resignFirstResponder()
+        inputPhotoDescription.resignFirstResponder()
     }
+    
+}
     
 

@@ -28,10 +28,6 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     
     @IBOutlet weak var inputTextView: UITextView!
     
-    @IBOutlet weak var selectDateLabel: UILabel!
-    
-    @IBOutlet weak var inputDate: UIDatePicker!
-    
     @IBOutlet weak var submitButton: UIButton!
     
     @IBOutlet weak var errorLabel: UILabel!
@@ -215,21 +211,19 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
             newEventLabel.isHidden = true
             inputEventTitle.isHidden = true
             inputTextView.isHidden = true
-            selectDateLabel.isHidden = true
-            inputDate.isHidden = true
             submitButton.isHidden = true
             deleteEventButton.isHidden = true
         }
     }
     func setUpElements(){
-        //LoginStyling.styleFilledButton(submitButton)
-        //LoginStyling.styleHollowButtonThree(deleteEventButton)
+        LoginStyling.styleFilledButton(submitButton)
+        LoginStyling.styleHollowButtonThree(deleteEventButton)
     }
 
     @IBAction func submitBtnTapped(_ sender: Any) {
         let eventTitle = inputEventTitle.text!
         var eventDescription = inputTextView.text!
-        let eventDate = inputDate.date
+        let eventDate = dateDBFormat
         
         // EXPLANATION: turning date input into a string
         let formatter = DateFormatter()
@@ -268,7 +262,7 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
-            textView.textColor = UIColor.black
+            textView.textColor = UIColor.label
         }
     }
     
@@ -293,12 +287,12 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    /*
+    
     func textFieldShouldReturn(_ inputEventTitle: UITextField) -> Bool{
         inputEventTitle.resignFirstResponder()
         return true
     }
-    */
+    
     private func textViewShouldReturn(_ inputTextView: UITextView) -> Bool {
         inputTextView.resignFirstResponder()
         return true

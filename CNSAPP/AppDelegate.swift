@@ -9,11 +9,20 @@ import UIKit
 import Firebase
 import FirebaseCore
 import FirebaseMessaging
+import SwiftUI
+import UserNotifications
+import SafariServices
 
-@main
+enum Identifiers {
+  static let viewAction = "VIEW_IDENTIFIER"
+  static let newsCategory = "NEWS_CATEGORY"
+}
+//@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
 let gcmMessageIDKey = "CNUCap.me"
+    var window : UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -45,6 +54,27 @@ let gcmMessageIDKey = "CNUCap.me"
             print("Remote FCM registration token: \(token)")
           }
         }
+        let notificationOption = launchOptions?[.remoteNotification]
+
+        // 1
+        if
+          let notification = notificationOption as? [String: AnyObject],
+          let aps = notification["aps"] as? [String: AnyObject] {
+          // 2
+          NewsItem.makeNewsItem(aps)
+          
+          // 3
+         (window?.rootViewController as? UITabBarController)?.selectedIndex = 4
+        }
+        
+        /*  let notificationOption = launchOptions?[.remoteNotification]
+               if let notification = notificationOption as? [String: AnyObject],
+                   let aps = notification["aps"] as? [String: AnyObject] {
+                   // Process remote notification in the view
+                   let main = window?.rootViewController as! AnnouncementsViewController
+                   main.initialNotification = aps
+               } */
+               
 
       //  FirebaseApp.configure()
         return true
@@ -93,7 +123,9 @@ let gcmMessageIDKey = "CNUCap.me"
         for (key, value) in userInfo{
             print(String(describing: key))
             print(String(describing: value))
+            
         }
+       // print(String(describing: v))
 
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         Messaging.messaging().appDidReceiveMessage(userInfo)
@@ -129,6 +161,11 @@ let gcmMessageIDKey = "CNUCap.me"
       // If you are receiving a notification message while your app is in the background,
       // this callback will not be fired till the user taps on the notification launching the application.
       // TODO: Handle data of notification
+       guard let aps = userInfo["aps"] as? [String: AnyObject] else {
+           completionHandler(.failed)
+           return
+         }
+         NewsItem.makeNewsItem(aps)
 
       // With swizzling disabled you must let Messaging know about the message, for Analytics
       Messaging.messaging().appDidReceiveMessage(userInfo)

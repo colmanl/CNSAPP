@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1004706490000-omb0mhr4r3al4i8doa9h0f9ija5jrhcq.apps.googleusercontent.com</string>
+	<string>1004706490000-j8cdl08uvf52bvkv0be32673ol0ja2rl.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1004706490000-omb0mhr4r3al4i8doa9h0f9ija5jrhcq</string>
+	<string>com.googleusercontent.apps.1004706490000-j8cdl08uvf52bvkv0be32673ol0ja2rl</string>
 	<key>API_KEY</key>
 	<string>AIzaSyA8xZYVdqKMGzUemSHO0W6jASeKdeTn4CY</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.dsuCapstone.CNSAPP</string>
+	<string>com.dsuCapstone.CNSAPP2</string>
 	<key>PROJECT_ID</key>
 	<string>dsucapstone-ed41c</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1004706490000:ios:0a5b075e402a928ffa1a15</string>
+	<string>1:1004706490000:ios:9f3470049e5ae81dfa1a15</string>
+	<key>DATABASE_URL</key>
+	<string>https://dsucapstone-ed41c-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

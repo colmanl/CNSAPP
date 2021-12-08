@@ -13,7 +13,6 @@ class PhotosViewController: UIViewController, UIScrollViewDelegate, UINavigation
     let database = Firestore.firestore()
     var imgPath = ""
     var reduce = false
-    //var delArray = [String]()
     var delArray2 = [Photo]()
     var fetchingMore = false
     var scrollEnabled = false

@@ -62,6 +62,8 @@ class CalendarViewController: UIViewController, UITextViewDelegate, ObservableOb
         inputTextView.delegate = self;
         //inputTextView.text = "(Optional) Enter event description"
         inputTextView.textColor = UIColor.lightGray
+        inputTextView.textContainer.maximumNumberOfLines = 3
+        inputTextView.textContainer.lineBreakMode = .byTruncatingTail
         //let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         //view.addGestureRecognizer(tap)
         
